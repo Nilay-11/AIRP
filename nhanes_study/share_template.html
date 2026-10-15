@@ -71,15 +71,17 @@ nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decora
   <h2>Key findings</h2>
   <div class="keys">
     <div class="key"><b>{{N}}</b><span>adults from 4 survey cycles (2011–2018), {{CASES}} with CVD</span></div>
-    <div class="key"><b>{{LO}}–{{XGB}}</b><span>test ROC-AUC range across all five models</span></div>
-    <div class="key"><b>{{XGB}}</b><span>best model: XGBoost. MLP scored {{MLP}}</span></div>
+    <div class="key"><b>{{LO}}–{{XGB}}</b><span>test ROC-AUC range across all 7 models</span></div>
+    <div class="key"><b>{{XGB}}</b><span>best model: XGBoost. Best deep model, FT-Transformer: {{FTT}}</span></div>
     <div class="key"><b>W = {{W}}</b><span>Kendall's W: agreement of SHAP rankings across models</span></div>
   </div>
   <ul class="prose">
-    <li>The MLP (deep learning) was not significantly better or worse than any classical model.</li>
-    <li>XGBoost had the highest AUC. It beat LR, RF and SVM significantly, but not the MLP.</li>
+    <li>Four classical models (LR, RF, SVM, XGBoost) were compared with three deep-learning models (MLP, ResNet, FT-Transformer).</li>
+    <li>No deep-learning model was significantly better than any classical model.</li>
+    <li>XGBoost had the highest AUC. It beat LR, RF, SVM and ResNet significantly, but not the MLP or FT-Transformer.</li>
+    <li>The FT-Transformer took 1.6 hours to tune, against 49 seconds for XGBoost, with no accuracy gain.</li>
     <li>All models were well calibrated, and all held up when tested on the newest cycle (2017–2018).</li>
-    <li>Age was the most important feature for every model. SHAP rankings group by model family: the two tree models agree with each other, and SVM, MLP and LR agree with each other.</li>
+    <li>Age was the most important feature for every model. SHAP rankings follow the shape of the model: the two tree models agree with each other, and the smooth models (LR, SVM and the three deep models) form a second group. The deep models agree almost perfectly with each other (W = 0.92).</li>
     <li>Cholesterol and blood pressure attributions are distorted by treatment after diagnosis. This is a limitation the paper must state (see Discussion).</li>
   </ul>
 </section>
@@ -103,11 +105,15 @@ nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decora
   <ul>{{GROUPS}}</ul>
   <p>Blood pressure is the mean of up to three readings; a diastolic reading of 0 was treated as missing. Medication variables were <b>not</b> used as features because treatment often follows a CVD diagnosis, which would leak the label. The most missing feature was income-to-poverty ratio (9.8%); every other feature was 6.3% or less.</p>
   <p><b>Split:</b> stratified 80/20 (train 17,241 with 1,895 cases; test 4,311 with 474 cases), seed 42. Median imputation and standardisation were fitted inside each model pipeline on training folds only.</p>
-  <p><b>Tuning:</b> 5-fold stratified cross-validation on the training set, optimising ROC-AUC. Grid search for LR, RF, SVM and MLP (MLP: 60 configurations); 40-iteration random search for XGBoost.</p>
-  <p><b>MLP:</b> PyTorch. Linear → BatchNorm → ReLU → Dropout blocks, AdamW optimiser, binary cross-entropy loss, batch size 256, early stopping on a 15% internal validation split (patience 15). The final network has 3,649 parameters and stopped at epoch 89.</p>
+  <p><b>Tuning:</b> 5-fold stratified cross-validation on the training set, optimising ROC-AUC. Grid search for LR, RF, SVM, MLP (60 configurations), ResNet (54) and FT-Transformer (8); 40-iteration random search for XGBoost.</p>
+  <p><b>Deep models (PyTorch):</b> all three share one training loop: AdamW optimiser, binary cross-entropy loss, batch size 256, early stopping on a 15% validation split (patience 15).</p>
+  <ul><li><b>MLP:</b> Linear → BatchNorm → ReLU → Dropout blocks; 3,649 parameters.</li>
+  <li><b>ResNet</b> (Gorishniy et al., 2021): residual blocks; 68,353 parameters.</li>
+  <li><b>FT-Transformer</b> (Gorishniy et al., 2021): each feature becomes a token, then multi-head self-attention; 69,589 parameters.</li></ul>
+  <p>All final models and timings used the CPU. FT-Transformer's ablation and bootstrap refits ran on a GPU for speed.</p>
   <p><b>Decision threshold:</b> for each model, the threshold that maximised F1 on out-of-fold training predictions. The test set was never used for any choice.</p>
   <p><b>Metrics:</b> ROC-AUC with 1,000-sample bootstrap 95% CI, PR-AUC, precision, recall, specificity, F1, Brier score, ECE (10 quantile bins), calibration slope and intercept, DeLong test for paired AUC differences, survey-weighted AUC, and timing.</p>
-  <p><b>SHAP:</b> the same model-agnostic method for all five models (permutation SHAP on predicted probability; 300 test rows, 50 background rows, 164 evaluations per row), so attributions are directly comparable. Checked against exact TreeSHAP for XGBoost: ranking Spearman ρ = {{TREECHK}}.</p>
+  <p><b>SHAP:</b> the same model-agnostic method for all 7 models (permutation SHAP on predicted probability; 300 test rows, 50 background rows, 164 evaluations per row), so attributions are directly comparable. Checked against exact TreeSHAP for XGBoost: ranking Spearman ρ = {{TREECHK}}.</p>
   <p><b>Stability:</b> across models, pairwise Spearman correlation of mean |SHAP|, top-5 Jaccard overlap and Kendall's W. Within each model, 5 bootstrap resamples of the training set were refit and their SHAP rankings compared.</p>
   <p><b>Ablation:</b> each feature group was removed in turn and the model retrained with its tuned settings. ΔAUC is averaged over 5 different random splits. <b>Temporal validation:</b> trained on 2011–2016 (n = 16,322) and tested on 2017–2018 (n = 5,230).</p>
   </div>
@@ -118,9 +124,11 @@ nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decora
 <section id="perf">
   <h2>Table 2. Test-set performance</h2>
   {{PERF}}
+  <h3>Pairwise DeLong p-values (bold: p &lt; 0.05)</h3>
+  {{DELONG}}
   <p class="cap">n = 4,311, of whom 474 have CVD. Highlighted row: best AUC. DeLong p for XGBoost against the other classical models: LR 0.005, RF &lt; 0.001, SVM 0.002. Precision, recall, specificity and F1 use the out-of-fold max-F1 threshold.</p>
   <figure>
-    <img src="figures/fig1_roc_calibration.png" alt="ROC curves for the five models nearly overlap; calibration curves lie close to the diagonal, with the MLP slightly over-confident in the upper deciles.">
+    <img src="figures/fig1_roc_calibration.png" alt="ROC curves for the 7 models nearly overlap; calibration curves lie close to the diagonal.">
     <figcaption class="cap"><b>Figure 1.</b> (a) ROC curves on the test set, with AUC in the legend. (b) Calibration by decile of predicted risk.</figcaption>
   </figure>
 </section>
@@ -128,20 +136,20 @@ nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decora
 <section id="robust">
   <h2>Robustness: repeated splits, temporal and survey-weighted</h2>
   {{ROBUST}}
-  <p class="cap prose">Across 5 random splits, the differences between models are within about one standard deviation. On the 2017–2018 temporal test set, all five models converge to the same AUC and XGBoost's small advantage disappears.</p>
+  <p class="cap prose">Across 5 random splits, the differences between models are within about one standard deviation. On the 2017–2018 temporal test set, all 7 models converge to an AUC of 0.837–0.840 and XGBoost's small advantage disappears.</p>
 </section>
 
 <section id="eff">
   <h2>Computational efficiency</h2>
   {{EFF}}
-  <p class="cap prose">Wall-clock times on a 12-core CPU; tuning ran in parallel. The MLP took the longest to tune and about 170 times longer than LR to fit, with no significant gain in accuracy. The SVM was by far the slowest to predict and to explain.</p>
+  <p class="cap prose">Wall-clock times on a 12-core CPU; tuning ran in parallel. The FT-Transformer took 119 times longer to tune than XGBoost and about 5,000 times longer than LR to fit, with no significant gain in accuracy. The SVM was the slowest to explain.</p>
 </section>
 
 <section id="shap">
   <h2>SHAP feature importance and stability</h2>
   <div class="figs2">
     <figure>
-      <img src="figures/fig2_shap_importance_heatmap.png" alt="Heatmap of normalised SHAP importance: age ranks first for all five models.">
+      <img src="figures/fig2_shap_importance_heatmap.png" alt="Heatmap of normalised SHAP importance: age ranks first for all 7 models.">
       <figcaption class="cap"><b>Figure 2.</b> Mean |SHAP| for each model, scaled to that model's top feature. The number in each cell is the feature's rank.</figcaption>
     </figure>
     <figure>
@@ -152,10 +160,10 @@ nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decora
   <h3>Table 3. Cross-model and within-model agreement of SHAP rankings</h3>
   {{STAB}}
   <ul class="prose">
-    <li>Kendall's W across all five models is {{W}}, meaning broad agreement.</li>
-    <li>Agreement follows model family. RF and XGB (tree ensembles) correlate at 0.94. SVM and MLP correlate at 0.89, and LR and MLP at 0.74. Pairs from different families range from 0.47 to 0.66.</li>
-    <li>LR, SVM and MLP share the same top 5: age, smoking, total cholesterol, diagnosed diabetes and income-to-poverty ratio. RF and XGB bring serum creatinine into their top 5.</li>
-    <li>Tree models give their full rankings the most stability across bootstrap refits (ρ 0.97 and 0.92). LR, SVM and MLP keep a more stable top 5.</li>
+    <li>Kendall's W across all 7 models is {{W}}, meaning broad agreement. It is 0.92 among the 3 deep models and 0.74 among the 4 classical models.</li>
+    <li>Agreement follows the shape of the model. RF and XGB (tree ensembles) correlate at 0.94. ResNet and FT-Transformer correlate at 0.94, and SVM and MLP at 0.89. Tree vs smooth pairs are the lowest (LR–RF 0.47).</li>
+    <li>LR, SVM and all three deep models share the same top 5: age, smoking, total cholesterol, diagnosed diabetes and income-to-poverty ratio. RF and XGB bring serum creatinine into their top 5.</li>
+    <li>Tree models give their full rankings the most stability across bootstrap refits (ρ 0.97 and 0.92). FT-Transformer is the least stable (top-5 overlap 0.61).</li>
   </ul>
 </section>
 
@@ -187,7 +195,7 @@ nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decora
     {{MED}}
     <p>The outcome is existing, self-reported CVD measured at a single point in time. So the models partly learn the signs of having been diagnosed and treated, not the risk of developing CVD. Medication was checked only for this analysis and was never a model feature (script <code>06_medication_check.py</code>).</p>
   </div>
-  <p class="prose"><b>Other limitations:</b> the outcome is self-reported (recall bias) and prevalent rather than incident. Age is top-coded at 80. Survey weights were used for descriptive statistics and a weighted-AUC check, not for model training. Permutation SHAP is approximate, though it was validated against exact TreeSHAP. The MLP's selected dropout (0.5) and weight decay (0.01) sit at the edge of the search grid; its architecture (64-32) is mid-range, and the top configurations score within a small margin of each other.</p>
+  <p class="prose"><b>Other limitations:</b> the outcome is self-reported (recall bias) and prevalent rather than incident. Age is top-coded at 80. Survey weights were used for descriptive statistics and a weighted-AUC check, not for model training. Permutation SHAP is approximate, though it was validated against exact TreeSHAP. Some selected deep-learning settings sit at the edge of their search grids, but the top configurations score within 0.003 AUC of each other, below the cross-validation noise.</p>
 </section>
 
 <section id="abstract">

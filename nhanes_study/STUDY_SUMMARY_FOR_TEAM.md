@@ -2,7 +2,7 @@
 
 **Title (working):** Does Deep Learning Outperform Classical Machine Learning for Cardiovascular Disease Classification? An Explainable AI Comparison Using NHANES 2011–2018
 
-Status: the 4 classical models and the MLP are final. ResNet and FT-Transformer results are being finalised; numbers marked [ ] will be filled in.
+Status: all results for the 7 models are final.
 
 ---
 
@@ -63,7 +63,7 @@ Preprocessing: median imputation and standardisation, fitted on the training dat
 | 4 | XGBoost | Classical ML | xgboost | 502 trees, depth 5, learning rate 0.011 |
 | 5 | Multilayer Perceptron (MLP) | Deep learning | PyTorch | 64-32 hidden units, BatchNorm, ReLU, dropout 0.5, AdamW |
 | 6 | Tabular ResNet | Deep learning | PyTorch | 4 residual blocks, width 64, dropout 0.5, AdamW |
-| 7 | FT-Transformer | Deep learning | PyTorch | feature tokenizer + Transformer blocks with self-attention [settings pending] |
+| 7 | FT-Transformer | Deep learning | PyTorch | feature tokenizer + 2 Transformer blocks, width 64, 8 attention heads, AdamW lr 3e-4 |
 
 All models were tuned with 5-fold stratified cross-validation on the training set (objective: ROC-AUC).
 The three deep models share the same training loop: AdamW optimiser, binary cross-entropy loss and early stopping.
@@ -106,8 +106,27 @@ ResNet and FT-Transformer follow Gorishniy et al., "Revisiting Deep Learning Mod
 
 ---
 
-## 5. Abstract (draft, about 190 words)
+## 5. Key results (test set, n = 4,311)
 
-Cardiovascular disease (CVD) is a leading cause of death, yet it remains unclear whether deep learning improves CVD classification over classical machine learning on structured clinical data. Using four cycles of the U.S. National Health and Nutrition Examination Survey (NHANES 2011–2018; n = 21,552 adults, 2,369 with CVD), we compared four classical models (Logistic Regression, Random Forest, Support Vector Machine, XGBoost) with three deep learning models (multilayer perceptron, tabular ResNet, FT-Transformer) using 20 demographic, clinical and laboratory features. Models were evaluated for discrimination (ROC-AUC, PR-AUC, DeLong test), calibration (Brier score, expected calibration error) and computational cost, and interpreted with SHAP. All models performed similarly (ROC-AUC 0.839–[0.848]). XGBoost achieved the highest AUC, and no deep learning model significantly outperformed the classical models [confirm], despite requiring far more training time. Age was the most influential feature for every model, but feature rankings agreed more within model families than between them (Kendall's W = [ ]). Inverse attributions for cholesterol reflected treatment after diagnosis, indicating association rather than causation. For structured health survey data, deep learning offered no measurable advantage over classical machine learning.
+| Model | Family | Test ROC-AUC [95% CI] | PR-AUC | F1 | Brier | ECE |
+|---|---|---|---|---|---|---|
+| Logistic Regression | Classical | 0.839 [0.821–0.855] | 0.392 | 0.455 | 0.080 | 0.010 |
+| Random Forest | Classical | 0.839 [0.821–0.856] | 0.407 | 0.447 | 0.080 | 0.010 |
+| SVM (RBF) | Classical | 0.839 [0.821–0.854] | 0.396 | 0.447 | 0.080 | 0.007 |
+| **XGBoost** | Classical | **0.848 [0.829–0.863]** | 0.418 | 0.451 | 0.078 | 0.009 |
+| MLP | Deep | 0.842 [0.825–0.858] | 0.398 | 0.447 | 0.080 | 0.018 |
+| ResNet | Deep | 0.837 [0.819–0.855] | 0.402 | 0.439 | 0.080 | 0.021 |
+| FT-Transformer | Deep | 0.843 [0.825–0.859] | 0.419 | 0.455 | 0.079 | 0.012 |
+
+- No deep model was significantly better than any classical model (DeLong p ≥ 0.161 wherever a deep model had the higher AUC).
+- XGBoost was significantly better than LR, RF, SVM and ResNet. It was not significantly better than the MLP (p = 0.064) or FT-Transformer (p = 0.075).
+- SHAP: age was ranked #1 by all 7 models. Kendall's W = 0.75 overall, 0.92 among the deep models and 0.74 among the classical models.
+- Cost: FT-Transformer took 5,779 s to tune against 49 s for XGBoost.
+
+Full results are in `RESULTS.md` and the results PDF.
+
+## 6. Abstract (final, about 190 words)
+
+Cardiovascular disease (CVD) is a leading cause of death, yet it remains unclear whether deep learning improves CVD classification over classical machine learning on structured clinical data. Using four cycles of the U.S. National Health and Nutrition Examination Survey (NHANES 2011–2018; n = 21,552 adults, 2,369 with CVD), we compared four classical models (Logistic Regression, Random Forest, Support Vector Machine, XGBoost) with three deep learning models (multilayer perceptron, tabular ResNet, FT-Transformer) using 20 demographic, clinical and laboratory features. Models were evaluated for discrimination (ROC-AUC, PR-AUC, DeLong test), calibration (Brier score, expected calibration error) and computational cost, and interpreted with SHAP. All models performed similarly (ROC-AUC 0.837–0.848). XGBoost achieved the highest AUC, and no deep learning model significantly outperformed any classical model, although the FT-Transformer required 119 times longer tuning than XGBoost. Age was the most influential feature for every model. Feature rankings were broadly concordant (Kendall's W = 0.75) but clustered by the shape of the decision function, with the deep models agreeing closely with each other (W = 0.92). Inverse attributions for cholesterol reflected treatment after diagnosis, indicating association rather than causation. For structured health survey data, deep learning offered no measurable advantage over classical machine learning.
 
 **Keywords:** cardiovascular disease, machine learning, deep learning, NHANES, explainable AI, SHAP

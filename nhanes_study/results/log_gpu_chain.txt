@@ -82,3 +82,208 @@ XGB permutation-SHAP vs TreeSHAP importance Spearman rho = 0.989
 bootstrap 1/5 done
 bootstrap 2/5 done
 bootstrap 3/5 done
+bootstrap 4/5 done
+bootstrap 5/5 done
+partial run; bootstrap still missing for ['FTT'] - summaries not written
+STEP_EXIT 0
+>>> FTT ablation+temporal (GPU)
+ablation: reusing ['LR', 'MLP', 'RF', 'SVM', 'XGB'] | running ['FTT']
+         mean     std     min     max
+model                                
+LR     0.8419  0.0024  0.8390  0.8458
+RF     0.8407  0.0041  0.8367  0.8468
+SVM    0.8431  0.0026  0.8393  0.8462
+XGB    0.8456  0.0039  0.8394  0.8499
+MLP    0.8436  0.0033  0.8388  0.8468
+FTT    0.8455  0.0035  0.8406  0.8501
+model                       LR      RF     SVM     XGB     MLP     FTT
+ablated                                                               
+Anthropometric         -0.0008 -0.0002 -0.0013 -0.0013 -0.0001 -0.0020
+Blood pressure & pulse -0.0003  0.0000  0.0001 -0.0008 -0.0010 -0.0008
+Demographic            -0.0631 -0.0399 -0.0484 -0.0388 -0.0401 -0.0452
+Glycaemic              -0.0065 -0.0050 -0.0059 -0.0057 -0.0050 -0.0064
+Lipids                 -0.0051 -0.0060 -0.0051 -0.0074 -0.0056 -0.0071
+Renal/metabolic        -0.0040 -0.0052 -0.0049 -0.0040 -0.0048 -0.0056
+Smoking                -0.0040 -0.0041 -0.0040 -0.0029 -0.0023 -0.0021
+Socioeconomic          -0.0056 -0.0033 -0.0058 -0.0049 -0.0048 -0.0062
+Temporal: train n=16322 test n=5230
+        roc_auc  pr_auc   brier     ece  calib_slope  calib_intercept
+model                                                               
+LR      0.8377  0.4075  0.0884  0.0115       1.0422           0.0491
+RF      0.8370  0.4032  0.0886  0.0154       1.1738           0.0647
+SVM     0.8384  0.3950  0.0887  0.0128       0.9562           0.0229
+XGB     0.8379  0.4025  0.0884  0.0123       1.0076           0.0735
+MLP     0.8394  0.4106  0.0882  0.0134       1.0349          -0.0333
+FTT     0.8371  0.4081  0.0885  0.0126       0.9759           0.0996
+STEP_EXIT 0
+>>> FTT bootstrap SHAP (GPU)
+LR: SHAP done in 10s; top5 ['age', 'smoking', 'income_poverty_ratio', 'diabetes_dx', 'total_chol']
+RF: SHAP done in 120s; top5 ['age', 'diabetes_dx', 'total_chol', 'creatinine', 'smoking']
+SVM: SHAP done in 1615s; top5 ['age', 'smoking', 'income_poverty_ratio', 'diabetes_dx', 'total_chol']
+XGB: SHAP done in 10s; top5 ['age', 'total_chol', 'income_poverty_ratio', 'smoking', 'creatinine']
+MLP: SHAP done in 5s; top5 ['age', 'smoking', 'total_chol', 'diabetes_dx', 'income_poverty_ratio']
+ResNet: SHAP done in 198s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
+FTT: SHAP done in 1300s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
+XGB permutation-SHAP vs TreeSHAP importance Spearman rho = 0.989
+bootstrap 1/5 done
+bootstrap 2/5 done
+bootstrap 3/5 done
+bootstrap 4/5 done
+bootstrap 5/5 done
+                          LR      RF     SVM     XGB     MLP  ResNet     FTT
+age                   0.0690  0.0548  0.0779  0.0641  0.0760  0.0808  0.0713
+male                  0.0009  0.0009  0.0065  0.0017  0.0077  0.0078  0.0063
+eth_mexican_american  0.0109  0.0009  0.0071  0.0047  0.0076  0.0087  0.0095
+eth_other_hispanic    0.0021  0.0001  0.0012  0.0001  0.0013  0.0019  0.0011
+eth_nh_black          0.0060  0.0006  0.0007  0.0022  0.0047  0.0061  0.0066
+eth_other_multi       0.0039  0.0003  0.0020  0.0009  0.0020  0.0022  0.0027
+income_poverty_ratio  0.0155  0.0108  0.0176  0.0171  0.0170  0.0155  0.0162
+education             0.0041  0.0030  0.0042  0.0039  0.0052  0.0040  0.0044
+systolic_bp           0.0008  0.0068  0.0020  0.0058  0.0036  0.0089  0.0051
+diastolic_bp          0.0022  0.0054  0.0024  0.0053  0.0028  0.0044  0.0046
+pulse_rate            0.0056  0.0036  0.0016  0.0048  0.0033  0.0049  0.0058
+bmi                   0.0048  0.0027  0.0009  0.0035  0.0036  0.0085  0.0069
+waist_cm              0.0043  0.0091  0.0082  0.0102  0.0048  0.0047  0.0049
+total_chol            0.0153  0.0151  0.0165  0.0178  0.0196  0.0239  0.0263
+hdl_chol              0.0039  0.0039  0.0028  0.0045  0.0042  0.0051  0.0053
+hba1c                 0.0027  0.0073  0.0007  0.0054  0.0017  0.0030  0.0009
+creatinine            0.0040  0.0149  0.0071  0.0147  0.0118  0.0130  0.0158
+uric_acid             0.0070  0.0029  0.0055  0.0019  0.0060  0.0054  0.0032
+smoking               0.0173  0.0121  0.0210  0.0150  0.0223  0.0231  0.0171
+diabetes_dx           0.0153  0.0163  0.0174  0.0135  0.0182  0.0176  0.0167
+   model_a model_b  spearman  kendall  top5_jaccard
+0       LR      RF     0.474    0.316         0.667
+1       LR     SVM     0.656    0.537         1.000
+2       LR     XGB     0.553    0.368         0.667
+3       LR     MLP     0.743    0.589         1.000
+4       LR  ResNet     0.666    0.526         1.000
+5       LR     FTT     0.728    0.558         1.000
+6       RF     SVM     0.653    0.442         0.667
+7       RF     XGB     0.941    0.821         0.667
+8       RF     MLP     0.629    0.432         0.667
+9       RF  ResNet     0.663    0.474         0.667
+10      RF     FTT     0.597    0.421         0.667
+11     SVM     XGB     0.663    0.474         0.667
+12     SVM     MLP     0.886    0.716         1.000
+13     SVM  ResNet     0.698    0.547         1.000
+14     SVM     FTT     0.692    0.516         1.000
+15     XGB     MLP     0.633    0.442         0.667
+16     XGB  ResNet     0.717    0.547         0.667
+17     XGB     FTT     0.681    0.537         0.667
+18     MLP  ResNet     0.863    0.726         1.000
+19     MLP     FTT     0.848    0.695         1.000
+20  ResNet     FTT     0.935    0.842         1.000
+    model  spearman_mean  spearman_min  top5_jaccard_mean  mean_cv_of_importance_top5
+0      LR          0.846         0.722              0.867                       0.093
+1      RF          0.973         0.947              0.767                       0.091
+2     SVM          0.732         0.592              1.000                       0.084
+3     XGB          0.921         0.869              0.733                       0.107
+4     MLP          0.805         0.671              1.000                       0.104
+5  ResNet          0.804         0.687              0.767                       0.132
+6     FTT          0.761         0.477              0.605                       0.138
+{'kendall_W_across_models': np.float64(0.7517876323461715), 'kendall_W_classical': np.float64(0.7424812030075187), 'kendall_W_deep': np.float64(0.9214703425229741), 'mean_spearman_by_family': {'classical_vs_deep': 0.6943609022556391, 'within_classical': 0.656641604010025, 'within_deep': 0.8822055137844611}, 'xgb_perm_vs_tree_spearman': np.float64(0.9894736842105262), 'n_explain': 300, 'n_background': 50, 'max_evals': 164, 'n_boot': 5, 'n_explain_boot': 100}
+STEP_EXIT 0
+>>> final SHAP summaries (all cached)
+LR: SHAP done in 10s; top5 ['age', 'smoking', 'income_poverty_ratio', 'diabetes_dx', 'total_chol']
+RF: SHAP done in 120s; top5 ['age', 'diabetes_dx', 'total_chol', 'creatinine', 'smoking']
+SVM: SHAP done in 1615s; top5 ['age', 'smoking', 'income_poverty_ratio', 'diabetes_dx', 'total_chol']
+XGB: SHAP done in 10s; top5 ['age', 'total_chol', 'income_poverty_ratio', 'smoking', 'creatinine']
+MLP: SHAP done in 5s; top5 ['age', 'smoking', 'total_chol', 'diabetes_dx', 'income_poverty_ratio']
+ResNet: SHAP done in 198s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
+FTT: SHAP done in 1300s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
+XGB permutation-SHAP vs TreeSHAP importance Spearman rho = 0.989
+bootstrap 1/5 done
+bootstrap 2/5 done
+bootstrap 3/5 done
+bootstrap 4/5 done
+bootstrap 5/5 done
+                          LR      RF     SVM     XGB     MLP  ResNet     FTT
+age                   0.0690  0.0548  0.0779  0.0641  0.0760  0.0808  0.0713
+male                  0.0009  0.0009  0.0065  0.0017  0.0077  0.0078  0.0063
+eth_mexican_american  0.0109  0.0009  0.0071  0.0047  0.0076  0.0087  0.0095
+eth_other_hispanic    0.0021  0.0001  0.0012  0.0001  0.0013  0.0019  0.0011
+eth_nh_black          0.0060  0.0006  0.0007  0.0022  0.0047  0.0061  0.0066
+eth_other_multi       0.0039  0.0003  0.0020  0.0009  0.0020  0.0022  0.0027
+income_poverty_ratio  0.0155  0.0108  0.0176  0.0171  0.0170  0.0155  0.0162
+education             0.0041  0.0030  0.0042  0.0039  0.0052  0.0040  0.0044
+systolic_bp           0.0008  0.0068  0.0020  0.0058  0.0036  0.0089  0.0051
+diastolic_bp          0.0022  0.0054  0.0024  0.0053  0.0028  0.0044  0.0046
+pulse_rate            0.0056  0.0036  0.0016  0.0048  0.0033  0.0049  0.0058
+bmi                   0.0048  0.0027  0.0009  0.0035  0.0036  0.0085  0.0069
+waist_cm              0.0043  0.0091  0.0082  0.0102  0.0048  0.0047  0.0049
+total_chol            0.0153  0.0151  0.0165  0.0178  0.0196  0.0239  0.0263
+hdl_chol              0.0039  0.0039  0.0028  0.0045  0.0042  0.0051  0.0053
+hba1c                 0.0027  0.0073  0.0007  0.0054  0.0017  0.0030  0.0009
+creatinine            0.0040  0.0149  0.0071  0.0147  0.0118  0.0130  0.0158
+uric_acid             0.0070  0.0029  0.0055  0.0019  0.0060  0.0054  0.0032
+smoking               0.0173  0.0121  0.0210  0.0150  0.0223  0.0231  0.0171
+diabetes_dx           0.0153  0.0163  0.0174  0.0135  0.0182  0.0176  0.0167
+   model_a model_b  spearman  kendall  top5_jaccard
+0       LR      RF     0.474    0.316         0.667
+1       LR     SVM     0.656    0.537         1.000
+2       LR     XGB     0.553    0.368         0.667
+3       LR     MLP     0.743    0.589         1.000
+4       LR  ResNet     0.666    0.526         1.000
+5       LR     FTT     0.728    0.558         1.000
+6       RF     SVM     0.653    0.442         0.667
+7       RF     XGB     0.941    0.821         0.667
+8       RF     MLP     0.629    0.432         0.667
+9       RF  ResNet     0.663    0.474         0.667
+10      RF     FTT     0.597    0.421         0.667
+11     SVM     XGB     0.663    0.474         0.667
+12     SVM     MLP     0.886    0.716         1.000
+13     SVM  ResNet     0.698    0.547         1.000
+14     SVM     FTT     0.692    0.516         1.000
+15     XGB     MLP     0.633    0.442         0.667
+16     XGB  ResNet     0.717    0.547         0.667
+17     XGB     FTT     0.681    0.537         0.667
+18     MLP  ResNet     0.863    0.726         1.000
+19     MLP     FTT     0.848    0.695         1.000
+20  ResNet     FTT     0.935    0.842         1.000
+    model  spearman_mean  spearman_min  top5_jaccard_mean  mean_cv_of_importance_top5
+0      LR          0.846         0.722              0.867                       0.093
+1      RF          0.973         0.947              0.767                       0.091
+2     SVM          0.732         0.592              1.000                       0.084
+3     XGB          0.921         0.869              0.733                       0.107
+4     MLP          0.805         0.671              1.000                       0.104
+5  ResNet          0.804         0.687              0.767                       0.132
+6     FTT          0.761         0.477              0.605                       0.138
+{'kendall_W_across_models': np.float64(0.7517876323461715), 'kendall_W_classical': np.float64(0.7424812030075187), 'kendall_W_deep': np.float64(0.9214703425229741), 'mean_spearman_by_family': {'classical_vs_deep': 0.6943609022556391, 'within_classical': 0.656641604010025, 'within_deep': 0.8822055137844611}, 'xgb_perm_vs_tree_spearman': np.float64(0.9894736842105262), 'n_explain': 300, 'n_background': 50, 'max_evals': 164, 'n_boot': 5, 'n_explain_boot': 100}
+STEP_EXIT 0
+CHAIN_DONE
+>>> ResNet ablation+temporal rerun (CPU)
+ablation: reusing ['FTT', 'LR', 'MLP', 'RF', 'SVM', 'XGB'] | running ['ResNet']
+[Parallel(n_jobs=10)]: Using backend LokyBackend with 10 concurrent workers.
+[Parallel(n_jobs=10)]: Done  36 out of  45 | elapsed: 12.6min remaining:  3.2min
+[Parallel(n_jobs=10)]: Done  45 out of  45 | elapsed: 14.2min finished
+          mean     std     min     max
+model                                 
+LR      0.8419  0.0024  0.8390  0.8458
+RF      0.8407  0.0041  0.8367  0.8468
+SVM     0.8431  0.0026  0.8393  0.8462
+XGB     0.8456  0.0039  0.8394  0.8499
+MLP     0.8436  0.0033  0.8388  0.8468
+ResNet  0.8405  0.0049  0.8340  0.8463
+FTT     0.8455  0.0035  0.8406  0.8501
+model                       LR      RF     SVM     XGB     MLP  ResNet     FTT
+ablated                                                                       
+Anthropometric         -0.0008 -0.0002 -0.0013 -0.0013 -0.0001  0.0029 -0.0020
+Blood pressure & pulse -0.0003  0.0000  0.0001 -0.0008 -0.0010  0.0021 -0.0008
+Demographic            -0.0631 -0.0399 -0.0484 -0.0388 -0.0401 -0.0373 -0.0452
+Glycaemic              -0.0065 -0.0050 -0.0059 -0.0057 -0.0050 -0.0031 -0.0064
+Lipids                 -0.0051 -0.0060 -0.0051 -0.0074 -0.0056 -0.0026 -0.0071
+Renal/metabolic        -0.0040 -0.0052 -0.0049 -0.0040 -0.0048 -0.0044 -0.0056
+Smoking                -0.0040 -0.0041 -0.0040 -0.0029 -0.0023 -0.0009 -0.0021
+Socioeconomic          -0.0056 -0.0033 -0.0058 -0.0049 -0.0048 -0.0037 -0.0062
+Temporal: train n=16322 test n=5230
+         roc_auc  pr_auc   brier     ece  calib_slope  calib_intercept
+model                                                                
+LR       0.8377  0.4075  0.0884  0.0115       1.0422           0.0491
+RF       0.8370  0.4032  0.0886  0.0154       1.1738           0.0647
+SVM      0.8384  0.3950  0.0887  0.0128       0.9562           0.0229
+XGB      0.8379  0.4025  0.0884  0.0123       1.0076           0.0735
+MLP      0.8394  0.4106  0.0882  0.0134       1.0349          -0.0333
+ResNet   0.8398  0.4034  0.0881  0.0168       0.9851          -0.1071
+FTT      0.8371  0.4081  0.0885  0.0126       0.9759           0.0996
+STEP_EXIT 0
+RERUN_DONE

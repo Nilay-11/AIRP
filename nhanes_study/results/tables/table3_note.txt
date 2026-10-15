@@ -1,2 +1,4 @@
-Kendall's W across 5 models: 0.746
+Kendall's W across all 7 models: 0.752
+Kendall's W classical (4): 0.742; deep (3): 0.921
+Mean Spearman by family pair: {'classical_vs_deep': 0.6943609022556391, 'within_classical': 0.656641604010025, 'within_deep': 0.8822055137844611}
 XGB permutation-SHAP vs TreeSHAP rho: 0.989

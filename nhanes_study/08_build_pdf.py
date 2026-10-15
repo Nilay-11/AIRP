@@ -50,7 +50,9 @@ def md_table(lines):
     data = [[Paragraph(inline(c), S["cellh" if i == 0 else "cell"]) for c in r] for i, r in enumerate(rows)]
     n = len(rows[0])
     lens = [max(len(re.sub(r"[*`]", "", r[j])) if j < len(r) else 0 for r in rows) for j in range(n)]
-    w = [min(max(l, 6), 60) for l in lens]
+    words = [max((len(t) for r in rows if j < len(r) for t in re.sub(r"[*`]", "", r[j]).split()), default=4)
+             for j in range(n)]
+    w = [max(words[j] + 1.5, min(lens[j], 40) * 0.55) for j in range(n)]  # longest word always fits
     widths = [WIDTH * x / sum(w) for x in w]
     tb = Table(data, colWidths=widths, repeatRows=1)
     tb.setStyle(TableStyle([("LINEBELOW", (0, 0), (-1, 0), 0.8, ACCENT), ("LINEBELOW", (0, 1), (-1, -1), 0.3, LINE),

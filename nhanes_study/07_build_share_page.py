@@ -29,11 +29,19 @@ def table(head, rows, num_from=1, best=None):
 
 N = MODEL_NAMES
 perf = table(["Model", "CV AUC (SD)", "Test AUC [95% CI]", "PR-AUC", "Precision", "Recall", "Specificity", "F1",
-              "Brier", "ECE", "Cal. slope", "DeLong p vs MLP"],
+              "Brier", "ECE", "Cal. slope", "DeLong p vs best", "Family"],
              [[N[k], f"{r.cv_auc:.3f} ({r.cv_auc_sd:.3f})", f"{r.roc_auc:.3f} [{r.auc_ci_low:.3f}–{r.auc_ci_high:.3f}]",
                f"{r.pr_auc:.3f}", f"{r.precision:.3f}", f"{r.recall:.3f}", f"{r.specificity:.3f}", f"{r.f1:.3f}",
                f"{r.brier:.4f}", f"{r.ece:.4f}", f"{r.calib_slope:.2f}",
-               "—" if k == "MLP" else f"{r.delong_p_vs_MLP:.3f}"] for k, r in m.iterrows()], best=N["XGB"])
+               "—" if np.isnan(r.delong_p_vs_best) else f"{r.delong_p_vs_best:.3f}",
+               "Classical" if k in CLASSICAL else "Deep"] for k, r in m.iterrows()], best=N[m.roc_auc.idxmax()])
+pw = pd.read_csv(RES / "delong_pairwise_p.csv", index_col=0)
+delong_tbl = table(["Model"] + [N[k] for k in MODEL_ORDER],
+                   [[N[a]] + ["—" if a == b else (f"<b>{pw.loc[a, b]:.3f}</b>" if pw.loc[a, b] < 0.05 else f"{pw.loc[a, b]:.3f}")
+                              for b in MODEL_ORDER] for a in MODEL_ORDER])
+# smallest p among deep-vs-classical pairs where the deep model had the higher AUC
+dl_wins = [pw.loc[d, c] for d in DEEP for c in CLASSICAL if m.roc_auc[d] > m.roc_auc[c]]
+min_p_dl_better = min(dl_wins) if dl_wins else float("nan")
 robust = table(["Model", "Repeated splits AUC (mean ± SD, 5 seeds)", "Range", "Temporal AUC (2017–18)", "Temporal Brier",
                 "Temporal cal. slope", "Survey-weighted test AUC"],
                [[N[k], f"{rep.loc[k, 'mean']:.3f} ± {rep.loc[k, 'std']:.3f}", f"{rep.loc[k, 'min']:.3f}–{rep.loc[k, 'max']:.3f}",
@@ -45,9 +53,9 @@ eff = table(["Model", "Tuning (s)", "Final fit (s)", "Inference (ms / 1k rows)",
 cohort = table(list(flow.columns.str.replace("_", " ").str.capitalize()),
                [[r.iloc[0]] + [f"{int(v):,}" for v in r.iloc[1:]] for _, r in flow.iterrows()])
 t1h = table(["Characteristic"] + list(t1.columns), [[i] + list(r) for i, r in t1.iterrows()])
-stab = table(["Model", "ρ vs LR", "ρ vs RF", "ρ vs SVM", "ρ vs XGB", "ρ vs MLP", "Mean ρ vs others",
+stab = table(["Model"] + [f"ρ vs {k}" for k in MODEL_ORDER] + ["Mean ρ vs others",
               "Within-model ρ (bootstrap)", "Within-model top-5 Jaccard", "Top-5 features"],
-             [[i] + [f"{v:.3f}" for v in r.iloc[:8]] + [r.iloc[8]] for i, r in t3.iterrows()])
+             [[i] + [f"{v:.3f}" for v in r.iloc[:-1]] + [r.iloc[-1]] for i, r in t3.iterrows()])
 ap = abl.pivot(index="ablated", columns="model", values="mean")[MODEL_ORDER]
 asd = abl.pivot(index="ablated", columns="model", values="std")[MODEL_ORDER]
 ap = ap.loc[ap.mean(1).sort_values().index]
@@ -60,26 +68,11 @@ hp = table(["Model", "Selected hyperparameters"], [[N[k], html.escape(fmt(params
 
 tot = flow.iloc[-1]
 r = m.roc_auc
-abstract = (f"Cardiovascular disease (CVD) classification from routinely collected clinical data offers a setting to compare "
-            f"the accuracy and interpretability of machine-learning methods. Using four cycles (2011–2018) of the National Health "
-            f"and Nutrition Examination Survey (n = {int(tot.outcome_determined):,} adults; {int(tot.cvd_cases):,} with self-reported CVD), "
-            f"we compared Logistic Regression, Random Forest, Support Vector Machine and XGBoost with a multilayer perceptron (MLP) "
-            f"on 20 harmonized demographic, clinical and laboratory features. All models achieved similar discrimination on a "
-            f"held-out test set (ROC-AUC {r.min():.3f}–{r.max():.3f}); XGBoost performed best ({r['XGB']:.3f}, 95% CI "
-            f"{m.auc_ci_low['XGB']:.3f}–{m.auc_ci_high['XGB']:.3f}), and the MLP ({r['MLP']:.3f}) did not differ significantly from "
-            f"any classical model (DeLong p ≥ {m.delong_p_vs_MLP.min():.3f}). All models were well calibrated (ECE ≤ {m.ece.max():.3f}), "
-            f"and under temporal validation on 2017–2018 data every model reached AUC {tmp.roc_auc.min():.3f}–{tmp.roc_auc.max():.3f}. "
-            f"The MLP required the longest tuning time and about {m.fit_time_s['MLP'] / m.fit_time_s['LR']:.0f} times the training time "
-            f"of Logistic Regression. SHAP analysis identified age as the most influential feature for every model, and feature "
-            f"rankings were broadly concordant (Kendall's W = {summ['kendall_W_across_models']:.2f}), but agreement clustered by model "
-            f"family: tree ensembles agreed closely with each other (ρ = {t3.loc['Random Forest', 'XGB']:.2f}), as did smooth-boundary "
-            f"models (SVM–MLP ρ = {t3.loc['SVM (RBF)', 'MLP']:.2f}). Feature-group ablation confirmed the dominance of demographic "
-            f"variables. Inverse attributions for cholesterol were traced to post-diagnosis treatment, underscoring that attributions "
-            f"reflect predictive association, not causation. For structured clinical survey data, deep learning provided no "
-            f"measurable advantage over classical approaches.")
+res_md = open(ROOT / "RESULTS.md", encoding="utf-8").read()
+abstract = res_md[res_md.index("> Cardiovascular disease (CVD) is a leading cause") + 2:res_md.index("\n\n---\n\n## 5. Files")]
 
 page = open(ROOT / "share_template.html", encoding="utf-8").read()
-for k, v in {"{{COHORT}}": cohort, "{{T1}}": t1h, "{{PERF}}": perf, "{{ROBUST}}": robust, "{{EFF}}": eff, "{{STAB}}": stab,
+for k, v in {"{{COHORT}}": cohort, "{{T1}}": t1h, "{{PERF}}": perf, "{{ROBUST}}": robust, "{{EFF}}": eff, "{{STAB}}": stab, "{{DELONG}}": delong_tbl, "{{FTT}}": f"{r['FTT']:.3f}",
              "{{ABL}}": ablh, "{{MED}}": medh, "{{GROUPS}}": groups, "{{HP}}": hp, "{{ABSTRACT}}": html.escape(abstract),
              "{{W}}": f"{summ['kendall_W_across_models']:.3f}", "{{TREECHK}}": f"{summ['xgb_perm_vs_tree_spearman']:.3f}",
              "{{N}}": f"{int(tot.outcome_determined):,}", "{{CASES}}": f"{int(tot.cvd_cases):,}",

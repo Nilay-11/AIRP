@@ -143,7 +143,7 @@ piv = piv.loc[piv.mean(1).sort_values().index]
 fig, ax = plt.subplots(figsize=(5.4, 3.0))
 ax.grid(False)
 vmax = np.abs(piv.values).max()
-im = ax.imshow(piv.values, cmap=DIVERGE, norm=TwoSlopeNorm(0, -vmax, max(vmax * 0.2, 1e-3)), aspect="auto")
+im = ax.imshow(piv.values, cmap=DIVERGE, norm=TwoSlopeNorm(0, -vmax, vmax), aspect="auto")
 for i in range(piv.shape[0]):
     for j in range(len(MODEL_ORDER)):
         v = piv.iloc[i, j]

@@ -1,5 +1,12 @@
 {
-  "kendall_W_across_models": 0.746406015037594,
+  "kendall_W_across_models": 0.7517876323461715,
+  "kendall_W_classical": 0.7424812030075187,
+  "kendall_W_deep": 0.9214703425229741,
+  "mean_spearman_by_family": {
+    "classical_vs_deep": 0.6943609022556391,
+    "within_classical": 0.656641604010025,
+    "within_deep": 0.8822055137844611
+  },
   "xgb_perm_vs_tree_spearman": 0.9894736842105262,
   "n_explain": 300,
   "n_background": 50,

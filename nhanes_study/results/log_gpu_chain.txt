@@ -80,3 +80,5 @@ ResNet: SHAP done in 198s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 
 FTT: SHAP done in 1300s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
 XGB permutation-SHAP vs TreeSHAP importance Spearman rho = 0.989
 bootstrap 1/5 done
+bootstrap 2/5 done
+bootstrap 3/5 done

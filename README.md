@@ -29,7 +29,9 @@ No deep-learning model significantly outperformed any classical model (DeLong p 
 | `nhanes_study/LITERATURE_SYNTHESIS.md` | What the cited papers found and how it relates to our results |
 | `nhanes_study/STUDY_SUMMARY_FOR_TEAM.md` | Dataset, features, models, comparison methods, abstract |
 | `overleaf_paper/` | IEEE LaTeX paper (`main.tex`, `refs.bib`, figures). Upload it to Overleaf |
-| `reference_papers/` | Reference list with links (the PDFs themselves are not included for copyright reasons) |
+| `reference_papers/` | Reference list with links, plus PDFs of the freely available papers (for team use only; this repository is private) |
+| `nhanes_study/data_raw/` | Raw NHANES files as downloaded from the CDC |
+| `nhanes_study/models/` | The 7 trained models (scikit-learn pipelines saved with joblib) |
 | `*.pdf` (root) | Shareable PDF reports |
 | `src/`, `reports/`, `results/`, `data/`, `cardio_cleaned.csv`, notebook | Earlier exploratory work on the Kaggle cardiovascular dataset |
 

@@ -1,0 +1,2 @@
+Kendall's W across 5 models: 0.746
+XGB permutation-SHAP vs TreeSHAP rho: 0.989

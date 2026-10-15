@@ -1,0 +1,212 @@
+<title>NHANES CVD Model Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (~72ch) with wide tables scrolling in their own frames; paper-section order. */
+:root {
+  --bg: #fbfbfa; --surface: #ffffff; --fg: #1d2329; --muted: #5d6670; --line: #dde1e5;
+  --accent: #1f5f8b; --accent-soft: #e6eff6; --warn: #8a5a00; --warn-soft: #fbf3e2;
+  --f-display: "Source Serif 4", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --fig-bg: #ffffff;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #13171b; --surface: #1a1f24; --fg: #e3e7eb; --muted: #9aa4ae; --line: #2d353d;
+  --accent: #79b4e0; --accent-soft: #1b2a37; --warn: #e3b25c; --warn-soft: #2b2416; --fig-bg: #ffffff; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #13171b; --surface: #1a1f24; --fg: #e3e7eb; --muted: #9aa4ae; --line: #2d353d;
+  --accent: #79b4e0; --accent-soft: #1b2a37; --warn: #e3b25c; --warn-soft: #2b2416; --fig-bg: #ffffff; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--f-body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; }
+.prose { max-width: 72ch; }
+header { display: grid; gap: 10px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.eyebrow { font: 500 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 600 clamp(26px, 4vw, 36px)/1.15 var(--f-display); margin: 0; text-wrap: balance; }
+h2 { font: 600 22px/1.25 var(--f-display); margin: 0; text-wrap: balance; }
+h3 { font: 600 15px/1.3 var(--f-body); margin: 0; }
+section { display: grid; gap: 14px; padding-block: 32px; border-bottom: 1px solid var(--line); }
+p { margin: 0; } ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.lede { color: var(--muted); font-size: 16px; }
+.keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.key { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 4px; min-width: 0; }
+.key b { font: 600 24px/1.1 var(--f-display); font-variant-numeric: tabular-nums; color: var(--accent); }
+.key span { color: var(--muted); font-size: 13px; }
+.tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 11.5px/1.3 var(--f-body); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+td.n, th.n { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+tr.best td { background: var(--accent-soft); font-weight: 600; }
+.cap { font-size: 13px; color: var(--muted); }
+.cap b { color: var(--fg); }
+figure { margin: 0; display: grid; gap: 8px; }
+figure img { background: var(--fig-bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px; width: 100%; height: auto; box-sizing: border-box; }
+.figs2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
+.note { background: var(--warn-soft); border-left: 3px solid var(--warn); padding: 14px 16px; border-radius: 0 6px 6px 0; display: grid; gap: 8px; }
+.note h3 { color: var(--warn); }
+.abs { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; font: 15.5px/1.65 var(--f-display); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+button { font: 500 13px var(--f-body); color: var(--accent); background: var(--accent-soft); border: 1px solid var(--line); border-radius: 5px; padding: 6px 12px; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code { font: 13px var(--f-mono); }
+nav { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+nav a { color: var(--accent); text-decoration: none; } nav a:hover { text-decoration: underline; }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Experiment results · for paper drafting</div>
+  <h1>Classical Machine Learning vs. Deep Learning for Cardiovascular Disease Classification on NHANES</h1>
+  <p class="lede">Every number on this page comes from the experiment's output files. Section order follows the paper: data, methods, results, discussion. Table and figure numbers match the paper outline.</p>
+  <nav>
+    <a href="#key">Key findings</a><a href="#data">Data</a><a href="#methods">Methods</a><a href="#perf">Performance</a>
+    <a href="#robust">Robustness</a><a href="#eff">Efficiency</a><a href="#shap">SHAP</a><a href="#ablation">Ablation</a>
+    <a href="#discussion">Discussion</a><a href="#abstract">Abstract</a>
+  </nav>
+</header>
+
+<section id="key">
+  <h2>Key findings</h2>
+  <div class="keys">
+    <div class="key"><b>21,552</b><span>adults from 4 survey cycles (2011–2018), 2,369 with CVD</span></div>
+    <div class="key"><b>0.839–0.848</b><span>test ROC-AUC range across all five models</span></div>
+    <div class="key"><b>0.848</b><span>best model: XGBoost. MLP scored 0.842</span></div>
+    <div class="key"><b>W = 0.746</b><span>Kendall's W: agreement of SHAP rankings across models</span></div>
+  </div>
+  <ul class="prose">
+    <li>The MLP (deep learning) was not significantly better or worse than any classical model.</li>
+    <li>XGBoost had the highest AUC. It beat LR, RF and SVM significantly, but not the MLP.</li>
+    <li>All models were well calibrated, and all held up when tested on the newest cycle (2017–2018).</li>
+    <li>Age was the most important feature for every model. SHAP rankings group by model family: the two tree models agree with each other, and SVM, MLP and LR agree with each other.</li>
+    <li>Cholesterol and blood pressure attributions are distorted by treatment after diagnosis. This is a limitation the paper must state (see Discussion).</li>
+  </ul>
+</section>
+
+<section id="data">
+  <h2>Data and cohort</h2>
+  <p class="prose">NHANES cycles 2011–2012 (G), 2013–2014 (H), 2015–2016 (I) and 2017–2018 (J), downloaded from the CDC. Files used: DEMO, BPX, BMX, MCQ, TCHOL, HDL, GHB, BIOPRO, SMQ, DIQ. Variable names and codes were checked to be identical in all four cycles. The 2019–2020 cycle was left out because COVID-19 interrupted its data collection.</p>
+  <p class="prose"><b>Inclusion:</b> adults aged 20 or older who completed the physical examination and had a known outcome.<br>
+  <b>Outcome (CVD = 1):</b> answered "yes" to ever being told by a doctor they had congestive heart failure (MCQ160B), coronary heart disease (MCQ160C), angina (MCQ160D), heart attack (MCQ160E) or stroke (MCQ160F). CVD = 0 if "no" to all five. Anyone else was excluded (94 people). Prevalence was 11.0% unweighted and 8.9% survey-weighted.</p>
+  <h3>Cohort flow</h3>
+  <div class="tw"><table><thead><tr><th>Cycle</th><th class=n>Participants</th><th class=n>Examined adults 20plus</th><th class=n>Outcome determined</th><th class=n>Cvd cases</th></tr></thead><tbody><tr><td>2011-2012</td><td class=n>9,756</td><td class=n>5,319</td><td class=n>5,302</td><td class=n>550</td></tr><tr><td>2013-2014</td><td class=n>10,175</td><td class=n>5,588</td><td class=n>5,572</td><td class=n>574</td></tr><tr><td>2015-2016</td><td class=n>9,971</td><td class=n>5,474</td><td class=n>5,448</td><td class=n>598</td></tr><tr><td>2017-2018</td><td class=n>9,254</td><td class=n>5,265</td><td class=n>5,230</td><td class=n>647</td></tr><tr><td>Total</td><td class=n>39,156</td><td class=n>21,646</td><td class=n>21,552</td><td class=n>2,369</td></tr></tbody></table></div>
+  <h3>Table 1. Survey-weighted characteristics by CVD status</h3>
+  <div class="tw"><table><thead><tr><th>Characteristic</th><th class=n>Overall</th><th class=n>No CVD</th><th class=n>CVD</th></tr></thead><tbody><tr><td>Age, mean (SD)</td><td class=n>47.7 (17.1)</td><td class=n>46.1 (16.5)</td><td class=n>65.0 (13.1)</td></tr><tr><td>Income-to-poverty ratio, mean (SD)</td><td class=n>3.0 (1.7)</td><td class=n>3.0 (1.7)</td><td class=n>2.5 (1.6)</td></tr><tr><td>Systolic BP, mean (SD)</td><td class=n>122.8 (17.4)</td><td class=n>122.0 (16.8)</td><td class=n>130.4 (20.8)</td></tr><tr><td>Diastolic BP, mean (SD)</td><td class=n>71.0 (12.0)</td><td class=n>71.3 (11.7)</td><td class=n>67.8 (14.5)</td></tr><tr><td>Pulse rate, mean (SD)</td><td class=n>72.5 (11.8)</td><td class=n>72.8 (11.8)</td><td class=n>69.8 (11.7)</td></tr><tr><td>BMI, mean (SD)</td><td class=n>29.3 (7.0)</td><td class=n>29.1 (7.0)</td><td class=n>30.8 (7.3)</td></tr><tr><td>Waist circumference, mean (SD)</td><td class=n>99.9 (16.7)</td><td class=n>99.3 (16.6)</td><td class=n>106.6 (16.2)</td></tr><tr><td>Total cholesterol, mean (SD)</td><td class=n>191.6 (41.4)</td><td class=n>193.0 (41.0)</td><td class=n>177.5 (43.0)</td></tr><tr><td>HDL cholesterol, mean (SD)</td><td class=n>53.9 (16.5)</td><td class=n>54.2 (16.5)</td><td class=n>50.4 (16.4)</td></tr><tr><td>HbA1c, mean (SD)</td><td class=n>5.7 (1.0)</td><td class=n>5.6 (0.9)</td><td class=n>6.2 (1.3)</td></tr><tr><td>Serum creatinine, mean (SD)</td><td class=n>0.9 (0.4)</td><td class=n>0.9 (0.3)</td><td class=n>1.1 (0.6)</td></tr><tr><td>Uric acid, mean (SD)</td><td class=n>5.4 (1.4)</td><td class=n>5.3 (1.4)</td><td class=n>5.8 (1.6)</td></tr><tr><td>Male sex, %</td><td class=n>48.0</td><td class=n>47.5</td><td class=n>54.0</td></tr><tr><td>Diagnosed diabetes, %</td><td class=n>10.5</td><td class=n>8.3</td><td class=n>33.0</td></tr><tr><td>Non-Hispanic Black, %</td><td class=n>11.4</td><td class=n>11.4</td><td class=n>11.9</td></tr><tr><td>Mexican American, %</td><td class=n>8.6</td><td class=n>9.0</td><td class=n>4.6</td></tr><tr><td>Current smoker, %</td><td class=n>18.9</td><td class=n>18.5</td><td class=n>22.4</td></tr><tr><td>Former smoker, %</td><td class=n>24.5</td><td class=n>23.1</td><td class=n>38.0</td></tr><tr><td>Unweighted n</td><td class=n>21,552</td><td class=n>19,183</td><td class=n>2,369</td></tr></tbody></table></div>
+  <p class="cap">Weights: MEC exam weight divided by 4, following NCHS guidance for combining four cycles. Age is top-coded at 80 in NHANES.</p>
+</section>
+
+<section id="methods">
+  <h2>Methods</h2>
+  <div class="prose" style="display:grid;gap:12px">
+  <p><b>Features (20), by group:</b></p>
+  <ul><li><b>Demographic:</b> Age, Male sex, Mexican American, Other Hispanic, Non-Hispanic Black, Other/multiracial</li><li><b>Socioeconomic:</b> Income-to-poverty ratio, Education</li><li><b>Blood pressure & pulse:</b> Systolic BP, Diastolic BP, Pulse rate</li><li><b>Anthropometric:</b> BMI, Waist circumference</li><li><b>Lipids:</b> Total cholesterol, HDL cholesterol</li><li><b>Glycaemic:</b> HbA1c, Diagnosed diabetes</li><li><b>Renal/metabolic:</b> Serum creatinine, Uric acid</li><li><b>Smoking:</b> Smoking status</li></ul>
+  <p>Blood pressure is the mean of up to three readings; a diastolic reading of 0 was treated as missing. Medication variables were <b>not</b> used as features because treatment often follows a CVD diagnosis, which would leak the label. The most missing feature was income-to-poverty ratio (9.8%); every other feature was 6.3% or less.</p>
+  <p><b>Split:</b> stratified 80/20 (train 17,241 with 1,895 cases; test 4,311 with 474 cases), seed 42. Median imputation and standardisation were fitted inside each model pipeline on training folds only.</p>
+  <p><b>Tuning:</b> 5-fold stratified cross-validation on the training set, optimising ROC-AUC. Grid search for LR, RF, SVM and MLP (MLP: 60 configurations); 40-iteration random search for XGBoost.</p>
+  <p><b>MLP:</b> PyTorch. Linear → BatchNorm → ReLU → Dropout blocks, AdamW optimiser, binary cross-entropy loss, batch size 256, early stopping on a 15% internal validation split (patience 15). The final network has 3,649 parameters and stopped at epoch 89.</p>
+  <p><b>Decision threshold:</b> for each model, the threshold that maximised F1 on out-of-fold training predictions. The test set was never used for any choice.</p>
+  <p><b>Metrics:</b> ROC-AUC with 1,000-sample bootstrap 95% CI, PR-AUC, precision, recall, specificity, F1, Brier score, ECE (10 quantile bins), calibration slope and intercept, DeLong test for paired AUC differences, survey-weighted AUC, and timing.</p>
+  <p><b>SHAP:</b> the same model-agnostic method for all five models (permutation SHAP on predicted probability; 300 test rows, 50 background rows, 164 evaluations per row), so attributions are directly comparable. Checked against exact TreeSHAP for XGBoost: ranking Spearman ρ = 0.989.</p>
+  <p><b>Stability:</b> across models, pairwise Spearman correlation of mean |SHAP|, top-5 Jaccard overlap and Kendall's W. Within each model, 5 bootstrap resamples of the training set were refit and their SHAP rankings compared.</p>
+  <p><b>Ablation:</b> each feature group was removed in turn and the model retrained with its tuned settings. ΔAUC is averaged over 5 different random splits. <b>Temporal validation:</b> trained on 2011–2016 (n = 16,322) and tested on 2017–2018 (n = 5,230).</p>
+  </div>
+  <h3>Selected hyperparameters</h3>
+  <div class="tw"><table><thead><tr><th>Model</th><th class=n>Selected hyperparameters</th></tr></thead><tbody><tr><td>Logistic Regression</td><td class=n>C = 0.01</td></tr><tr><td>Random Forest</td><td class=n>max_depth = 12, max_features = sqrt, min_samples_leaf = 20</td></tr><tr><td>SVM (RBF)</td><td class=n>C = 10, class_weight = balanced, gamma = 0.001</td></tr><tr><td>XGBoost</td><td class=n>colsample_bytree = 0.5933, learning_rate = 0.0113, max_depth = 5, min_child_weight = 4, n_estimators = 502, reg_lambda = 2.6442, subsample = 0.9238</td></tr><tr><td>MLP</td><td class=n>dropout = 0.5, hidden = [64, 32], lr = 0.001, weight_decay = 0.01</td></tr></tbody></table></div>
+</section>
+
+<section id="perf">
+  <h2>Table 2. Test-set performance</h2>
+  <div class="tw"><table><thead><tr><th>Model</th><th class=n>CV AUC (SD)</th><th class=n>Test AUC [95% CI]</th><th class=n>PR-AUC</th><th class=n>Precision</th><th class=n>Recall</th><th class=n>Specificity</th><th class=n>F1</th><th class=n>Brier</th><th class=n>ECE</th><th class=n>Cal. slope</th><th class=n>DeLong p vs MLP</th></tr></thead><tbody><tr><td>Logistic Regression</td><td class=n>0.846 (0.009)</td><td class=n>0.839 [0.821–0.855]</td><td class=n>0.392</td><td class=n>0.383</td><td class=n>0.561</td><td class=n>0.888</td><td class=n>0.455</td><td class=n>0.0799</td><td class=n>0.0097</td><td class=n>1.04</td><td class=n>0.321</td></tr><tr><td>Random Forest</td><td class=n>0.847 (0.003)</td><td class=n>0.839 [0.821–0.856]</td><td class=n>0.407</td><td class=n>0.361</td><td class=n>0.586</td><td class=n>0.872</td><td class=n>0.447</td><td class=n>0.0795</td><td class=n>0.0103</td><td class=n>1.16</td><td class=n>0.460</td></tr><tr><td>SVM (RBF)</td><td class=n>0.849 (0.007)</td><td class=n>0.839 [0.821–0.854]</td><td class=n>0.396</td><td class=n>0.362</td><td class=n>0.584</td><td class=n>0.873</td><td class=n>0.447</td><td class=n>0.0799</td><td class=n>0.0074</td><td class=n>0.97</td><td class=n>0.274</td></tr><tr class="best"><td>XGBoost</td><td class=n>0.850 (0.005)</td><td class=n>0.848 [0.829–0.863]</td><td class=n>0.418</td><td class=n>0.373</td><td class=n>0.572</td><td class=n>0.881</td><td class=n>0.451</td><td class=n>0.0782</td><td class=n>0.0095</td><td class=n>1.04</td><td class=n>0.064</td></tr><tr><td>MLP</td><td class=n>0.849 (0.007)</td><td class=n>0.842 [0.825–0.858]</td><td class=n>0.398</td><td class=n>0.390</td><td class=n>0.523</td><td class=n>0.899</td><td class=n>0.447</td><td class=n>0.0798</td><td class=n>0.0183</td><td class=n>0.91</td><td class=n>—</td></tr></tbody></table></div>
+  <p class="cap">n = 4,311, of whom 474 have CVD. Highlighted row: best AUC. DeLong p for XGBoost against the other classical models: LR 0.005, RF &lt; 0.001, SVM 0.002. Precision, recall, specificity and F1 use the out-of-fold max-F1 threshold.</p>
+  <figure>
+    <img src="figures/fig1_roc_calibration.png" alt="ROC curves for the five models nearly overlap; calibration curves lie close to the diagonal, with the MLP slightly over-confident in the upper deciles.">
+    <figcaption class="cap"><b>Figure 1.</b> (a) ROC curves on the test set, with AUC in the legend. (b) Calibration by decile of predicted risk.</figcaption>
+  </figure>
+</section>
+
+<section id="robust">
+  <h2>Robustness: repeated splits, temporal and survey-weighted</h2>
+  <div class="tw"><table><thead><tr><th>Model</th><th class=n>Repeated splits AUC (mean ± SD, 5 seeds)</th><th class=n>Range</th><th class=n>Temporal AUC (2017–18)</th><th class=n>Temporal Brier</th><th class=n>Temporal cal. slope</th><th class=n>Survey-weighted test AUC</th></tr></thead><tbody><tr><td>Logistic Regression</td><td class=n>0.842 ± 0.002</td><td class=n>0.839–0.846</td><td class=n>0.838</td><td class=n>0.0884</td><td class=n>1.04</td><td class=n>0.852</td></tr><tr><td>Random Forest</td><td class=n>0.841 ± 0.004</td><td class=n>0.837–0.847</td><td class=n>0.837</td><td class=n>0.0886</td><td class=n>1.17</td><td class=n>0.851</td></tr><tr><td>SVM (RBF)</td><td class=n>0.843 ± 0.003</td><td class=n>0.839–0.846</td><td class=n>0.838</td><td class=n>0.0887</td><td class=n>0.96</td><td class=n>0.853</td></tr><tr><td>XGBoost</td><td class=n>0.846 ± 0.004</td><td class=n>0.839–0.850</td><td class=n>0.838</td><td class=n>0.0884</td><td class=n>1.01</td><td class=n>0.862</td></tr><tr><td>MLP</td><td class=n>0.844 ± 0.003</td><td class=n>0.839–0.847</td><td class=n>0.839</td><td class=n>0.0882</td><td class=n>1.03</td><td class=n>0.855</td></tr></tbody></table></div>
+  <p class="cap prose">Across 5 random splits, the differences between models are within about one standard deviation. On the 2017–2018 temporal test set, all five models converge to the same AUC and XGBoost's small advantage disappears.</p>
+</section>
+
+<section id="eff">
+  <h2>Computational efficiency</h2>
+  <div class="tw"><table><thead><tr><th>Model</th><th class=n>Tuning (s)</th><th class=n>Final fit (s)</th><th class=n>Inference (ms / 1k rows)</th><th class=n>SHAP, 300 rows (s)</th></tr></thead><tbody><tr><td>Logistic Regression</td><td class=n>5</td><td class=n>0.05</td><td class=n>1.1</td><td class=n>10</td></tr><tr><td>Random Forest</td><td class=n>271</td><td class=n>1.49</td><td class=n>24.8</td><td class=n>120</td></tr><tr><td>SVM (RBF)</td><td class=n>224</td><td class=n>47.43</td><td class=n>828.3</td><td class=n>1615</td></tr><tr><td>XGBoost</td><td class=n>49</td><td class=n>0.62</td><td class=n>2.9</td><td class=n>10</td></tr><tr><td>MLP</td><td class=n>352</td><td class=n>9.04</td><td class=n>1.2</td><td class=n>5</td></tr></tbody></table></div>
+  <p class="cap prose">Wall-clock times on a 12-core CPU; tuning ran in parallel. The MLP took the longest to tune and about 170 times longer than LR to fit, with no significant gain in accuracy. The SVM was by far the slowest to predict and to explain.</p>
+</section>
+
+<section id="shap">
+  <h2>SHAP feature importance and stability</h2>
+  <div class="figs2">
+    <figure>
+      <img src="figures/fig2_shap_importance_heatmap.png" alt="Heatmap of normalised SHAP importance: age ranks first for all five models.">
+      <figcaption class="cap"><b>Figure 2.</b> Mean |SHAP| for each model, scaled to that model's top feature. The number in each cell is the feature's rank.</figcaption>
+    </figure>
+    <figure>
+      <img src="figures/fig3_shap_beeswarm_XGB.png" alt="SHAP beeswarm for XGBoost: older age raises predicted risk; higher total cholesterol lowers it.">
+      <figcaption class="cap"><b>Figure 3.</b> SHAP beeswarm for XGBoost (best model). Each dot is one test participant. Grey dots are missing values.</figcaption>
+    </figure>
+  </div>
+  <h3>Table 3. Cross-model and within-model agreement of SHAP rankings</h3>
+  <div class="tw"><table><thead><tr><th>Model</th><th class=n>ρ vs LR</th><th class=n>ρ vs RF</th><th class=n>ρ vs SVM</th><th class=n>ρ vs XGB</th><th class=n>ρ vs MLP</th><th class=n>Mean ρ vs others</th><th class=n>Within-model ρ (bootstrap)</th><th class=n>Within-model top-5 Jaccard</th><th class=n>Top-5 features</th></tr></thead><tbody><tr><td>Logistic Regression</td><td class=n>1.000</td><td class=n>0.474</td><td class=n>0.656</td><td class=n>0.553</td><td class=n>0.743</td><td class=n>0.606</td><td class=n>0.846</td><td class=n>0.867</td><td class=n>Age, Smoking status, Income-to-poverty ratio, Diagnosed diabetes, Total cholesterol</td></tr><tr><td>Random Forest</td><td class=n>0.474</td><td class=n>1.000</td><td class=n>0.653</td><td class=n>0.941</td><td class=n>0.629</td><td class=n>0.674</td><td class=n>0.973</td><td class=n>0.767</td><td class=n>Age, Diagnosed diabetes, Total cholesterol, Serum creatinine, Smoking status</td></tr><tr><td>SVM (RBF)</td><td class=n>0.656</td><td class=n>0.653</td><td class=n>1.000</td><td class=n>0.663</td><td class=n>0.886</td><td class=n>0.714</td><td class=n>0.732</td><td class=n>1.000</td><td class=n>Age, Smoking status, Income-to-poverty ratio, Diagnosed diabetes, Total cholesterol</td></tr><tr><td>XGBoost</td><td class=n>0.553</td><td class=n>0.941</td><td class=n>0.663</td><td class=n>1.000</td><td class=n>0.633</td><td class=n>0.698</td><td class=n>0.921</td><td class=n>0.733</td><td class=n>Age, Total cholesterol, Income-to-poverty ratio, Smoking status, Serum creatinine</td></tr><tr><td>MLP</td><td class=n>0.743</td><td class=n>0.629</td><td class=n>0.886</td><td class=n>0.633</td><td class=n>1.000</td><td class=n>0.723</td><td class=n>0.805</td><td class=n>1.000</td><td class=n>Age, Smoking status, Total cholesterol, Diagnosed diabetes, Income-to-poverty ratio</td></tr></tbody></table></div>
+  <ul class="prose">
+    <li>Kendall's W across all five models is 0.746, meaning broad agreement.</li>
+    <li>Agreement follows model family. RF and XGB (tree ensembles) correlate at 0.94. SVM and MLP correlate at 0.89, and LR and MLP at 0.74. Pairs from different families range from 0.47 to 0.66.</li>
+    <li>LR, SVM and MLP share the same top 5: age, smoking, total cholesterol, diagnosed diabetes and income-to-poverty ratio. RF and XGB bring serum creatinine into their top 5.</li>
+    <li>Tree models give their full rankings the most stability across bootstrap refits (ρ 0.97 and 0.92). LR, SVM and MLP keep a more stable top 5.</li>
+  </ul>
+</section>
+
+<section id="ablation">
+  <h2>Table 4. Leave-one-group-out ablation</h2>
+  <div class="figs2">
+    <figure>
+      <img src="figures/fig4_ablation.png" alt="Ablation heatmap: removing demographic features lowers AUC by 0.04 to 0.06; removing blood pressure or anthropometric features changes almost nothing.">
+      <figcaption class="cap"><b>Figure 4.</b> Change in test AUC when each feature group is removed (cell values × 100).</figcaption>
+    </figure>
+    <div style="display:grid;gap:10px;min-width:0">
+      <div class="tw"><table><thead><tr><th>Group removed</th><th class=n>Logistic Regression</th><th class=n>Random Forest</th><th class=n>SVM (RBF)</th><th class=n>XGBoost</th><th class=n>MLP</th></tr></thead><tbody><tr><td>Demographic</td><td class=n>-0.0631 ± 0.0070</td><td class=n>-0.0399 ± 0.0019</td><td class=n>-0.0484 ± 0.0067</td><td class=n>-0.0388 ± 0.0010</td><td class=n>-0.0401 ± 0.0052</td></tr><tr><td>Lipids</td><td class=n>-0.0051 ± 0.0032</td><td class=n>-0.0060 ± 0.0026</td><td class=n>-0.0051 ± 0.0029</td><td class=n>-0.0074 ± 0.0035</td><td class=n>-0.0056 ± 0.0037</td></tr><tr><td>Glycaemic</td><td class=n>-0.0065 ± 0.0014</td><td class=n>-0.0050 ± 0.0040</td><td class=n>-0.0059 ± 0.0015</td><td class=n>-0.0057 ± 0.0025</td><td class=n>-0.0050 ± 0.0031</td></tr><tr><td>Socioeconomic</td><td class=n>-0.0056 ± 0.0009</td><td class=n>-0.0033 ± 0.0012</td><td class=n>-0.0058 ± 0.0015</td><td class=n>-0.0049 ± 0.0020</td><td class=n>-0.0048 ± 0.0027</td></tr><tr><td>Renal/metabolic</td><td class=n>-0.0040 ± 0.0009</td><td class=n>-0.0052 ± 0.0013</td><td class=n>-0.0049 ± 0.0012</td><td class=n>-0.0040 ± 0.0019</td><td class=n>-0.0048 ± 0.0016</td></tr><tr><td>Smoking</td><td class=n>-0.0040 ± 0.0025</td><td class=n>-0.0041 ± 0.0022</td><td class=n>-0.0040 ± 0.0023</td><td class=n>-0.0029 ± 0.0027</td><td class=n>-0.0023 ± 0.0012</td></tr><tr><td>Anthropometric</td><td class=n>-0.0008 ± 0.0006</td><td class=n>-0.0002 ± 0.0014</td><td class=n>-0.0013 ± 0.0006</td><td class=n>-0.0013 ± 0.0010</td><td class=n>-0.0001 ± 0.0013</td></tr><tr><td>Blood pressure & pulse</td><td class=n>-0.0003 ± 0.0009</td><td class=n>+0.0000 ± 0.0010</td><td class=n>+0.0001 ± 0.0008</td><td class=n>-0.0008 ± 0.0009</td><td class=n>-0.0010 ± 0.0019</td></tr></tbody></table></div>
+      <p class="cap">ΔAUC, mean ± SD over 5 splits. Negative values mean the model got worse without that group.</p>
+    </div>
+  </div>
+</section>
+
+<section id="discussion">
+  <h2>Discussion points</h2>
+  <ul class="prose">
+    <li><b>Deep learning gave no measurable advantage.</b> This matches earlier findings that gradient-boosted trees match or beat neural networks on tabular data.</li>
+    <li><b>Simple models are competitive.</b> LR came within 0.009 AUC of the best model, was well calibrated, and was the cheapest to train.</li>
+    <li><b>Similar accuracy does not mean similar explanations.</b> Tree models and smooth models spread credit differently across correlated features. SHAP from a single model gives an incomplete picture.</li>
+    <li><b>Attributions are associations, not causes.</b></li>
+  </ul>
+  <div class="note prose">
+    <h3>Limitation the paper must state: treatment after diagnosis</h3>
+    <p>In every model, higher total cholesterol lowers predicted CVD probability, and blood pressure adds almost nothing. People already diagnosed with CVD are usually treated:</p>
+    <div class="tw"><table><thead><tr><th>Measure</th><th class=n>No CVD</th><th class=n>CVD</th></tr></thead><tbody><tr><td>Statin use, % (weighted)</td><td class=n>14.2</td><td class=n>58.0</td></tr><tr><td>BP medication use, % (weighted)</td><td class=n>20.1</td><td class=n>62.8</td></tr><tr><td>Total cholesterol, statin users</td><td class=n>183.0</td><td class=n>166.4</td></tr><tr><td>Total cholesterol, non-users</td><td class=n>193.5</td><td class=n>188.5</td></tr><tr><td>Systolic BP, BP-med users</td><td class=n>134.3</td><td class=n>135.4</td></tr><tr><td>Systolic BP, non-users</td><td class=n>120.7</td><td class=n>127.6</td></tr></tbody></table></div>
+    <p>The outcome is existing, self-reported CVD measured at a single point in time. So the models partly learn the signs of having been diagnosed and treated, not the risk of developing CVD. Medication was checked only for this analysis and was never a model feature (script <code>06_medication_check.py</code>).</p>
+  </div>
+  <p class="prose"><b>Other limitations:</b> the outcome is self-reported (recall bias) and prevalent rather than incident. Age is top-coded at 80. Survey weights were used for descriptive statistics and a weighted-AUC check, not for model training. Permutation SHAP is approximate, though it was validated against exact TreeSHAP. The MLP's selected dropout (0.5) and weight decay (0.01) sit at the edge of the search grid; its architecture (64-32) is mid-range, and the top configurations score within a small margin of each other.</p>
+</section>
+
+<section id="abstract">
+  <div class="row"><h2>Results-based abstract</h2><button id="copyAbs" type="button">Copy abstract</button></div>
+  <p class="cap">This replaces the "proposed study" abstract. All numbers are filled in from the results.</p>
+  <div class="abs" id="absText">Cardiovascular disease (CVD) classification from routinely collected clinical data offers a setting to compare the accuracy and interpretability of machine-learning methods. Using four cycles (2011–2018) of the National Health and Nutrition Examination Survey (n = 21,552 adults; 2,369 with self-reported CVD), we compared Logistic Regression, Random Forest, Support Vector Machine and XGBoost with a multilayer perceptron (MLP) on 20 harmonized demographic, clinical and laboratory features. All models achieved similar discrimination on a held-out test set (ROC-AUC 0.839–0.848); XGBoost performed best (0.848, 95% CI 0.829–0.863), and the MLP (0.842) did not differ significantly from any classical model (DeLong p ≥ 0.064). All models were well calibrated (ECE ≤ 0.018), and under temporal validation on 2017–2018 data every model reached AUC 0.837–0.839. The MLP required the longest tuning time and about 166 times the training time of Logistic Regression. SHAP analysis identified age as the most influential feature for every model, and feature rankings were broadly concordant (Kendall&#x27;s W = 0.75), but agreement clustered by model family: tree ensembles agreed closely with each other (ρ = 0.94), as did smooth-boundary models (SVM–MLP ρ = 0.89). Feature-group ablation confirmed the dominance of demographic variables. Inverse attributions for cholesterol were traced to post-diagnosis treatment, underscoring that attributions reflect predictive association, not causation. For structured clinical survey data, deep learning provided no measurable advantage over classical approaches.</div>
+  <p class="cap"><b>Keywords:</b> Cardiovascular disease, classical machine learning, deep learning, NHANES, explainable artificial intelligence, SHAP.</p>
+</section>
+
+<section>
+  <h2>Files</h2>
+  <p class="prose">The zip <code>NHANES_CVD_results_for_paper.zip</code> holds the 300-dpi PNG and vector PDF figures, every table as CSV and Markdown, the raw result files, the processed dataset, and the code (scripts <code>01</code> to <code>06</code> rerun the whole experiment).</p>
+</section>
+</div>
+<script>
+document.getElementById("copyAbs").addEventListener("click", async (e) => {
+  const t = document.getElementById("absText");
+  try { await navigator.clipboard.writeText(t.innerText); e.target.textContent = "Copied"; }
+  catch { const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); e.target.textContent = "Selected. Press Ctrl+C"; }
+  setTimeout(() => e.target.textContent = "Copy abstract", 2500);
+});
+</script>

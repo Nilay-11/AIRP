@@ -1,0 +1,32 @@
+train n=17241 (cases 1895), test n=4311 (cases 474)
+LR: CV AUC 0.8465±0.0085 params {'C': 0.01} (5s)
+RF: CV AUC 0.8472±0.0029 params {'max_depth': 12, 'max_features': 'sqrt', 'min_samples_leaf': 20} (271s)
+SVM: CV AUC 0.8489±0.0070 params {'C': 10, 'class_weight': 'balanced', 'gamma': 0.001, 'probability': True} (224s)
+XGB: CV AUC 0.8503±0.0048 params {'colsample_bytree': np.float64(0.5932592551999272), 'learning_rate': np.float64(0.011299251679907115), 'max_depth': 5, 'min_child_weight': 4, 'n_estimators': 502, 'reg_lambda': np.float64(2.6442290056449522), 'subsample': np.float64(0.9238004184558861)} (49s)
+MLP: CV AUC 0.8494±0.0074 params {'dropout': 0.5, 'hidden': (64, 32), 'lr': 0.001, 'weight_decay': 0.01} (352s)
+model                   LR        RF       SVM      XGB        MLP
+roc_auc             0.8390    0.8393    0.8393   0.8476     0.8420
+pr_auc              0.3923    0.4066    0.3956   0.4180     0.3983
+precision           0.3827    0.3606    0.3616   0.3728     0.3899
+recall              0.5612    0.5865    0.5844   0.5717     0.5232
+specificity         0.8882    0.8715    0.8726   0.8812     0.8989
+f1                  0.4551    0.4466    0.4468   0.4513     0.4468
+brier               0.0799    0.0795    0.0799   0.0782     0.0798
+ece                 0.0097    0.0103    0.0074   0.0095     0.0183
+calib_slope         1.0393    1.1637    0.9707   1.0398     0.9135
+calib_intercept    -0.0014   -0.0087    0.0040   0.0152    -0.0143
+threshold           0.2212    0.2095    0.2177   0.2119     0.2932
+cv_auc              0.8465    0.8472    0.8489   0.8503     0.8494
+cv_auc_sd           0.0085    0.0029    0.0070   0.0048     0.0074
+auc_ci_low          0.8210    0.8207    0.8214   0.8290     0.8252
+auc_ci_high         0.8548    0.8557    0.8544   0.8635     0.8584
+weighted_auc        0.8519    0.8507    0.8528   0.8615     0.8553
+tune_time_s         5.0682  271.0097  224.4956  48.5481   352.0275
+fit_time_s          0.0545    1.4908   47.4268   0.6201     9.0377
+infer_ms_per_1k     1.0613   24.8148  828.3392   2.8840     1.1925
+mlp_epochs             NaN       NaN       NaN      NaN    89.0000
+mlp_params             NaN       NaN       NaN      NaN  3649.0000
+delong_diff_vs_MLP -0.0030   -0.0027   -0.0027   0.0055     0.0000
+delong_p_vs_MLP     0.3211    0.4596    0.2742   0.0636        NaN
+delong_p_vs_best    0.0053    0.0006    0.0021      NaN     0.0636
+

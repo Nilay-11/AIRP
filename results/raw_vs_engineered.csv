@@ -1,0 +1,5 @@
+Model,Raw_CV_AUC,Engineered_CV_AUC,Delta_CV_AUC,Raw_Test_AUC,Engineered_Test_AUC,Delta_Test_AUC,Raw_CV_Acc,Engineered_CV_Acc,Delta_CV_Acc
+Logistic Regression,0.7947,0.7966,0.0019,0.7892,0.7915,0.0023,0.7312,0.7317,0.0005
+Decision Tree,0.7953,0.7936,-0.0017,0.7904,0.7872,-0.0032,0.7326,0.7315,-0.0011
+Random Forest,0.8036,0.8023,-0.0013,0.7966,0.797,0.0004,0.737,0.7357,-0.0013
+SVM (Linear),0.7945,0.7958,0.0012,0.789,0.7906,0.0016,0.7308,0.7306,-0.0001

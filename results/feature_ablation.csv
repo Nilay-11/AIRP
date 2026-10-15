@@ -1,0 +1,15 @@
+Ablation_Experiment,Features_Removed,Remaining_Features_Count,Model,CV_Accuracy_Mean,CV_Accuracy_Std,CV_F1_Mean,CV_ROC_AUC_Mean,CV_ROC_AUC_Std,Delta_AUC_vs_Full,Test_ROC_AUC,Test_Accuracy
+Full Model (All 11 Features),None (Reference Full Set),11,Random Forest,0.737,0.0034,0.724,0.8036,0.0037,0.0,0.7966,0.7315
+Full Model (All 11 Features),None (Reference Full Set),11,Logistic Regression,0.7312,0.0041,0.7152,0.7947,0.0042,0.0,0.7892,0.7245
+Ablation 1: Remove Blood Pressure,"['ap_hi', 'ap_lo']",9,Random Forest,0.6434,0.003,0.6359,0.7008,0.0033,-0.1028,0.6971,0.6378
+Ablation 1: Remove Blood Pressure,"['ap_hi', 'ap_lo']",9,Logistic Regression,0.6435,0.0029,0.6327,0.6986,0.0041,-0.0962,0.6946,0.6374
+Ablation 2: Remove Demographics & Anthropometrics,"['age_years', 'gender', 'height', 'weight']",7,Random Forest,0.7293,0.0034,0.7105,0.781,0.0038,-0.0226,0.7759,0.7242
+Ablation 2: Remove Demographics & Anthropometrics,"['age_years', 'gender', 'height', 'weight']",7,Logistic Regression,0.7279,0.0033,0.7082,0.7779,0.0039,-0.0168,0.7732,0.7228
+Ablation 3: Remove Lifestyle Factors,"['smoke', 'alco', 'active']",8,Random Forest,0.736,0.0039,0.7231,0.8012,0.0036,-0.0024,0.7959,0.7299
+Ablation 3: Remove Lifestyle Factors,"['smoke', 'alco', 'active']",8,Logistic Regression,0.73,0.0038,0.7129,0.7932,0.0042,-0.0015,0.788,0.7229
+Ablation 4: Remove Metabolic/Biochemical Markers,"['cholesterol', 'gluc']",9,Random Forest,0.7288,0.0034,0.7188,0.7924,0.0043,-0.0112,0.7868,0.7242
+Ablation 4: Remove Metabolic/Biochemical Markers,"['cholesterol', 'gluc']",9,Logistic Regression,0.7245,0.0045,0.7097,0.7857,0.0052,-0.0091,0.7815,0.7199
+Ablation 5: Remove Age Only,['age_years'],10,Random Forest,0.7296,0.0038,0.7098,0.7847,0.0042,-0.0189,0.779,0.7271
+Ablation 5: Remove Age Only,['age_years'],10,Logistic Regression,0.7286,0.0031,0.7073,0.7806,0.0045,-0.0142,0.776,0.7246
+Ablation 6: Remove Cholesterol Only,['cholesterol'],10,Random Forest,0.7283,0.0035,0.7191,0.7944,0.0041,-0.0092,0.7886,0.7255
+Ablation 6: Remove Cholesterol Only,['cholesterol'],10,Logistic Regression,0.7246,0.005,0.7099,0.7863,0.0052,-0.0084,0.7824,0.7212

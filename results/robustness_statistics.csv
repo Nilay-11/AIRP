@@ -1,0 +1,7 @@
+Comparison,Model_1,Model_2,Model_1_AUC_Mean,Model_2_AUC_Mean,Mean_AUC_Difference,Paired_t_stat_AUC,P_Value_Paired_t_AUC,Statistically_Significant_p05,Paired_t_stat_Acc,P_Value_Paired_t_Acc
+Random Forest vs. Logistic Regression (Raw),Random Forest [Config A (Raw)],Logistic Regression [Config A (Raw)],0.8036,0.7947,0.0088,16.6878,7.6e-05,Yes (p < 0.05),12.6313,0.000226
+Random Forest vs. Decision Tree (Raw),Random Forest [Config A (Raw)],Decision Tree [Config A (Raw)],0.8036,0.7953,0.0082,12.8157,0.000214,Yes (p < 0.05),3.7694,0.019615
+Random Forest vs. Linear SVM (Raw),Random Forest [Config A (Raw)],SVM (Linear) [Config A (Raw)],0.8036,0.7945,0.009,17.7271,5.9e-05,Yes (p < 0.05),23.816,1.8e-05
+Logistic Regression vs. Linear SVM (Raw),Logistic Regression [Config A (Raw)],SVM (Linear) [Config A (Raw)],0.7947,0.7945,0.0002,4.5132,0.010714,Yes (p < 0.05),1.298,0.264074
+Random Forest: Raw vs. Engineered,Random Forest [Config A (Raw)],Random Forest [Config B (Engineered)],0.8036,0.8023,0.0013,3.944,0.016903,Yes (p < 0.05),2.0682,0.107446
+Logistic Regression: Raw vs. Engineered,Logistic Regression [Config A (Raw)],Logistic Regression [Config B (Engineered)],0.7947,0.7966,-0.0019,-4.611,0.009948,Yes (p < 0.05),-0.8377,0.449315

@@ -1,0 +1,49 @@
+{
+  "LR": {
+    "C": 0.01
+  },
+  "RF": {
+    "max_depth": 12,
+    "max_features": "sqrt",
+    "min_samples_leaf": 20
+  },
+  "SVM": {
+    "C": 10,
+    "class_weight": "balanced",
+    "gamma": 0.001,
+    "probability": true
+  },
+  "XGB": {
+    "colsample_bytree": 0.5932592551999272,
+    "learning_rate": 0.011299251679907115,
+    "max_depth": 5,
+    "min_child_weight": 4,
+    "n_estimators": 502,
+    "reg_lambda": 2.6442290056449522,
+    "subsample": 0.9238004184558861
+  },
+  "MLP": {
+    "dropout": 0.5,
+    "hidden": [
+      64,
+      32
+    ],
+    "lr": 0.001,
+    "weight_decay": 0.01
+  },
+  "ResNet": {
+    "d": 64,
+    "dropout": 0.5,
+    "lr": 0.001,
+    "n_blocks": 4,
+    "weight_decay": 0.01
+  },
+  "FTT": {
+    "attn_dropout": 0.2,
+    "d": 64,
+    "ffn_dropout": 0.1,
+    "lr": 0.0003,
+    "n_blocks": 2,
+    "weight_decay": 1e-05
+  }
+}

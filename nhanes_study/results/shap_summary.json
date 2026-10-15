@@ -1,0 +1,9 @@
+{
+  "kendall_W_across_models": 0.746406015037594,
+  "xgb_perm_vs_tree_spearman": 0.9894736842105262,
+  "n_explain": 300,
+  "n_background": 50,
+  "max_evals": 164,
+  "n_boot": 5,
+  "n_explain_boot": 100
+}

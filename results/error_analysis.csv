@@ -1,0 +1,19 @@
+Domain,Subgroup,Cohort_Size,Percent_of_Test_Cohort,Actual_CVD_Prevalence_pct,Subgroup_Accuracy,False_Negatives_Count,False_Negative_Rate_pct,False_Positives_Count,False_Positive_Rate_pct
+Age Group,<45 yrs,2035,14.69,30.47,0.8251,253,40.81,103,7.28
+Age Group,45-54 yrs,5603,40.45,45.19,0.7367,1013,40.01,462,15.04
+Age Group,55-64 yrs,6215,44.86,60.61,0.6961,887,23.55,1002,40.93
+Blood Pressure Stage,Elevated,600,4.33,32.67,0.7017,157,80.1,22,5.45
+Blood Pressure Stage,Hypertension Stage 1,6433,46.44,38.38,0.6722,1531,62.01,578,14.58
+Blood Pressure Stage,Hypertension Stage 2,4864,35.11,77.67,0.7917,85,2.25,928,85.45
+Blood Pressure Stage,Hypertensive Crisis,60,0.43,81.67,0.8167,0,0.0,11,100.0
+Blood Pressure Stage,Normal,1896,13.69,22.52,0.7848,380,88.99,28,1.91
+Cholesterol Level,1,10400,75.07,44.03,0.7251,1858,40.58,1001,17.2
+Cholesterol Level,2,1862,13.44,59.51,0.7293,257,23.19,247,32.76
+Cholesterol Level,3,1591,11.48,77.44,0.7756,38,3.08,319,88.86
+BMI Classification,Normal weight,5136,37.08,40.13,0.7383,945,45.85,399,12.98
+BMI Classification,Obesity Class I/II,3300,23.82,61.55,0.7209,376,18.51,545,42.95
+BMI Classification,Overweight,4975,35.91,51.7,0.7278,792,30.79,562,23.39
+BMI Classification,Severe Obesity Class III,326,2.35,69.63,0.7423,27,11.89,57,57.58
+BMI Classification,Underweight,116,0.84,24.14,0.8534,13,46.43,4,4.55
+Biological Sex,1,9046,65.3,49.69,0.7306,1415,31.48,1022,22.46
+Biological Sex,2,4807,34.7,50.43,0.7331,738,30.45,545,22.87

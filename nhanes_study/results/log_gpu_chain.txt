@@ -1,0 +1,82 @@
+>>> ResNet ablation (CPU)
+ablation: reusing ['LR', 'MLP', 'RF', 'SVM', 'XGB'] | running ['ResNet']
+[Parallel(n_jobs=10)]: Using backend LokyBackend with 10 concurrent workers.
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\externals\loky\process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\externals\loky\process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 607, in <listcomp>
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\OneDrive\Desktop\AI RP\nhanes_study\04_ablation_robustness.py", line 25, in run
+    model.fit(train[feats], train.cvd)
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\pipeline.py", line 473, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\nilay\OneDrive\Desktop\AI RP\nhanes_study\common.py", line 109, in fit
+    opt.step()
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\torch\optim\optimizer.py", line 530, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\torch\optim\optimizer.py", line 80, in _use_grad
+    ret = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\torch\optim\adam.py", line 222, in step
+    self._accelerator_graph_capture_health_check()
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\torch\optim\optimizer.py", line 466, in _accelerator_graph_capture_health_check
+    capturing = torch.accelerator.current_stream().is_capturing()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\torch\accelerator\__init__.py", line 232, in current_stream
+    return torch._C._accelerator_getStream(device_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.AcceleratorError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+Search for `cudaErrorDevicesUnavailable' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+For more detailed error information, run with CUDA_LOG_FILE=stderr
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilay\OneDrive\Desktop\AI RP\nhanes_study\04_ablation_robustness.py", line 44, in <module>
+    new = pd.DataFrame(Parallel(n_jobs=10, verbose=5)(delayed(run)(*t) for t in tasks)) if tasks else pd.DataFrame()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nilay\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\parallel.py", line 773, in _return_or_raise
+    raise self._result
+torch.AcceleratorError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+Search for `cudaErrorDevicesUnavailable' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+For more detailed error information, run with CUDA_LOG_FILE=stderr
+
+STEP_EXIT 1
+>>> ResNet bootstrap SHAP (CPU)
+LR: SHAP done in 10s; top5 ['age', 'smoking', 'income_poverty_ratio', 'diabetes_dx', 'total_chol']
+RF: SHAP done in 120s; top5 ['age', 'diabetes_dx', 'total_chol', 'creatinine', 'smoking']
+SVM: SHAP done in 1615s; top5 ['age', 'smoking', 'income_poverty_ratio', 'diabetes_dx', 'total_chol']
+XGB: SHAP done in 10s; top5 ['age', 'total_chol', 'income_poverty_ratio', 'smoking', 'creatinine']
+MLP: SHAP done in 5s; top5 ['age', 'smoking', 'total_chol', 'diabetes_dx', 'income_poverty_ratio']
+ResNet: SHAP done in 198s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
+FTT: SHAP done in 1300s; top5 ['age', 'total_chol', 'smoking', 'diabetes_dx', 'income_poverty_ratio']
+XGB permutation-SHAP vs TreeSHAP importance Spearman rho = 0.989
+bootstrap 1/5 done

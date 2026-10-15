@@ -1,0 +1,4 @@
+Model,Selected_Parameters,CV_ROC_AUC_Mean,Test_Accuracy,Test_Precision,Test_Recall,Test_F1,Test_ROC_AUC
+Decision Tree (CV-Tuned),"{'max_depth': 9, 'min_samples_leaf': 100}",0.7974,0.7309,0.758,0.6774,0.7155,0.7925
+Logistic Regression (CV-Tuned),C=100.0,0.7947,0.7245,0.7522,0.6689,0.7081,0.7892
+Random Forest (CV-Tuned),"{'max_depth': 12, 'min_samples_leaf': 10}",0.8036,0.7315,0.7526,0.6888,0.7193,0.7966

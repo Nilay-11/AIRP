@@ -124,7 +124,7 @@ FT-Transformer      & Deep & 0.850 (0.007) & 0.843 [0.825--0.859] & \textbf{0.41
 \end{figure*}
 
 \subsection{Robustness and Efficiency}
-Across five random splits, XGBoost and FT-Transformer tied (mean AUC 0.846) and all models differed by about one standard deviation or less; under temporal validation all seven converged to 0.837--0.840 (Table~\ref{tab:robust}). Cost differed by orders of magnitude: FT-Transformer took 119 times longer to tune than XGBoost and about 5{,}000 times longer to fit than LR.
+Across five random splits, XGBoost had the highest mean AUC (0.846), closely followed by FT-Transformer (0.845), and all models differed by about one standard deviation or less; under temporal validation all seven converged to 0.837--0.840 (Table~\ref{tab:robust}). Cost differed by orders of magnitude: FT-Transformer took 119 times longer to tune than XGBoost and about 5{,}000 times longer to fit than LR.
 
 \begin{table}[t]
 \caption{Robustness and Computational Cost}
@@ -136,8 +136,8 @@ Across five random splits, XGBoost and FT-Transformer tied (mean AUC 0.846) and 
 \toprule
  & LR & RF & SVM & XGB & MLP & ResNet & FTT \\
 \midrule
-AUC, 5 splits (mean)  & 0.842 & 0.841 & 0.843 & 0.846 & 0.844 & 0.841 & 0.846 \\
-\quad SD              & 0.002 & 0.004 & 0.003 & 0.004 & 0.003 & 0.005 & 0.004 \\
+AUC, 5 splits (mean)  & 0.842 & 0.841 & 0.843 & 0.846 & 0.844 & 0.841 & 0.845 \\
+\quad SD              & 0.002 & 0.004 & 0.003 & 0.004 & 0.003 & 0.005 & 0.003 \\
 Temporal AUC          & 0.838 & 0.837 & 0.838 & 0.838 & 0.839 & 0.840 & 0.837 \\
 Weighted test AUC     & 0.852 & 0.851 & 0.853 & 0.862 & 0.855 & 0.851 & 0.853 \\
 \midrule

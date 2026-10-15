@@ -99,7 +99,7 @@ CVD cases were older (65.0 vs 46.1 years), more often had diagnosed diabetes (33
 - All models were well calibrated (ECE ≤ 0.021). FT-Transformer had the slope closest to 1 (0.99). ResNet (0.87) and MLP (0.91) were slightly over-confident, and RF (1.16) slightly under-confident.
 - Survey-weighted test AUC: 0.851–0.862, with XGBoost again highest.
 
-**Repeated splits (5 seeds, `repeated_split_auc.md`):** mean AUC LR 0.842 ± 0.002, RF 0.841 ± 0.004, SVM 0.843 ± 0.003, **XGB 0.846 ± 0.004**, MLP 0.844 ± 0.003, ResNet 0.841 ± 0.005, **FTT 0.846 ± 0.004**. XGBoost and FT-Transformer are tied, and all differences are within about one SD.
+**Repeated splits (5 seeds, `repeated_split_auc.md`):** mean AUC LR 0.842 ± 0.002, RF 0.841 ± 0.004, SVM 0.843 ± 0.003, **XGB 0.846 ± 0.004**, MLP 0.844 ± 0.003, ResNet 0.841 ± 0.005, FTT 0.845 ± 0.003. XGBoost is highest with FT-Transformer a close second, and all differences are within about one SD.
 
 **Temporal validation (train 2011–2016 → test 2017–2018, `temporal_validation.md`):** AUC LR 0.838, RF 0.837, SVM 0.838, XGB 0.838, MLP 0.839, ResNet 0.840, FTT 0.837; Brier 0.088–0.089 for all. All 7 models converge to 0.837–0.840, so XGBoost's held-out advantage disappears.
 

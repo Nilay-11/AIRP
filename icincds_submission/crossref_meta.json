@@ -1,0 +1,3822 @@
+{
+ "tsao2023": {
+  "doi": "10.1161/CIR.0000000000001123",
+  "authors": [
+   [
+    "Tsao",
+    "Connie W."
+   ],
+   [
+    "Aday",
+    "Aaron W."
+   ],
+   [
+    "Almarzooq",
+    "Zaid I."
+   ],
+   [
+    "Anderson",
+    "Cheryl A.M."
+   ],
+   [
+    "Arora",
+    "Pankaj"
+   ],
+   [
+    "Avery",
+    "Christy L."
+   ],
+   [
+    "Baker-Smith",
+    "Carissa M."
+   ],
+   [
+    "Beaton",
+    "Andrea Z."
+   ],
+   [
+    "Boehme",
+    "Amelia K."
+   ],
+   [
+    "Buxton",
+    "Alfred E."
+   ],
+   [
+    "Commodore-Mensah",
+    "Yvonne"
+   ],
+   [
+    "Elkind",
+    "Mitchell S.V."
+   ],
+   [
+    "Evenson",
+    "Kelly R."
+   ],
+   [
+    "Eze-Nliam",
+    "Chete"
+   ],
+   [
+    "Fugar",
+    "Setri"
+   ],
+   [
+    "Generoso",
+    "Giuliano"
+   ],
+   [
+    "Heard",
+    "Debra G."
+   ],
+   [
+    "Hiremath",
+    "Swapnil"
+   ],
+   [
+    "Ho",
+    "Jennifer E."
+   ],
+   [
+    "Kalani",
+    "Rizwan"
+   ],
+   [
+    "Kazi",
+    "Dhruv S."
+   ],
+   [
+    "Ko",
+    "Darae"
+   ],
+   [
+    "Levine",
+    "Deborah A."
+   ],
+   [
+    "Liu",
+    "Junxiu"
+   ],
+   [
+    "Ma",
+    "Jun"
+   ],
+   [
+    "Magnani",
+    "Jared W."
+   ],
+   [
+    "Michos",
+    "Erin D."
+   ],
+   [
+    "Mussolino",
+    "Michael E."
+   ],
+   [
+    "Navaneethan",
+    "Sankar D."
+   ],
+   [
+    "Parikh",
+    "Nisha I."
+   ],
+   [
+    "Poudel",
+    "Remy"
+   ],
+   [
+    "Rezk-Hanna",
+    "Mary"
+   ],
+   [
+    "Roth",
+    "Gregory A."
+   ],
+   [
+    "Shah",
+    "Nilay S."
+   ],
+   [
+    "St-Onge",
+    "Marie-Pierre"
+   ],
+   [
+    "Thacker",
+    "Evan L."
+   ],
+   [
+    "Virani",
+    "Salim S."
+   ],
+   [
+    "Voeks",
+    "Jenifer H."
+   ],
+   [
+    "Wang",
+    "Nae-Yuh"
+   ],
+   [
+    "Wong",
+    "Nathan D."
+   ],
+   [
+    "Wong",
+    "Sally S."
+   ],
+   [
+    "Yaffe",
+    "Kristine"
+   ],
+   [
+    "Martin",
+    "Seth S."
+   ],
+   [
+    "on behalf of the American Heart Association Council on Epidemiology and Prevention Statistics Committee and Stroke Statistics Subcommittee",
+    ""
+   ]
+  ],
+  "n": 44,
+  "title": "Heart Disease and Stroke Statistics—2023 Update: A Report From the American Heart Association",
+  "container": "Circulation",
+  "volume": "147",
+  "issue": "8",
+  "page": "",
+  "year": 2023
+ },
+ "roth2020": {
+  "doi": "10.1016/j.jacc.2020.11.010",
+  "authors": [
+   [
+    "Roth",
+    "Gregory A."
+   ],
+   [
+    "Mensah",
+    "George A."
+   ],
+   [
+    "Johnson",
+    "Catherine O."
+   ],
+   [
+    "Addolorato",
+    "Giovanni"
+   ],
+   [
+    "Ammirati",
+    "Enrico"
+   ],
+   [
+    "Baddour",
+    "Larry M."
+   ],
+   [
+    "Barengo",
+    "Noël C."
+   ],
+   [
+    "Beaton",
+    "Andrea Z."
+   ],
+   [
+    "Benjamin",
+    "Emelia J."
+   ],
+   [
+    "Benziger",
+    "Catherine P."
+   ],
+   [
+    "Bonny",
+    "Aimé"
+   ],
+   [
+    "Brauer",
+    "Michael"
+   ],
+   [
+    "Brodmann",
+    "Marianne"
+   ],
+   [
+    "Cahill",
+    "Thomas J."
+   ],
+   [
+    "Carapetis",
+    "Jonathan"
+   ],
+   [
+    "Catapano",
+    "Alberico L."
+   ],
+   [
+    "Chugh",
+    "Sumeet S."
+   ],
+   [
+    "Cooper",
+    "Leslie T."
+   ],
+   [
+    "Coresh",
+    "Josef"
+   ],
+   [
+    "Criqui",
+    "Michael"
+   ],
+   [
+    "DeCleene",
+    "Nicole"
+   ],
+   [
+    "Eagle",
+    "Kim A."
+   ],
+   [
+    "Emmons-Bell",
+    "Sophia"
+   ],
+   [
+    "Feigin",
+    "Valery L."
+   ],
+   [
+    "Fernández-Solà",
+    "Joaquim"
+   ],
+   [
+    "Fowkes",
+    "Gerry"
+   ],
+   [
+    "Gakidou",
+    "Emmanuela"
+   ],
+   [
+    "Grundy",
+    "Scott M."
+   ],
+   [
+    "He",
+    "Feng J."
+   ],
+   [
+    "Howard",
+    "George"
+   ],
+   [
+    "Hu",
+    "Frank"
+   ],
+   [
+    "Inker",
+    "Lesley"
+   ],
+   [
+    "Karthikeyan",
+    "Ganesan"
+   ],
+   [
+    "Kassebaum",
+    "Nicholas"
+   ],
+   [
+    "Koroshetz",
+    "Walter"
+   ],
+   [
+    "Lavie",
+    "Carl"
+   ],
+   [
+    "Lloyd-Jones",
+    "Donald"
+   ],
+   [
+    "Lu",
+    "Hong S."
+   ],
+   [
+    "Mirijello",
+    "Antonio"
+   ],
+   [
+    "Temesgen",
+    "Awoke Misganaw"
+   ],
+   [
+    "Mokdad",
+    "Ali"
+   ],
+   [
+    "Moran",
+    "Andrew E."
+   ],
+   [
+    "Muntner",
+    "Paul"
+   ],
+   [
+    "Narula",
+    "Jagat"
+   ],
+   [
+    "Neal",
+    "Bruce"
+   ],
+   [
+    "Ntsekhe",
+    "Mpiko"
+   ],
+   [
+    "Moraes de Oliveira",
+    "Glaucia"
+   ],
+   [
+    "Otto",
+    "Catherine"
+   ],
+   [
+    "Owolabi",
+    "Mayowa"
+   ],
+   [
+    "Pratt",
+    "Michael"
+   ],
+   [
+    "Rajagopalan",
+    "Sanjay"
+   ],
+   [
+    "Reitsma",
+    "Marissa"
+   ],
+   [
+    "Ribeiro",
+    "Antonio Luiz P."
+   ],
+   [
+    "Rigotti",
+    "Nancy"
+   ],
+   [
+    "Rodgers",
+    "Anthony"
+   ],
+   [
+    "Sable",
+    "Craig"
+   ],
+   [
+    "Shakil",
+    "Saate"
+   ],
+   [
+    "Sliwa-Hahnle",
+    "Karen"
+   ],
+   [
+    "Stark",
+    "Benjamin"
+   ],
+   [
+    "Sundström",
+    "Johan"
+   ],
+   [
+    "Timpel",
+    "Patrick"
+   ],
+   [
+    "Tleyjeh",
+    "Imad M."
+   ],
+   [
+    "Valgimigli",
+    "Marco"
+   ],
+   [
+    "Vos",
+    "Theo"
+   ],
+   [
+    "Whelton",
+    "Paul K."
+   ],
+   [
+    "Yacoub",
+    "Magdi"
+   ],
+   [
+    "Zuhlke",
+    "Liesl"
+   ],
+   [
+    "Murray",
+    "Christopher"
+   ],
+   [
+    "Fuster",
+    "Valentin"
+   ],
+   [
+    "Roth",
+    "Gregory A."
+   ],
+   [
+    "Mensah",
+    "George A."
+   ],
+   [
+    "Johnson",
+    "Catherine O."
+   ],
+   [
+    "Addolorato",
+    "Giovanni"
+   ],
+   [
+    "Ammirati",
+    "Enrico"
+   ],
+   [
+    "Baddour",
+    "Larry M."
+   ],
+   [
+    "Barengo",
+    "Noel C."
+   ],
+   [
+    "Beaton",
+    "Andrea"
+   ],
+   [
+    "Benjamin",
+    "Emelia J."
+   ],
+   [
+    "Benziger",
+    "Catherine P."
+   ],
+   [
+    "Bonny",
+    "Aime"
+   ],
+   [
+    "Brauer",
+    "Michael"
+   ],
+   [
+    "Brodmann",
+    "Marianne"
+   ],
+   [
+    "Cahill",
+    "Thomas J."
+   ],
+   [
+    "Carapetis",
+    "Jonathan R."
+   ],
+   [
+    "Catapano",
+    "Alberico L."
+   ],
+   [
+    "Chugh",
+    "Sumeet"
+   ],
+   [
+    "Cooper",
+    "Leslie T."
+   ],
+   [
+    "Coresh",
+    "Josef"
+   ],
+   [
+    "Criqui",
+    "Michael H."
+   ],
+   [
+    "DeCleene",
+    "Nicole K."
+   ],
+   [
+    "Eagle",
+    "Kim A."
+   ],
+   [
+    "Emmons-Bell",
+    "Sophia"
+   ],
+   [
+    "Feigin",
+    "Valery L."
+   ],
+   [
+    "Fernández-Sola",
+    "Joaquim"
+   ],
+   [
+    "Fowkes",
+    "F. Gerry R."
+   ],
+   [
+    "Gakidou",
+    "Emmanuela"
+   ],
+   [
+    "Grundy",
+    "Scott M."
+   ],
+   [
+    "He",
+    "Feng J."
+   ],
+   [
+    "Howard",
+    "George"
+   ],
+   [
+    "Hu",
+    "Frank"
+   ],
+   [
+    "Inker",
+    "Lesley"
+   ],
+   [
+    "Karthikeyan",
+    "Ganesan"
+   ],
+   [
+    "Kassebaum",
+    "Nicholas J."
+   ],
+   [
+    "Koroshetz",
+    "Walter J."
+   ],
+   [
+    "Lavie",
+    "Carl"
+   ],
+   [
+    "Lloyd-Jones",
+    "Donald"
+   ],
+   [
+    "Lu",
+    "Hong S."
+   ],
+   [
+    "Mirijello",
+    "Antonio"
+   ],
+   [
+    "Misganaw",
+    "Awoke T."
+   ],
+   [
+    "Mokdad",
+    "Ali H."
+   ],
+   [
+    "Moran",
+    "Andrew E."
+   ],
+   [
+    "Muntner",
+    "Paul"
+   ],
+   [
+    "Narula",
+    "Jagat"
+   ],
+   [
+    "Neal",
+    "Bruce"
+   ],
+   [
+    "Ntsekhe",
+    "Mpiko"
+   ],
+   [
+    "Oliveira",
+    "Gláucia M.M."
+   ],
+   [
+    "Otto",
+    "Catherine M."
+   ],
+   [
+    "Owolabi",
+    "Mayowa O."
+   ],
+   [
+    "Pratt",
+    "Michael"
+   ],
+   [
+    "Rajagopalan",
+    "Sanjay"
+   ],
+   [
+    "Reitsma",
+    "Marissa B."
+   ],
+   [
+    "Ribeiro",
+    "Antonio Luiz P."
+   ],
+   [
+    "Rigotti",
+    "Nancy A."
+   ],
+   [
+    "Rodgers",
+    "Anthony"
+   ],
+   [
+    "Sable",
+    "Craig A."
+   ],
+   [
+    "Shakil",
+    "Saate S."
+   ],
+   [
+    "Sliwa",
+    "Karen"
+   ],
+   [
+    "Stark",
+    "Benjamin A."
+   ],
+   [
+    "Sundström",
+    "Johan"
+   ],
+   [
+    "Timpel",
+    "Patrick"
+   ],
+   [
+    "Tleyjeh",
+    "Imad I."
+   ],
+   [
+    "Valgimigli",
+    "Marco"
+   ],
+   [
+    "Vos",
+    "Theo"
+   ],
+   [
+    "Whelton",
+    "Paul K."
+   ],
+   [
+    "Yacoub",
+    "Magdi"
+   ],
+   [
+    "Zuhlke",
+    "Liesl J."
+   ],
+   [
+    "Abbasi-Kangevari",
+    "Mohsen"
+   ],
+   [
+    "Abdi",
+    "Alireza"
+   ],
+   [
+    "Abedi",
+    "Aidin"
+   ],
+   [
+    "Aboyans",
+    "Victor"
+   ],
+   [
+    "Abrha",
+    "Woldu A."
+   ],
+   [
+    "Abu-Gharbieh",
+    "Eman"
+   ],
+   [
+    "Abushouk",
+    "Abdelrahman I."
+   ],
+   [
+    "Acharya",
+    "Dilaram"
+   ],
+   [
+    "Adair",
+    "Tim"
+   ],
+   [
+    "Adebayo",
+    "Oladimeji M."
+   ],
+   [
+    "Ademi",
+    "Zanfina"
+   ],
+   [
+    "Advani",
+    "Shailesh M."
+   ],
+   [
+    "Afshari",
+    "Khashayar"
+   ],
+   [
+    "Afshin",
+    "Ashkan"
+   ],
+   [
+    "Agarwal",
+    "Gina"
+   ],
+   [
+    "Agasthi",
+    "Pradyumna"
+   ],
+   [
+    "Ahmad",
+    "Sohail"
+   ],
+   [
+    "Ahmadi",
+    "Sepideh"
+   ],
+   [
+    "Ahmed",
+    "Muktar B."
+   ],
+   [
+    "Aji",
+    "Budi"
+   ],
+   [
+    "Akalu",
+    "Yonas"
+   ],
+   [
+    "Akande-Sholabi",
+    "Wuraola"
+   ],
+   [
+    "Aklilu",
+    "Addis"
+   ],
+   [
+    "Akunna",
+    "Chisom J."
+   ],
+   [
+    "Alahdab",
+    "Fares"
+   ],
+   [
+    "Al-Eyadhy",
+    "Ayman"
+   ],
+   [
+    "Alhabib",
+    "Khalid F."
+   ],
+   [
+    "Alif",
+    "Sheikh M."
+   ],
+   [
+    "Alipour",
+    "Vahid"
+   ],
+   [
+    "Aljunid",
+    "Syed M."
+   ],
+   [
+    "Alla",
+    "François"
+   ],
+   [
+    "Almasi-Hashiani",
+    "Amir"
+   ],
+   [
+    "Almustanyir",
+    "Sami"
+   ],
+   [
+    "Al-Raddadi",
+    "Rajaa M."
+   ],
+   [
+    "Amegah",
+    "Adeladza K."
+   ],
+   [
+    "Amini",
+    "Saeed"
+   ],
+   [
+    "Aminorroaya",
+    "Arya"
+   ],
+   [
+    "Amu",
+    "Hubert"
+   ],
+   [
+    "Amugsi",
+    "Dickson A."
+   ],
+   [
+    "Ancuceanu",
+    "Robert"
+   ],
+   [
+    "Anderlini",
+    "Deanna"
+   ],
+   [
+    "Andrei",
+    "Tudorel"
+   ],
+   [
+    "Andrei",
+    "Catalina Liliana"
+   ],
+   [
+    "Ansari-Moghaddam",
+    "Alireza"
+   ],
+   [
+    "Anteneh",
+    "Zelalem A."
+   ],
+   [
+    "Antonazzo",
+    "Ippazio Cosimo"
+   ],
+   [
+    "Antony",
+    "Benny"
+   ],
+   [
+    "Anwer",
+    "Razique"
+   ],
+   [
+    "Appiah",
+    "Lambert T."
+   ],
+   [
+    "Arabloo",
+    "Jalal"
+   ],
+   [
+    "Ärnlöv",
+    "Johan"
+   ],
+   [
+    "Artanti",
+    "Kurnia D."
+   ],
+   [
+    "Ataro",
+    "Zerihun"
+   ],
+   [
+    "Ausloos",
+    "Marcel"
+   ],
+   [
+    "Avila-Burgos",
+    "Leticia"
+   ],
+   [
+    "Awan",
+    "Asma T."
+   ],
+   [
+    "Awoke",
+    "Mamaru A."
+   ],
+   [
+    "Ayele",
+    "Henok T."
+   ],
+   [
+    "Ayza",
+    "Muluken A."
+   ],
+   [
+    "Azari",
+    "Samad"
+   ],
+   [
+    "B",
+    "Darshan B."
+   ],
+   [
+    "Baheiraei",
+    "Nafiseh"
+   ],
+   [
+    "Baig",
+    "Atif A."
+   ],
+   [
+    "Bakhtiari",
+    "Ahad"
+   ],
+   [
+    "Banach",
+    "Maciej"
+   ],
+   [
+    "Banik",
+    "Palash C."
+   ],
+   [
+    "Baptista",
+    "Emerson A."
+   ],
+   [
+    "Barboza",
+    "Miguel A."
+   ],
+   [
+    "Barua",
+    "Lingkan"
+   ],
+   [
+    "Basu",
+    "Sanjay"
+   ],
+   [
+    "Bedi",
+    "Neeraj"
+   ],
+   [
+    "Béjot",
+    "Yannick"
+   ],
+   [
+    "Bennett",
+    "Derrick A."
+   ],
+   [
+    "Bensenor",
+    "Isabela M."
+   ],
+   [
+    "Berman",
+    "Adam E."
+   ],
+   [
+    "Bezabih",
+    "Yihienew M."
+   ],
+   [
+    "Bhagavathula",
+    "Akshaya S."
+   ],
+   [
+    "Bhaskar",
+    "Sonu"
+   ],
+   [
+    "Bhattacharyya",
+    "Krittika"
+   ],
+   [
+    "Bijani",
+    "Ali"
+   ],
+   [
+    "Bikbov",
+    "Boris"
+   ],
+   [
+    "Birhanu",
+    "Mulugeta M."
+   ],
+   [
+    "Boloor",
+    "Archith"
+   ],
+   [
+    "Brant",
+    "Luisa C."
+   ],
+   [
+    "Brenner",
+    "Hermann"
+   ],
+   [
+    "Briko",
+    "Nikolay I."
+   ],
+   [
+    "Butt",
+    "Zahid A."
+   ],
+   [
+    "Caetano dos Santos",
+    "Florentino Luciano"
+   ],
+   [
+    "Cahill",
+    "Leah E."
+   ],
+   [
+    "Cahuana-Hurtado",
+    "Lucero"
+   ],
+   [
+    "Cámera",
+    "Luis A."
+   ],
+   [
+    "Campos-Nonato",
+    "Ismael R."
+   ],
+   [
+    "Cantu-Brito",
+    "Carlos"
+   ],
+   [
+    "Car",
+    "Josip"
+   ],
+   [
+    "Carrero",
+    "Juan J."
+   ],
+   [
+    "Carvalho",
+    "Felix"
+   ],
+   [
+    "Castañeda-Orjuela",
+    "Carlos A."
+   ],
+   [
+    "Catalá-López",
+    "Ferrán"
+   ],
+   [
+    "Cerin",
+    "Ester"
+   ],
+   [
+    "Charan",
+    "Jaykaran"
+   ],
+   [
+    "Chattu",
+    "Vijay Kumar"
+   ],
+   [
+    "Chen",
+    "Simiao"
+   ],
+   [
+    "Chin",
+    "Ken L."
+   ],
+   [
+    "Choi",
+    "Jee-Young J."
+   ],
+   [
+    "Chu",
+    "Dinh-Toi"
+   ],
+   [
+    "Chung",
+    "Sheng-Chia"
+   ],
+   [
+    "Cirillo",
+    "Massimo"
+   ],
+   [
+    "Coffey",
+    "Sean"
+   ],
+   [
+    "Conti",
+    "Sara"
+   ],
+   [
+    "Costa",
+    "Vera M."
+   ],
+   [
+    "Cundiff",
+    "David K."
+   ],
+   [
+    "Dadras",
+    "Omid"
+   ],
+   [
+    "Dagnew",
+    "Baye"
+   ],
+   [
+    "Dai",
+    "Xiaochen"
+   ],
+   [
+    "Damasceno",
+    "Albertino A.M."
+   ],
+   [
+    "Dandona",
+    "Lalit"
+   ],
+   [
+    "Dandona",
+    "Rakhi"
+   ],
+   [
+    "Davletov",
+    "Kairat"
+   ],
+   [
+    "De la Cruz-Góngora",
+    "Vanessa"
+   ],
+   [
+    "De la Hoz",
+    "Fernando P."
+   ],
+   [
+    "De Neve",
+    "Jan-Walter"
+   ],
+   [
+    "Denova-Gutiérrez",
+    "Edgar"
+   ],
+   [
+    "Derbew Molla",
+    "Meseret"
+   ],
+   [
+    "Derseh",
+    "Behailu T."
+   ],
+   [
+    "Desai",
+    "Rupak"
+   ],
+   [
+    "Deuschl",
+    "Günther"
+   ],
+   [
+    "Dharmaratne",
+    "Samath D."
+   ],
+   [
+    "Dhimal",
+    "Meghnath"
+   ],
+   [
+    "Dhungana",
+    "Raja Ram"
+   ],
+   [
+    "Dianatinasab",
+    "Mostafa"
+   ],
+   [
+    "Diaz",
+    "Daniel"
+   ],
+   [
+    "Djalalinia",
+    "Shirin"
+   ],
+   [
+    "Dokova",
+    "Klara"
+   ],
+   [
+    "Douiri",
+    "Abdel"
+   ],
+   [
+    "Duncan",
+    "Bruce B."
+   ],
+   [
+    "Duraes",
+    "Andre R."
+   ],
+   [
+    "Eagan",
+    "Arielle W."
+   ],
+   [
+    "Ebtehaj",
+    "Sanam"
+   ],
+   [
+    "Eftekhari",
+    "Aziz"
+   ],
+   [
+    "Eftekharzadeh",
+    "Sahar"
+   ],
+   [
+    "Ekholuenetale",
+    "Michael"
+   ],
+   [
+    "El Nahas",
+    "Nevine"
+   ],
+   [
+    "Elgendy",
+    "Islam Y."
+   ],
+   [
+    "Elhadi",
+    "Muhammed"
+   ],
+   [
+    "El-Jaafary",
+    "Shaimaa I."
+   ],
+   [
+    "Esteghamati",
+    "Sadaf"
+   ],
+   [
+    "Etisso",
+    "Atkilt E."
+   ],
+   [
+    "Eyawo",
+    "Oghenowede"
+   ],
+   [
+    "Fadhil",
+    "Ibtihal"
+   ],
+   [
+    "Faraon",
+    "Emerito Jose A."
+   ],
+   [
+    "Faris",
+    "Pawan S."
+   ],
+   [
+    "Farwati",
+    "Medhat"
+   ],
+   [
+    "Farzadfar",
+    "Farshad"
+   ],
+   [
+    "Fernandes",
+    "Eduarda"
+   ],
+   [
+    "Fernandez Prendes",
+    "Carlota"
+   ],
+   [
+    "Ferrara",
+    "Pietro"
+   ],
+   [
+    "Filip",
+    "Irina"
+   ],
+   [
+    "Fischer",
+    "Florian"
+   ],
+   [
+    "Flood",
+    "David"
+   ],
+   [
+    "Fukumoto",
+    "Takeshi"
+   ],
+   [
+    "Gad",
+    "Mohamed M."
+   ],
+   [
+    "Gaidhane",
+    "Shilpa"
+   ],
+   [
+    "Ganji",
+    "Morsaleh"
+   ],
+   [
+    "Garg",
+    "Jalaj"
+   ],
+   [
+    "Gebre",
+    "Abadi K."
+   ],
+   [
+    "Gebregiorgis",
+    "Birhan G."
+   ],
+   [
+    "Gebregzabiher",
+    "Kidane Z."
+   ],
+   [
+    "Gebremeskel",
+    "Gebreamlak G."
+   ],
+   [
+    "Getacher",
+    "Lemma"
+   ],
+   [
+    "Obsa",
+    "Abera Getachew"
+   ],
+   [
+    "Ghajar",
+    "Alireza"
+   ],
+   [
+    "Ghashghaee",
+    "Ahmad"
+   ],
+   [
+    "Ghith",
+    "Nermin"
+   ],
+   [
+    "Giampaoli",
+    "Simona"
+   ],
+   [
+    "Gilani",
+    "Syed Amir"
+   ],
+   [
+    "Gill",
+    "Paramjit S."
+   ],
+   [
+    "Gillum",
+    "Richard F."
+   ],
+   [
+    "Glushkova",
+    "Ekaterina V."
+   ],
+   [
+    "Gnedovskaya",
+    "Elena V."
+   ],
+   [
+    "Golechha",
+    "Mahaveer"
+   ],
+   [
+    "Gonfa",
+    "Kebebe B."
+   ],
+   [
+    "Goudarzian",
+    "Amir Hossein"
+   ],
+   [
+    "Goulart",
+    "Alessandra C."
+   ],
+   [
+    "Guadamuz",
+    "Jenny S."
+   ],
+   [
+    "Guha",
+    "Avirup"
+   ],
+   [
+    "Guo",
+    "Yuming"
+   ],
+   [
+    "Gupta",
+    "Rajeev"
+   ],
+   [
+    "Hachinski",
+    "Vladimir"
+   ],
+   [
+    "Hafezi-Nejad",
+    "Nima"
+   ],
+   [
+    "Haile",
+    "Teklehaimanot G."
+   ],
+   [
+    "Hamadeh",
+    "Randah R."
+   ],
+   [
+    "Hamidi",
+    "Samer"
+   ],
+   [
+    "Hankey",
+    "Graeme J."
+   ],
+   [
+    "Hargono",
+    "Arief"
+   ],
+   [
+    "Hartono",
+    "Risky K."
+   ],
+   [
+    "Hashemian",
+    "Maryam"
+   ],
+   [
+    "Hashi",
+    "Abdiwahab"
+   ],
+   [
+    "Hassan",
+    "Shoaib"
+   ],
+   [
+    "Hassen",
+    "Hamid Y."
+   ],
+   [
+    "Havmoeller",
+    "Rasmus J."
+   ],
+   [
+    "Hay",
+    "Simon I."
+   ],
+   [
+    "Hayat",
+    "Khezar"
+   ],
+   [
+    "Heidari",
+    "Golnaz"
+   ],
+   [
+    "Herteliu",
+    "Claudiu"
+   ],
+   [
+    "Holla",
+    "Ramesh"
+   ],
+   [
+    "Hosseini",
+    "Mostafa"
+   ],
+   [
+    "Hosseinzadeh",
+    "Mehdi"
+   ],
+   [
+    "Hostiuc",
+    "Mihaela"
+   ],
+   [
+    "Hostiuc",
+    "Sorin"
+   ],
+   [
+    "Househ",
+    "Mowafa"
+   ],
+   [
+    "Huang",
+    "Junjie"
+   ],
+   [
+    "Humayun",
+    "Ayesha"
+   ],
+   [
+    "Iavicoli",
+    "Ivo"
+   ],
+   [
+    "Ibeneme",
+    "Charles U."
+   ],
+   [
+    "Ibitoye",
+    "Segun E."
+   ],
+   [
+    "Ilesanmi",
+    "Olayinka S."
+   ],
+   [
+    "Ilic",
+    "Irena M."
+   ],
+   [
+    "Ilic",
+    "Milena D."
+   ],
+   [
+    "Iqbal",
+    "Usman"
+   ],
+   [
+    "Irvani",
+    "Seyed Sina N."
+   ],
+   [
+    "Islam",
+    "Sheikh Mohammed Shariful"
+   ],
+   [
+    "Islam",
+    "Rakibul M."
+   ],
+   [
+    "Iso",
+    "Hiroyasu"
+   ],
+   [
+    "Iwagami",
+    "Masao"
+   ],
+   [
+    "Jain",
+    "Vardhmaan"
+   ],
+   [
+    "Javaheri",
+    "Tahereh"
+   ],
+   [
+    "Jayapal",
+    "Sathish Kumar"
+   ],
+   [
+    "Jayaram",
+    "Shubha"
+   ],
+   [
+    "Jayawardena",
+    "Ranil"
+   ],
+   [
+    "Jeemon",
+    "Panniyammakal"
+   ],
+   [
+    "Jha",
+    "Ravi P."
+   ],
+   [
+    "Jonas",
+    "Jost B."
+   ],
+   [
+    "Jonnagaddala",
+    "Jitendra"
+   ],
+   [
+    "Joukar",
+    "Farahnaz"
+   ],
+   [
+    "Jozwiak",
+    "Jacek J."
+   ],
+   [
+    "Jürisson",
+    "Mikk"
+   ],
+   [
+    "Kabir",
+    "Ali"
+   ],
+   [
+    "Kahlon",
+    "Tanvir"
+   ],
+   [
+    "Kalani",
+    "Rizwan"
+   ],
+   [
+    "Kalhor",
+    "Rohollah"
+   ],
+   [
+    "Kamath",
+    "Ashwin"
+   ],
+   [
+    "Kamel",
+    "Ibrahim"
+   ],
+   [
+    "Kandel",
+    "Himal"
+   ],
+   [
+    "Kandel",
+    "Amit"
+   ],
+   [
+    "Karch",
+    "André"
+   ],
+   [
+    "Kasa",
+    "Ayele Semachew"
+   ],
+   [
+    "Katoto",
+    "Patrick D.M.C."
+   ],
+   [
+    "Kayode",
+    "Gbenga A."
+   ],
+   [
+    "Khader",
+    "Yousef S."
+   ],
+   [
+    "Khammarnia",
+    "Mohammad"
+   ],
+   [
+    "Khan",
+    "Muhammad S."
+   ],
+   [
+    "Khan",
+    "Md Nuruzzaman"
+   ],
+   [
+    "Khan",
+    "Maseer"
+   ],
+   [
+    "Khan",
+    "Ejaz A."
+   ],
+   [
+    "Khatab",
+    "Khaled"
+   ],
+   [
+    "Kibria",
+    "Gulam M.A."
+   ],
+   [
+    "Kim",
+    "Yun Jin"
+   ],
+   [
+    "Kim",
+    "Gyu Ri"
+   ],
+   [
+    "Kimokoti",
+    "Ruth W."
+   ],
+   [
+    "Kisa",
+    "Sezer"
+   ],
+   [
+    "Kisa",
+    "Adnan"
+   ],
+   [
+    "Kivimäki",
+    "Mika"
+   ],
+   [
+    "Kolte",
+    "Dhaval"
+   ],
+   [
+    "Koolivand",
+    "Ali"
+   ],
+   [
+    "Korshunov",
+    "Vladimir A."
+   ],
+   [
+    "Koulmane Laxminarayana",
+    "Sindhura Lakshmi"
+   ],
+   [
+    "Koyanagi",
+    "Ai"
+   ],
+   [
+    "Krishan",
+    "Kewal"
+   ],
+   [
+    "Krishnamoorthy",
+    "Vijay"
+   ],
+   [
+    "Kuate Defo",
+    "Barthelemy"
+   ],
+   [
+    "Kucuk Bicer",
+    "Burcu"
+   ],
+   [
+    "Kulkarni",
+    "Vaman"
+   ],
+   [
+    "Kumar",
+    "G. Anil"
+   ],
+   [
+    "Kumar",
+    "Nithin"
+   ],
+   [
+    "Kurmi",
+    "Om P."
+   ],
+   [
+    "Kusuma",
+    "Dian"
+   ],
+   [
+    "Kwan",
+    "Gene F."
+   ],
+   [
+    "La Vecchia",
+    "Carlo"
+   ],
+   [
+    "Lacey",
+    "Ben"
+   ],
+   [
+    "Lallukka",
+    "Tea"
+   ],
+   [
+    "Lan",
+    "Qing"
+   ],
+   [
+    "Lasrado",
+    "Savita"
+   ],
+   [
+    "Lassi",
+    "Zohra S."
+   ],
+   [
+    "Lauriola",
+    "Paolo"
+   ],
+   [
+    "Lawrence",
+    "Wayne R."
+   ],
+   [
+    "Laxmaiah",
+    "Avula"
+   ],
+   [
+    "LeGrand",
+    "Kate E."
+   ],
+   [
+    "Li",
+    "Ming-Chieh"
+   ],
+   [
+    "Li",
+    "Bingyu"
+   ],
+   [
+    "Li",
+    "Shanshan"
+   ],
+   [
+    "Lim",
+    "Stephen S."
+   ],
+   [
+    "Lim",
+    "Lee-Ling"
+   ],
+   [
+    "Lin",
+    "Hualiang"
+   ],
+   [
+    "Lin",
+    "Ziqiang"
+   ],
+   [
+    "Lin",
+    "Ro-Ting"
+   ],
+   [
+    "Liu",
+    "Xuefeng"
+   ],
+   [
+    "Lopez",
+    "Alan D."
+   ],
+   [
+    "Lorkowski",
+    "Stefan"
+   ],
+   [
+    "Lotufo",
+    "Paulo A."
+   ],
+   [
+    "Lugo",
+    "Alessandra"
+   ],
+   [
+    "M",
+    "Nirmal K."
+   ],
+   [
+    "Madotto",
+    "Fabiana"
+   ],
+   [
+    "Mahmoudi",
+    "Morteza"
+   ],
+   [
+    "Majeed",
+    "Azeem"
+   ],
+   [
+    "Malekzadeh",
+    "Reza"
+   ],
+   [
+    "Malik",
+    "Ahmad A."
+   ],
+   [
+    "Mamun",
+    "Abdullah A."
+   ],
+   [
+    "Manafi",
+    "Navid"
+   ],
+   [
+    "Mansournia",
+    "Mohammad Ali"
+   ],
+   [
+    "Mantovani",
+    "Lorenzo G."
+   ],
+   [
+    "Martini",
+    "Santi"
+   ],
+   [
+    "Mathur",
+    "Manu R."
+   ],
+   [
+    "Mazzaglia",
+    "Giampiero"
+   ],
+   [
+    "Mehata",
+    "Suresh"
+   ],
+   [
+    "Mehndiratta",
+    "Man Mohan"
+   ],
+   [
+    "Meier",
+    "Toni"
+   ],
+   [
+    "Menezes",
+    "Ritesh G."
+   ],
+   [
+    "Meretoja",
+    "Atte"
+   ],
+   [
+    "Mestrovic",
+    "Tomislav"
+   ],
+   [
+    "Miazgowski",
+    "Bartosz"
+   ],
+   [
+    "Miazgowski",
+    "Tomasz"
+   ],
+   [
+    "Michalek",
+    "Irmina Maria"
+   ],
+   [
+    "Miller",
+    "Ted R."
+   ],
+   [
+    "Mirrakhimov",
+    "Erkin M."
+   ],
+   [
+    "Mirzaei",
+    "Hamed"
+   ],
+   [
+    "Moazen",
+    "Babak"
+   ],
+   [
+    "Moghadaszadeh",
+    "Masoud"
+   ],
+   [
+    "Mohammad",
+    "Yousef"
+   ],
+   [
+    "Mohammad",
+    "Dara K."
+   ],
+   [
+    "Mohammed",
+    "Shafiu"
+   ],
+   [
+    "Mohammed",
+    "Mohammed A."
+   ],
+   [
+    "Mokhayeri",
+    "Yaser"
+   ],
+   [
+    "Molokhia",
+    "Mariam"
+   ],
+   [
+    "Montasir",
+    "Ahmed A."
+   ],
+   [
+    "Moradi",
+    "Ghobad"
+   ],
+   [
+    "Moradzadeh",
+    "Rahmatollah"
+   ],
+   [
+    "Moraga",
+    "Paula"
+   ],
+   [
+    "Morawska",
+    "Lidia"
+   ],
+   [
+    "Moreno Velásquez",
+    "Ilais"
+   ],
+   [
+    "Morze",
+    "Jakub"
+   ],
+   [
+    "Mubarik",
+    "Sumaira"
+   ],
+   [
+    "Muruet",
+    "Walter"
+   ],
+   [
+    "Musa",
+    "Kamarul Imran"
+   ],
+   [
+    "Nagarajan",
+    "Ahamarshan J."
+   ],
+   [
+    "Nalini",
+    "Mahdi"
+   ],
+   [
+    "Nangia",
+    "Vinay"
+   ],
+   [
+    "Naqvi",
+    "Atta Abbas"
+   ],
+   [
+    "Narasimha Swamy",
+    "Sreenivas"
+   ],
+   [
+    "Nascimento",
+    "Bruno R."
+   ],
+   [
+    "Nayak",
+    "Vinod C."
+   ],
+   [
+    "Nazari",
+    "Javad"
+   ],
+   [
+    "Nazarzadeh",
+    "Milad"
+   ],
+   [
+    "Negoi",
+    "Ruxandra I."
+   ],
+   [
+    "Neupane Kandel",
+    "Sandhya"
+   ],
+   [
+    "Nguyen",
+    "Huong L.T."
+   ],
+   [
+    "Nixon",
+    "Molly R."
+   ],
+   [
+    "Norrving",
+    "Bo"
+   ],
+   [
+    "Noubiap",
+    "Jean Jacques"
+   ],
+   [
+    "Nouthe",
+    "Brice E."
+   ],
+   [
+    "Nowak",
+    "Christoph"
+   ],
+   [
+    "Odukoya",
+    "Oluwakemi O."
+   ],
+   [
+    "Ogbo",
+    "Felix A."
+   ],
+   [
+    "Olagunju",
+    "Andrew T."
+   ],
+   [
+    "Orru",
+    "Hans"
+   ],
+   [
+    "Ortiz",
+    "Alberto"
+   ],
+   [
+    "Ostroff",
+    "Samuel M."
+   ],
+   [
+    "Padubidri",
+    "Jagadish Rao"
+   ],
+   [
+    "Palladino",
+    "Raffaele"
+   ],
+   [
+    "Pana",
+    "Adrian"
+   ],
+   [
+    "Panda-Jonas",
+    "Songhomitra"
+   ],
+   [
+    "Parekh",
+    "Utsav"
+   ],
+   [
+    "Park",
+    "Eun-Cheol"
+   ],
+   [
+    "Parvizi",
+    "Mojtaba"
+   ],
+   [
+    "Pashazadeh Kan",
+    "Fatemeh"
+   ],
+   [
+    "Patel",
+    "Urvish K."
+   ],
+   [
+    "Pathak",
+    "Mona"
+   ],
+   [
+    "Paudel",
+    "Rajan"
+   ],
+   [
+    "Pepito",
+    "Veincent Christian F."
+   ],
+   [
+    "Perianayagam",
+    "Arokiasamy"
+   ],
+   [
+    "Perico",
+    "Norberto"
+   ],
+   [
+    "Pham",
+    "Hai Q."
+   ],
+   [
+    "Pilgrim",
+    "Thomas"
+   ],
+   [
+    "Piradov",
+    "Michael A."
+   ],
+   [
+    "Pishgar",
+    "Farhad"
+   ],
+   [
+    "Podder",
+    "Vivek"
+   ],
+   [
+    "Polibin",
+    "Roman V."
+   ],
+   [
+    "Pourshams",
+    "Akram"
+   ],
+   [
+    "Pribadi",
+    "Dimas R.A."
+   ],
+   [
+    "Rabiee",
+    "Navid"
+   ],
+   [
+    "Rabiee",
+    "Mohammad"
+   ],
+   [
+    "Radfar",
+    "Amir"
+   ],
+   [
+    "Rafiei",
+    "Alireza"
+   ],
+   [
+    "Rahim",
+    "Fakher"
+   ],
+   [
+    "Rahimi-Movaghar",
+    "Vafa"
+   ],
+   [
+    "Ur Rahman",
+    "Mohammad Hifz"
+   ],
+   [
+    "Rahman",
+    "Muhammad Aziz"
+   ],
+   [
+    "Rahmani",
+    "Amir Masoud"
+   ],
+   [
+    "Rakovac",
+    "Ivo"
+   ],
+   [
+    "Ram",
+    "Pradhum"
+   ],
+   [
+    "Ramalingam",
+    "Sudha"
+   ],
+   [
+    "Rana",
+    "Juwel"
+   ],
+   [
+    "Ranasinghe",
+    "Priyanga"
+   ],
+   [
+    "Rao",
+    "Sowmya J."
+   ],
+   [
+    "Rathi",
+    "Priya"
+   ],
+   [
+    "Rawal",
+    "Lal"
+   ],
+   [
+    "Rawasia",
+    "Wasiq F."
+   ],
+   [
+    "Rawassizadeh",
+    "Reza"
+   ],
+   [
+    "Remuzzi",
+    "Giuseppe"
+   ],
+   [
+    "Renzaho",
+    "Andre M.N."
+   ],
+   [
+    "Rezapour",
+    "Aziz"
+   ],
+   [
+    "Riahi",
+    "Seyed Mohammad"
+   ],
+   [
+    "Roberts-Thomson",
+    "Ross L."
+   ],
+   [
+    "Roever",
+    "Leonardo"
+   ],
+   [
+    "Rohloff",
+    "Peter"
+   ],
+   [
+    "Romoli",
+    "Michele"
+   ],
+   [
+    "Roshandel",
+    "Gholamreza"
+   ],
+   [
+    "Rwegerera",
+    "Godfrey M."
+   ],
+   [
+    "Saadatagah",
+    "Seyedmohammad"
+   ],
+   [
+    "Saber-Ayad",
+    "Maha M."
+   ],
+   [
+    "Sabour",
+    "Siamak"
+   ],
+   [
+    "Sacco",
+    "Simona"
+   ],
+   [
+    "Sadeghi",
+    "Masoumeh"
+   ],
+   [
+    "Saeedi Moghaddam",
+    "Sahar"
+   ],
+   [
+    "Safari",
+    "Saeed"
+   ],
+   [
+    "Sahebkar",
+    "Amirhossein"
+   ],
+   [
+    "Salehi",
+    "Sana"
+   ],
+   [
+    "Salimzadeh",
+    "Hamideh"
+   ],
+   [
+    "Samaei",
+    "Mehrnoosh"
+   ],
+   [
+    "Samy",
+    "Abdallah M."
+   ],
+   [
+    "Santos",
+    "Itamar S."
+   ],
+   [
+    "Santric-Milicevic",
+    "Milena M."
+   ],
+   [
+    "Sarrafzadegan",
+    "Nizal"
+   ],
+   [
+    "Sarveazad",
+    "Arash"
+   ],
+   [
+    "Sathish",
+    "Thirunavukkarasu"
+   ],
+   [
+    "Sawhney",
+    "Monika"
+   ],
+   [
+    "Saylan",
+    "Mete"
+   ],
+   [
+    "Schmidt",
+    "Maria I."
+   ],
+   [
+    "Schutte",
+    "Aletta E."
+   ],
+   [
+    "Senthilkumaran",
+    "Subramanian"
+   ],
+   [
+    "Sepanlou",
+    "Sadaf G."
+   ],
+   [
+    "Sha",
+    "Feng"
+   ],
+   [
+    "Shahabi",
+    "Saeed"
+   ],
+   [
+    "Shahid",
+    "Izza"
+   ],
+   [
+    "Shaikh",
+    "Masood A."
+   ],
+   [
+    "Shamali",
+    "Mahdi"
+   ],
+   [
+    "Shamsizadeh",
+    "Morteza"
+   ],
+   [
+    "Shawon",
+    "Md Shajedur Rahman"
+   ],
+   [
+    "Sheikh",
+    "Aziz"
+   ],
+   [
+    "Shigematsu",
+    "Mika"
+   ],
+   [
+    "Shin",
+    "Min-Jeong"
+   ],
+   [
+    "Shin",
+    "Jae Il"
+   ],
+   [
+    "Shiri",
+    "Rahman"
+   ],
+   [
+    "Shiue",
+    "Ivy"
+   ],
+   [
+    "Shuval",
+    "Kerem"
+   ],
+   [
+    "Siabani",
+    "Soraya"
+   ],
+   [
+    "Siddiqi",
+    "Tariq J."
+   ],
+   [
+    "Silva",
+    "Diego A.S."
+   ],
+   [
+    "Singh",
+    "Jasvinder A."
+   ],
+   [
+    "Mtech",
+    "Ambrish Singh"
+   ],
+   [
+    "Skryabin",
+    "Valentin Y."
+   ],
+   [
+    "Skryabina",
+    "Anna A."
+   ],
+   [
+    "Soheili",
+    "Amin"
+   ],
+   [
+    "Spurlock",
+    "Emma E."
+   ],
+   [
+    "Stockfelt",
+    "Leo"
+   ],
+   [
+    "Stortecky",
+    "Stefan"
+   ],
+   [
+    "Stranges",
+    "Saverio"
+   ],
+   [
+    "Suliankatchi Abdulkader",
+    "Rizwan"
+   ],
+   [
+    "Tadbiri",
+    "Hooman"
+   ],
+   [
+    "Tadesse",
+    "Eyayou G."
+   ],
+   [
+    "Tadesse",
+    "Degena B."
+   ],
+   [
+    "Tajdini",
+    "Masih"
+   ],
+   [
+    "Tariqujjaman",
+    "Md"
+   ],
+   [
+    "Teklehaimanot",
+    "Berhane F."
+   ],
+   [
+    "Temsah",
+    "Mohamad-Hani"
+   ],
+   [
+    "Tesema",
+    "Ayenew K."
+   ],
+   [
+    "Thakur",
+    "Bhaskar"
+   ],
+   [
+    "Thankappan",
+    "Kavumpurathu R."
+   ],
+   [
+    "Thapar",
+    "Rekha"
+   ],
+   [
+    "Thrift",
+    "Amanda G."
+   ],
+   [
+    "Timalsina",
+    "Binod"
+   ],
+   [
+    "Tonelli",
+    "Marcello"
+   ],
+   [
+    "Touvier",
+    "Mathilde"
+   ],
+   [
+    "Tovani-Palone",
+    "Marcos R."
+   ],
+   [
+    "Tripathi",
+    "Avnish"
+   ],
+   [
+    "Tripathy",
+    "Jaya P."
+   ],
+   [
+    "Truelsen",
+    "Thomas C."
+   ],
+   [
+    "Tsegay",
+    "Guesh M."
+   ],
+   [
+    "Tsegaye",
+    "Gebiyaw W."
+   ],
+   [
+    "Tsilimparis",
+    "Nikolaos"
+   ],
+   [
+    "Tusa",
+    "Biruk S."
+   ],
+   [
+    "Tyrovolas",
+    "Stefanos"
+   ],
+   [
+    "Umapathi",
+    "Krishna Kishore"
+   ],
+   [
+    "Unim",
+    "Brigid"
+   ],
+   [
+    "Unnikrishnan",
+    "Bhaskaran"
+   ],
+   [
+    "Usman",
+    "Muhammad S."
+   ],
+   [
+    "Vaduganathan",
+    "Muthiah"
+   ],
+   [
+    "Valdez",
+    "Pascual R."
+   ],
+   [
+    "Vasankari",
+    "Tommi J."
+   ],
+   [
+    "Velazquez",
+    "Diana Z."
+   ],
+   [
+    "Venketasubramanian",
+    "Narayanaswamy"
+   ],
+   [
+    "Vu",
+    "Giang T."
+   ],
+   [
+    "Vujcic",
+    "Isidora S."
+   ],
+   [
+    "Waheed",
+    "Yasir"
+   ],
+   [
+    "Wang",
+    "Yanzhong"
+   ],
+   [
+    "Wang",
+    "Fang"
+   ],
+   [
+    "Wei",
+    "Jingkai"
+   ],
+   [
+    "Weintraub",
+    "Robert G."
+   ],
+   [
+    "Weldemariam",
+    "Abrha H."
+   ],
+   [
+    "Westerman",
+    "Ronny"
+   ],
+   [
+    "Winkler",
+    "Andrea S."
+   ],
+   [
+    "Wiysonge",
+    "Charles S."
+   ],
+   [
+    "Wolfe",
+    "Charles D.A."
+   ],
+   [
+    "Wubishet",
+    "Befikadu Legesse"
+   ],
+   [
+    "Xu",
+    "Gelin"
+   ],
+   [
+    "Yadollahpour",
+    "Ali"
+   ],
+   [
+    "Yamagishi",
+    "Kazumasa"
+   ],
+   [
+    "Yan",
+    "Lijing L."
+   ],
+   [
+    "Yandrapalli",
+    "Srikanth"
+   ],
+   [
+    "Yano",
+    "Yuichiro"
+   ],
+   [
+    "Yatsuya",
+    "Hiroshi"
+   ],
+   [
+    "Yeheyis",
+    "Tomas Y."
+   ],
+   [
+    "Yeshaw",
+    "Yigizie"
+   ],
+   [
+    "Yilgwan",
+    "Christopher S."
+   ],
+   [
+    "Yonemoto",
+    "Naohiro"
+   ],
+   [
+    "Yu",
+    "Chuanhua"
+   ],
+   [
+    "Yusefzadeh",
+    "Hasan"
+   ],
+   [
+    "Zachariah",
+    "Geevar"
+   ],
+   [
+    "Zaman",
+    "Sojib Bin"
+   ],
+   [
+    "Zaman",
+    "Muhammed S."
+   ],
+   [
+    "Zamanian",
+    "Maryam"
+   ],
+   [
+    "Zand",
+    "Ramin"
+   ],
+   [
+    "Zandifar",
+    "Alireza"
+   ],
+   [
+    "Zarghi",
+    "Afshin"
+   ],
+   [
+    "Zastrozhin",
+    "Mikhail S."
+   ],
+   [
+    "Zastrozhina",
+    "Anasthasia"
+   ],
+   [
+    "Zhang",
+    "Zhi-Jiang"
+   ],
+   [
+    "Zhang",
+    "Yunquan"
+   ],
+   [
+    "Zhang",
+    "Wangjian"
+   ],
+   [
+    "Zhong",
+    "Chenwen"
+   ],
+   [
+    "Zou",
+    "Zhiyong"
+   ],
+   [
+    "Zuniga",
+    "Yves Miel H."
+   ],
+   [
+    "Murray",
+    "Christopher J.L."
+   ],
+   [
+    "Fuster",
+    "Valentin"
+   ]
+  ],
+  "n": 679,
+  "title": "Global Burden of Cardiovascular Diseases and Risk Factors, 1990–2019",
+  "container": "Journal of the American College of Cardiology",
+  "volume": "76",
+  "issue": "25",
+  "page": "2982-3021",
+  "year": 2020
+ },
+ "dagostino2008": {
+  "doi": "10.1161/CIRCULATIONAHA.107.699579",
+  "authors": [
+   [
+    "D’Agostino",
+    "Ralph B."
+   ],
+   [
+    "Vasan",
+    "Ramachandran S."
+   ],
+   [
+    "Pencina",
+    "Michael J."
+   ],
+   [
+    "Wolf",
+    "Philip A."
+   ],
+   [
+    "Cobain",
+    "Mark"
+   ],
+   [
+    "Massaro",
+    "Joseph M."
+   ],
+   [
+    "Kannel",
+    "William B."
+   ]
+  ],
+  "n": 7,
+  "title": "General Cardiovascular Risk Profile for Use in Primary Care",
+  "container": "Circulation",
+  "volume": "117",
+  "issue": "6",
+  "page": "743-753",
+  "year": 2008
+ },
+ "goff2014": {
+  "doi": "10.1161/01.cir.0000437741.48606.98",
+  "authors": [
+   [
+    "Goff",
+    "David C."
+   ],
+   [
+    "Lloyd-Jones",
+    "Donald M."
+   ],
+   [
+    "Bennett",
+    "Glen"
+   ],
+   [
+    "Coady",
+    "Sean"
+   ],
+   [
+    "D’Agostino",
+    "Ralph B."
+   ],
+   [
+    "Gibbons",
+    "Raymond"
+   ],
+   [
+    "Greenland",
+    "Philip"
+   ],
+   [
+    "Lackland",
+    "Daniel T."
+   ],
+   [
+    "Levy",
+    "Daniel"
+   ],
+   [
+    "O’Donnell",
+    "Christopher J."
+   ],
+   [
+    "Robinson",
+    "Jennifer G."
+   ],
+   [
+    "Schwartz",
+    "J. Sanford"
+   ],
+   [
+    "Shero",
+    "Susan T."
+   ],
+   [
+    "Smith",
+    "Sidney C."
+   ],
+   [
+    "Sorlie",
+    "Paul"
+   ],
+   [
+    "Stone",
+    "Neil J."
+   ],
+   [
+    "Wilson",
+    "Peter W. F."
+   ]
+  ],
+  "n": 17,
+  "title": "2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk",
+  "container": "Circulation",
+  "volume": "129",
+  "issue": "25_suppl_2",
+  "page": "",
+  "year": 2014
+ },
+ "weng2017": {
+  "doi": "10.1371/journal.pone.0174944",
+  "authors": [
+   [
+    "Weng",
+    "Stephen F."
+   ],
+   [
+    "Reps",
+    "Jenna"
+   ],
+   [
+    "Kai",
+    "Joe"
+   ],
+   [
+    "Garibaldi",
+    "Jonathan M."
+   ],
+   [
+    "Qureshi",
+    "Nadeem"
+   ]
+  ],
+  "n": 5,
+  "title": "Can machine-learning improve cardiovascular risk prediction using routine clinical data?",
+  "container": "PLOS ONE",
+  "volume": "12",
+  "issue": "4",
+  "page": "e0174944",
+  "year": 2017
+ },
+ "alaa2019": {
+  "doi": "10.1371/journal.pone.0213653",
+  "authors": [
+   [
+    "Alaa",
+    "Ahmed M."
+   ],
+   [
+    "Bolton",
+    "Thomas"
+   ],
+   [
+    "Di Angelantonio",
+    "Emanuele"
+   ],
+   [
+    "Rudd",
+    "James H. F."
+   ],
+   [
+    "van der Schaar",
+    "Mihaela"
+   ]
+  ],
+  "n": 5,
+  "title": "Cardiovascular disease risk prediction using automated machine learning: A prospective study of 423,604 UK Biobank participants",
+  "container": "PLOS ONE",
+  "volume": "14",
+  "issue": "5",
+  "page": "e0213653",
+  "year": 2019
+ },
+ "ambale2017": {
+  "doi": "10.1161/CIRCRESAHA.117.311312",
+  "authors": [
+   [
+    "Ambale-Venkatesh",
+    "Bharath"
+   ],
+   [
+    "Yang",
+    "Xiaoying"
+   ],
+   [
+    "Wu",
+    "Colin O."
+   ],
+   [
+    "Liu",
+    "Kiang"
+   ],
+   [
+    "Hundley",
+    "W. Gregory"
+   ],
+   [
+    "McClelland",
+    "Robyn"
+   ],
+   [
+    "Gomes",
+    "Antoinette S."
+   ],
+   [
+    "Folsom",
+    "Aaron R."
+   ],
+   [
+    "Shea",
+    "Steven"
+   ],
+   [
+    "Guallar",
+    "Eliseo"
+   ],
+   [
+    "Bluemke",
+    "David A."
+   ],
+   [
+    "Lima",
+    "João A.C."
+   ]
+  ],
+  "n": 12,
+  "title": "Cardiovascular Event Prediction by Machine Learning",
+  "container": "Circulation Research",
+  "volume": "121",
+  "issue": "9",
+  "page": "1092-1101",
+  "year": 2017
+ },
+ "krittanawong2020": {
+  "doi": "10.1038/s41598-020-72685-1",
+  "authors": [
+   [
+    "Krittanawong",
+    "Chayakrit"
+   ],
+   [
+    "Virk",
+    "Hafeez Ul Hassan"
+   ],
+   [
+    "Bangalore",
+    "Sripal"
+   ],
+   [
+    "Wang",
+    "Zhen"
+   ],
+   [
+    "Johnson",
+    "Kipp W."
+   ],
+   [
+    "Pinotti",
+    "Rachel"
+   ],
+   [
+    "Zhang",
+    "HongJu"
+   ],
+   [
+    "Kaplin",
+    "Scott"
+   ],
+   [
+    "Narasimhan",
+    "Bharat"
+   ],
+   [
+    "Kitai",
+    "Takeshi"
+   ],
+   [
+    "Baber",
+    "Usman"
+   ],
+   [
+    "Halperin",
+    "Jonathan L."
+   ],
+   [
+    "Tang",
+    "W. H. Wilson"
+   ]
+  ],
+  "n": 13,
+  "title": "Machine learning prediction in cardiovascular diseases: a meta-analysis",
+  "container": "Scientific Reports",
+  "volume": "10",
+  "issue": "1",
+  "page": "16057",
+  "year": 2020
+ },
+ "dinh2019": {
+  "doi": "10.1186/s12911-019-0918-5",
+  "authors": [
+   [
+    "Dinh",
+    "An"
+   ],
+   [
+    "Miertschin",
+    "Stacey"
+   ],
+   [
+    "Young",
+    "Amber"
+   ],
+   [
+    "Mohanty",
+    "Somya D."
+   ]
+  ],
+  "n": 4,
+  "title": "A data-driven approach to predicting diabetes and cardiovascular disease with machine learning",
+  "container": "BMC Medical Informatics and Decision Making",
+  "volume": "19",
+  "issue": "1",
+  "page": "211",
+  "year": 2019
+ },
+ "martinmorales2023": {
+  "doi": "10.3390/nu15183937",
+  "authors": [
+   [
+    "Martin-Morales",
+    "Agustin"
+   ],
+   [
+    "Yamamoto",
+    "Masaki"
+   ],
+   [
+    "Inoue",
+    "Mai"
+   ],
+   [
+    "Vu",
+    "Thien"
+   ],
+   [
+    "Dawadi",
+    "Research"
+   ],
+   [
+    "Araki",
+    "Michihiro"
+   ]
+  ],
+  "n": 6,
+  "title": "Predicting Cardiovascular Disease Mortality: Leveraging Machine Learning for Comprehensive Assessment of Health and Nutrition Variables",
+  "container": "Nutrients",
+  "volume": "15",
+  "issue": "18",
+  "page": "3937",
+  "year": 2023
+ },
+ "ahiduzzaman2025": {
+  "doi": "10.1371/journal.pone.0335915",
+  "authors": [
+   [
+    "Ahiduzzaman",
+    "Md"
+   ],
+   [
+    "Hasan",
+    "Md Nahid"
+   ]
+  ],
+  "n": 2,
+  "title": "Interpretable machine learning for cardiovascular risk prediction: Insights from NHANES dietary and health data",
+  "container": "PLOS One",
+  "volume": "20",
+  "issue": "11",
+  "page": "e0335915",
+  "year": 2025
+ },
+ "christodoulou2019": {
+  "doi": "10.1016/j.jclinepi.2019.02.004",
+  "authors": [
+   [
+    "Christodoulou",
+    "Evangelia"
+   ],
+   [
+    "Ma",
+    "Jie"
+   ],
+   [
+    "Collins",
+    "Gary S."
+   ],
+   [
+    "Steyerberg",
+    "Ewout W."
+   ],
+   [
+    "Verbakel",
+    "Jan Y."
+   ],
+   [
+    "Van Calster",
+    "Ben"
+   ]
+  ],
+  "n": 6,
+  "title": "A systematic review shows no performance benefit of machine learning over logistic regression for clinical prediction models",
+  "container": "Journal of Clinical Epidemiology",
+  "volume": "110",
+  "issue": "",
+  "page": "12-22",
+  "year": 2019
+ },
+ "shwartzziv2022": {
+  "doi": "10.1016/j.inffus.2021.11.011",
+  "authors": [
+   [
+    "Shwartz-Ziv",
+    "Ravid"
+   ],
+   [
+    "Armon",
+    "Amitai"
+   ]
+  ],
+  "n": 2,
+  "title": "Tabular data: Deep learning is not all you need",
+  "container": "Information Fusion",
+  "volume": "81",
+  "issue": "",
+  "page": "84-90",
+  "year": 2022
+ },
+ "rudin2019": {
+  "doi": "10.1038/s42256-019-0048-x",
+  "authors": [
+   [
+    "Rudin",
+    "Cynthia"
+   ]
+  ],
+  "n": 1,
+  "title": "Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead",
+  "container": "Nature Machine Intelligence",
+  "volume": "1",
+  "issue": "5",
+  "page": "206-215",
+  "year": 2019
+ },
+ "breiman2001": {
+  "doi": "10.1023/A:1010933404324",
+  "authors": [
+   [
+    "Breiman",
+    "Leo"
+   ]
+  ],
+  "n": 1,
+  "title": "Random Forests",
+  "container": "Machine Learning",
+  "volume": "45",
+  "issue": "1",
+  "page": "5-32",
+  "year": 2001
+ },
+ "cortes1995": {
+  "doi": "10.1007/BF00994018",
+  "authors": [
+   [
+    "Cortes",
+    "Corinna"
+   ],
+   [
+    "Vapnik",
+    "Vladimir"
+   ]
+  ],
+  "n": 2,
+  "title": "Support-vector networks",
+  "container": "Machine Learning",
+  "volume": "20",
+  "issue": "3",
+  "page": "273-297",
+  "year": 1995
+ },
+ "chen2016": {
+  "doi": "10.1145/2939672.2939785",
+  "authors": [
+   [
+    "Chen",
+    "Tianqi"
+   ],
+   [
+    "Guestrin",
+    "Carlos"
+   ]
+  ],
+  "n": 2,
+  "title": "XGBoost",
+  "container": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+  "volume": "",
+  "issue": "",
+  "page": "785-794",
+  "year": 2016
+ },
+ "delong1988": {
+  "doi": "10.2307/2531595",
+  "authors": [
+   [
+    "DeLong",
+    "Elizabeth R."
+   ],
+   [
+    "DeLong",
+    "David M."
+   ],
+   [
+    "Clarke-Pearson",
+    "Daniel L."
+   ]
+  ],
+  "n": 3,
+  "title": "Comparing the Areas under Two or More Correlated Receiver Operating Characteristic Curves: A Nonparametric Approach",
+  "container": "Biometrics",
+  "volume": "44",
+  "issue": "3",
+  "page": "837",
+  "year": 1988
+ },
+ "sun2014": {
+  "doi": "10.1109/LSP.2014.2337313",
+  "authors": [
+   [
+    "Sun",
+    "Xu"
+   ],
+   [
+    "Xu",
+    "Weichao"
+   ]
+  ],
+  "n": 2,
+  "title": "Fast Implementation of DeLong’s Algorithm for Comparing the Areas Under Correlated Receiver Operating Characteristic Curves",
+  "container": "IEEE Signal Processing Letters",
+  "volume": "21",
+  "issue": "11",
+  "page": "1389-1393",
+  "year": 2014
+ },
+ "saito2015": {
+  "doi": "10.1371/journal.pone.0118432",
+  "authors": [
+   [
+    "Saito",
+    "Takaya"
+   ],
+   [
+    "Rehmsmeier",
+    "Marc"
+   ]
+  ],
+  "n": 2,
+  "title": "The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets",
+  "container": "PLOS ONE",
+  "volume": "10",
+  "issue": "3",
+  "page": "e0118432",
+  "year": 2015
+ },
+ "brier1950": {
+  "doi": "10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2",
+  "authors": [
+   [
+    "BRIER",
+    "GLENN W."
+   ]
+  ],
+  "n": 1,
+  "title": "VERIFICATION OF FORECASTS EXPRESSED IN TERMS OF PROBABILITY",
+  "container": "Monthly Weather Review",
+  "volume": "78",
+  "issue": "1",
+  "page": "1-3",
+  "year": 1950
+ },
+ "naeini2015": {
+  "doi": "10.1609/aaai.v29i1.9602",
+  "authors": [
+   [
+    "Pakdaman Naeini",
+    "Mahdi"
+   ],
+   [
+    "Cooper",
+    "Gregory"
+   ],
+   [
+    "Hauskrecht",
+    "Milos"
+   ]
+  ],
+  "n": 3,
+  "title": "Obtaining Well Calibrated Probabilities Using Bayesian Binning",
+  "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "volume": "29",
+  "issue": "1",
+  "page": "",
+  "year": 2015
+ },
+ "vancalster2019": {
+  "doi": "10.1186/s12916-019-1466-7",
+  "authors": [
+   [
+    "On behalf of Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative",
+    ""
+   ],
+   [
+    "Van Calster",
+    "Ben"
+   ],
+   [
+    "McLernon",
+    "David J."
+   ],
+   [
+    "van Smeden",
+    "Maarten"
+   ],
+   [
+    "Wynants",
+    "Laure"
+   ],
+   [
+    "Steyerberg",
+    "Ewout W."
+   ]
+  ],
+  "n": 6,
+  "title": "Calibration: the Achilles heel of predictive analytics",
+  "container": "BMC Medicine",
+  "volume": "17",
+  "issue": "1",
+  "page": "230",
+  "year": 2019
+ },
+ "lundberg2020": {
+  "doi": "10.1038/s42256-019-0138-9",
+  "authors": [
+   [
+    "Lundberg",
+    "Scott M."
+   ],
+   [
+    "Erion",
+    "Gabriel"
+   ],
+   [
+    "Chen",
+    "Hugh"
+   ],
+   [
+    "DeGrave",
+    "Alex"
+   ],
+   [
+    "Prutkin",
+    "Jordan M."
+   ],
+   [
+    "Nair",
+    "Bala"
+   ],
+   [
+    "Katz",
+    "Ronit"
+   ],
+   [
+    "Himmelfarb",
+    "Jonathan"
+   ],
+   [
+    "Bansal",
+    "Nisha"
+   ],
+   [
+    "Lee",
+    "Su-In"
+   ]
+  ],
+  "n": 10,
+  "title": "From local explanations to global understanding with explainable AI for trees",
+  "container": "Nature Machine Intelligence",
+  "volume": "2",
+  "issue": "1",
+  "page": "56-67",
+  "year": 2020
+ },
+ "kendall1939": {
+  "doi": "10.1214/aoms/1177732186",
+  "authors": [
+   [
+    "Kendall",
+    "M. G."
+   ],
+   [
+    "Smith",
+    "B. Babington"
+   ]
+  ],
+  "n": 2,
+  "title": "The Problem of $m$ Rankings",
+  "container": "The Annals of Mathematical Statistics",
+  "volume": "10",
+  "issue": "3",
+  "page": "275-287",
+  "year": 1939
+ },
+ "hooker2021": {
+  "doi": "10.1007/s11222-021-10057-z",
+  "authors": [
+   [
+    "Hooker",
+    "Giles"
+   ],
+   [
+    "Mentch",
+    "Lucas"
+   ],
+   [
+    "Zhou",
+    "Siyu"
+   ]
+  ],
+  "n": 3,
+  "title": "Unrestricted permutation forces extrapolation: variable importance requires at least one more model, or there is no free variable importance",
+  "container": "Statistics and Computing",
+  "volume": "31",
+  "issue": "6",
+  "page": "82",
+  "year": 2021
+ },
+ "collins2024": {
+  "doi": "10.1136/bmj-2023-078378",
+  "authors": [
+   [
+    "Collins",
+    "Gary S"
+   ],
+   [
+    "Moons",
+    "Karel G M"
+   ],
+   [
+    "Dhiman",
+    "Paula"
+   ],
+   [
+    "Riley",
+    "Richard D"
+   ],
+   [
+    "Beam",
+    "Andrew L"
+   ],
+   [
+    "Van Calster",
+    "Ben"
+   ],
+   [
+    "Ghassemi",
+    "Marzyeh"
+   ],
+   [
+    "Liu",
+    "Xiaoxuan"
+   ],
+   [
+    "Reitsma",
+    "Johannes B"
+   ],
+   [
+    "van Smeden",
+    "Maarten"
+   ],
+   [
+    "Boulesteix",
+    "Anne-Laure"
+   ],
+   [
+    "Camaradou",
+    "Jennifer Catherine"
+   ],
+   [
+    "Celi",
+    "Leo Anthony"
+   ],
+   [
+    "Denaxas",
+    "Spiros"
+   ],
+   [
+    "Denniston",
+    "Alastair K"
+   ],
+   [
+    "Glocker",
+    "Ben"
+   ],
+   [
+    "Golub",
+    "Robert M"
+   ],
+   [
+    "Harvey",
+    "Hugh"
+   ],
+   [
+    "Heinze",
+    "Georg"
+   ],
+   [
+    "Hoffman",
+    "Michael M"
+   ],
+   [
+    "Kengne",
+    "André Pascal"
+   ],
+   [
+    "Lam",
+    "Emily"
+   ],
+   [
+    "Lee",
+    "Naomi"
+   ],
+   [
+    "Loder",
+    "Elizabeth W"
+   ],
+   [
+    "Maier-Hein",
+    "Lena"
+   ],
+   [
+    "Mateen",
+    "Bilal A"
+   ],
+   [
+    "McCradden",
+    "Melissa D"
+   ],
+   [
+    "Oakden-Rayner",
+    "Lauren"
+   ],
+   [
+    "Ordish",
+    "Johan"
+   ],
+   [
+    "Parnell",
+    "Richard"
+   ],
+   [
+    "Rose",
+    "Sherri"
+   ],
+   [
+    "Singh",
+    "Karandeep"
+   ],
+   [
+    "Wynants",
+    "Laure"
+   ],
+   [
+    "Logullo",
+    "Patricia"
+   ]
+  ],
+  "n": 34,
+  "title": "TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods",
+  "container": "BMJ",
+  "volume": "385",
+  "issue": "",
+  "page": "e078378",
+  "year": 2024
+ }
+}

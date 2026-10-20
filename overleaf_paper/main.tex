@@ -1,39 +1,33 @@
 % =====================================================================
-%  IEEE two-column paper (IEEEtran). Compile with pdfLaTeX.
+%  IEEE journal paper, following the Overleaf "LabReport IEEE Journal
+%  Paper Template" (IEEEtran, journal mode, IEEE reference style).
 %  Overleaf: Menu -> Compiler: pdfLaTeX. Main document: main.tex
 %  All numbers below come from the experiment outputs (nhanes_study/).
-%  Lines marked "% TODO" need your team's input (names, affiliations).
+%  Lines marked "% TODO" need your team's input (names, IDs, affiliations).
 % =====================================================================
-\documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
+\documentclass[journal]{IEEEtran}
 
-\usepackage{cite}
+\usepackage{cite}   % BibTeX + IEEEtran style: compiles much faster than biblatex/biber (fits Overleaf's free compile limit)
 \usepackage{amsmath,amssymb}
+\usepackage{url}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{array}
-\usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 \graphicspath{{figures/}}
+\hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
 
 \title{Classical Machine Learning vs. Deep Learning for Cardiovascular Disease Classification: An Explainable AI Study Using NHANES Data}
 
-% TODO: replace with your real names, departments and emails
-\author{
-\IEEEauthorblockN{Author One}
-\IEEEauthorblockA{\textit{Department of Computer Science} \\
-\textit{University Name}\\
-City, Country \\
-email@university.edu}
-\and
-\IEEEauthorblockN{Author Two}
-\IEEEauthorblockA{\textit{Department of Computer Science} \\
-\textit{University Name}\\
-City, Country \\
-email@university.edu}
-}
+% TODO: replace with your real names (and student IDs / affiliations if required)
+\author{Author One, Author Two, and Author Three%
+\thanks{Department of Computer Science, University Name, City, Country (e-mail: email@university.edu).}}
+
+\markboth{Classical vs. Deep Learning for CVD Classification on NHANES}%
+{Classical vs. Deep Learning for CVD Classification on NHANES}
 
 \maketitle
 
@@ -48,7 +42,7 @@ Cardiovascular disease, classical machine learning, deep learning, NHANES, expla
 
 % ---------------------------------------------------------------------
 \section{Introduction}
-Cardiovascular diseases (CVDs) are a major public health concern associated with demographic, physiological, biochemical, and behavioral factors~\cite{tsao2023,roth2020}. Clinical variables such as age, blood pressure, cholesterol, glucose concentration, and body mass index provide valuable information for investigating cardiovascular health and underpin established risk scores~\cite{dagostino2008,goff2014}. However, relationships among these variables can be nonlinear and interdependent, motivating the application of data-driven predictive methods.
+\IEEEPARstart{C}{ardiovascular} diseases (CVDs) are a major public health concern associated with demographic, physiological, biochemical, and behavioral factors~\cite{tsao2023,roth2020}. Clinical variables such as age, blood pressure, cholesterol, glucose concentration, and body mass index provide valuable information for investigating cardiovascular health and underpin established risk scores~\cite{dagostino2008,goff2014}. However, relationships among these variables can be nonlinear and interdependent, motivating the application of data-driven predictive methods.
 
 Classical machine learning algorithms, including Logistic Regression, Support Vector Machines, Random Forests, and gradient-boosted decision trees, are widely applicable to structured clinical data. These methods offer different trade-offs between interpretability, computational efficiency, and the ability to capture nonlinear relationships. Deep learning models, from multilayer perceptrons to Transformer architectures designed for tabular data~\cite{gorishniy2021}, can learn complex feature interactions but may require careful regularization and sufficient training data. Their greater complexity does not necessarily guarantee superior performance on tabular health datasets~\cite{christodoulou2019,grinsztajn2022,shwartzziv2022}.
 
@@ -59,7 +53,7 @@ The National Health and Nutrition Examination Survey (NHANES), conducted by the 
 This study compares four classical machine learning models with three deep learning models for cardiovascular disease classification using harmonized NHANES data. It evaluates predictive performance, calibration, and computational efficiency while examining clinical feature contributions through SHAP and feature-ablation experiments. The study further investigates whether different model families identify consistent influential features, providing a comparative assessment of predictive effectiveness and interpretability on structured clinical data.
 
 % ---------------------------------------------------------------------
-\section{Related Work}
+\subsection{Related Work}
 % TODO: review and edit. Facts about each study are taken from the cited papers.
 Machine learning for CVD risk has been studied in large cohorts. Weng \textit{et al.}~\cite{weng2017} compared logistic regression, random forests, gradient boosting and neural networks against the ACC/AHA risk score in 378{,}256 UK primary-care patients; the neural network exceeded logistic regression by only 0.004 AUC. Alaa \textit{et al.}~\cite{alaa2019} showed that an automated machine-learning ensemble outperformed the Framingham score in 423{,}604 UK Biobank participants, largely by using many more variables, and Ambale-Venkatesh \textit{et al.}~\cite{ambale2017} applied random survival forests to the Multi-Ethnic Study of Atherosclerosis. A meta-analysis of 103 cohorts~\cite{krittanawong2020} found overlapping performance across algorithm families and substantial heterogeneity between studies.
 
@@ -68,7 +62,7 @@ Several studies have used NHANES. Dinh \textit{et al.}~\cite{dinh2019} reported 
 Broader evidence suggests that machine learning rarely outperforms logistic regression in clinical prediction~\cite{christodoulou2019} and that tree ensembles often match or exceed deep learning on medium-sized tabular data~\cite{grinsztajn2022,shwartzziv2022}. Explanation methods can also disagree with one another~\cite{krishna2024}. We address these gaps by comparing classical and deep models on identical data splits, with calibration, temporal validation, and cross-model and within-model SHAP stability.
 
 % ---------------------------------------------------------------------
-\section{Dataset and Methodology}
+\section{Materials and Methods}
 
 \subsection{Data and Cohort}
 We combined four NHANES cycles (2011--2012 to 2017--2018)~\cite{nhanes}; 2019--2020 was excluded because data collection was interrupted by COVID-19. The cohort comprised adults aged $\geq 20$ years who completed the examination and had a determinable outcome ($n = 21{,}552$; 2{,}369 cases). Prevalence was 11.0\% unweighted and 8.9\% survey-weighted, using the examination weight divided by four~\cite{johnson2013}.
@@ -89,7 +83,7 @@ On the test set we report ROC-AUC with bootstrap confidence intervals, PR-AUC~\c
 The same model-agnostic permutation SHAP estimator~\cite{lundberg2017} was applied to every model's predicted probability (300 test rows, 50 background rows); its rankings agreed with exact TreeSHAP~\cite{lundberg2020} for XGBoost ($\rho = 0.989$). Cross-model agreement used pairwise Spearman correlation of mean $|\text{SHAP}|$ and Kendall's $W$~\cite{kendall1939}; within-model stability used five bootstrap refits. Feature-group ablation removed one of eight groups at a time and averaged the AUC change over five splits. All final models and timings used a CPU; FT-Transformer refits for ablation and stability used a GPU.
 
 % ---------------------------------------------------------------------
-\section{Results and Discussion}
+\section{Results}
 
 \subsection{Predictive Performance}
 Table~\ref{tab:perf} and Fig.~\ref{fig:roc} summarize test performance. All seven models fell within 0.011 AUC. XGBoost was significantly better than LR ($p = 0.005$), RF ($p = 0.001$), SVM ($p = 0.002$) and ResNet ($p = 0.002$), but not than the MLP ($p = 0.064$) or FT-Transformer ($p = 0.075$). No deep model was significantly better than any classical model ($p \geq 0.161$ wherever a deep model had the higher AUC). All models were well calibrated; FT-Transformer had the slope closest to one (0.99), while ResNet and MLP were slightly over-confident.
@@ -191,14 +185,23 @@ Removing demographic features caused the largest loss for every model (Fig.~\ref
 \label{fig:abl}
 \end{figure}
 
-\subsection{Discussion}
+\section{Discussion and Summary}
 Neither the MLP nor the tabular architectures (ResNet, FT-Transformer) offered a measurable advantage, consistent with benchmarks on medium-sized tabular data~\cite{grinsztajn2022,shwartzziv2022} and with clinical prediction studies~\cite{christodoulou2019,weng2017}. LR came within 0.009 AUC of the best model at a negligible cost~\cite{rudin2019}. Similar accuracy did not imply similar explanations: tree ensembles and smooth-boundary models distribute credit differently among correlated features, so attributions from a single model give an incomplete picture~\cite{krishna2024,hooker2021}.
 
 Higher total cholesterol lowered predicted CVD probability in every model, and blood pressure added almost no information. Both reflect treatment after diagnosis: survey-weighted statin use was 58.0\% among cases versus 14.2\% among controls, and antihypertensive use was 62.8\% versus 20.1\%. In contrast, NHANES studies of future CVD mortality find systolic blood pressure predictive~\cite{martinmorales2023}. Because our outcome is prevalent, self-reported CVD measured cross-sectionally, the models partly learn markers of diagnosis and treatment, and attributions describe association only. Further limitations are recall bias, age top-coded at 80, and the use of survey weights for descriptive analysis rather than training. Reporting followed TRIPOD+AI~\cite{collins2024}.
 
 % ---------------------------------------------------------------------
-\section{Conclusion and Future Work}
+\subsection{Summary and Future Work}
 On harmonized NHANES 2011--2018 data, four classical models and three deep learning models achieved nearly identical discrimination and calibration for CVD classification; no deep model was significantly better than a classical model, while the FT-Transformer was orders of magnitude more expensive. SHAP identified age as the dominant feature for all models, but attribution agreement depended on the shape of the decision function. Future work should use incident outcomes from linked mortality data, model treatment status explicitly, incorporate the survey design into training, and evaluate ensembles of tree and deep models~\cite{shwartzziv2022}.
+
+% ---------------------------------------------------------------------
+\section*{Acknowledgment}
+\textit{Data and code availability.} NHANES data are publicly available from the U.S. Centers for Disease Control and Prevention~\cite{nhanes}. Analysis code, random seeds, trained models and result files are available at \url{https://github.com/Nilay-11/AIRP}.
+
+
+\section*{Declaration of AI-Assisted Technologies}
+% TODO: check your venue's AI policy; keep this statement accurate if your own contribution changes (e.g., after you rewrite the text).
+An AI assistant (Claude, Anthropic) was used to help develop the analysis code and draft the manuscript. The authors defined the research question, the study design, the models and the evaluation metrics, ran and verified the analyses, checked all reported results, and take full responsibility for the content of this publication. The AI assistant is not an author.
 
 % ---------------------------------------------------------------------
 \bibliographystyle{IEEEtran}

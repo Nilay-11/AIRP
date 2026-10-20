@@ -28,8 +28,9 @@ No deep-learning model significantly outperformed any classical model (DeLong p 
 | `nhanes_study/RESULTS.md` | Full results write-up |
 | `nhanes_study/LITERATURE_SYNTHESIS.md` | What the cited papers found and how it relates to our results |
 | `nhanes_study/STUDY_SUMMARY_FOR_TEAM.md` | Dataset, features, models, comparison methods, abstract |
-| `overleaf_paper/` | IEEE LaTeX paper (`main.tex`, `refs.bib`, figures). Upload it to Overleaf |
-| `reference_papers/` | Reference list with links, plus PDFs of the freely available papers (for team use only; this repository is private) |
+| `overleaf_paper/` | IEEE LaTeX version of the paper (`main.tex`, `refs.bib`, figures) |
+| `icincds_submission/`, `ICINCDS_2026_Manuscript_NHANES_CVD_v2.docx` | ICINCDS 2026 manuscript (conference Word template, APA references) and the script that builds it |
+| `reference_papers/` | Reference list with links to every cited paper (the PDFs are not redistributed here for copyright reasons) |
 | `nhanes_study/data_raw/` | Raw NHANES files as downloaded from the CDC |
 | `nhanes_study/models/` | The 7 trained models (scikit-learn pipelines saved with joblib) |
 | `*.pdf` (root) | Shareable PDF reports |

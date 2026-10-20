@@ -93,9 +93,9 @@ CVD cases were older (65.0 vs 46.1 years), more often had diagnosed diabetes (33
 | FTT | 0.169 | 0.239 | 0.161 | 0.075 | 0.682 | 0.075 | – |
 
 - The 7 models span only **0.011 AUC** (0.837–0.848).
-- XGBoost had the highest AUC and was significantly better than LR, RF, SVM and ResNet. It was not significantly better than the MLP (p = 0.064) or FT-Transformer (p = 0.075).
-- **No deep model was significantly better than any classical model.** Wherever a deep model's AUC was higher than a classical model's (MLP and FT-Transformer vs LR, RF and SVM), p ≥ 0.161.
-- Among the deep models, the MLP was significantly better than ResNet (p = 0.031).
+- XGBoost had the highest AUC. **After Holm correction for the 21 pairwise comparisons** (`results/delong_pairwise_corrected.csv`), it remained significantly better than RF (adjusted p = 0.012), ResNet (0.036) and SVM (0.040). Its advantage over LR (unadjusted p = 0.005) did not survive correction (adjusted p = 0.095). It was not significantly better than the MLP or FT-Transformer (unadjusted p = 0.064 and 0.075; adjusted 1.000).
+- **No deep model was significantly better than any classical model,** with or without correction. Wherever a deep model's AUC was higher than a classical model's (MLP and FT-Transformer vs LR, RF and SVM), unadjusted p ≥ 0.161.
+- The MLP vs ResNet difference (unadjusted p = 0.031) did not survive correction (adjusted p = 0.525).
 - All models were well calibrated (ECE ≤ 0.021). FT-Transformer had the slope closest to 1 (0.99). ResNet (0.87) and MLP (0.91) were slightly over-confident, and RF (1.16) slightly under-confident.
 - Survey-weighted test AUC: 0.851–0.862, with XGBoost again highest.
 

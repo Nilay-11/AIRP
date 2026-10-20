@@ -26,5 +26,6 @@
  "gorishniy2021": "Gorishniy, Y., Rubachev, I., Khrulkov, V., & Babenko, A. (2021). Revisiting deep learning models for tabular data. In *Advances in Neural Information Processing Systems* (Vol. 34, pp. 18932–18943).",
  "krishna2024": "Krishna, S., Han, T., Gu, A., Wu, S., Jabbari, S., & Lakkaraju, H. (2024). The disagreement problem in explainable machine learning: A practitioner's perspective. *Transactions on Machine Learning Research*. https://arxiv.org/abs/2202.01602",
  "johnson2013": "Johnson, C. L., Paulose-Ram, R., Ogden, C. L., Carroll, M. D., Kruszon-Moran, D., Dohrmann, S. M., & Curtin, L. R. (2013). National Health and Nutrition Examination Survey: Analytic guidelines, 1999–2010. *Vital and Health Statistics, Series 2*(161), 1–24.",
- "nhanes": "Centers for Disease Control and Prevention, National Center for Health Statistics. (n.d.). *National Health and Nutrition Examination Survey data, 2011–2018*. U.S. Department of Health and Human Services. https://wwwn.cdc.gov/nchs/nhanes/"
+ "nhanes": "Centers for Disease Control and Prevention, National Center for Health Statistics. (n.d.). *National Health and Nutrition Examination Survey data, 2011–2018*. U.S. Department of Health and Human Services. https://wwwn.cdc.gov/nchs/nhanes/",
+ "holm1979": "Holm, S. (1979). A simple sequentially rejective multiple test procedure. *Scandinavian Journal of Statistics*, *6*(2), 65–70."
 }

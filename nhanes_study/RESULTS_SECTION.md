@@ -70,7 +70,7 @@ All models were well calibrated (Fig. 1b, Table III). Expected calibration error
 
 ## D. Statistical Comparison
 
-Pairwise DeLong tests (Table IV) showed that XGBoost was significantly better than LR (p = 0.005), RF (p = 0.001), SVM (p = 0.002) and ResNet (p = 0.002). It was not significantly better than the MLP (p = 0.064) or the FT-Transformer (p = 0.075). **No deep-learning model was significantly better than any classical model.** Wherever a deep model had the higher AUC (the MLP and FT-Transformer versus LR, RF and SVM), p ranged from 0.161 to 0.460. Within the deep family, the MLP was significantly better than ResNet (p = 0.031). LR, RF and SVM were statistically indistinguishable from one another (p ≥ 0.876).
+Pairwise DeLong tests compared all 21 model pairs (Table IV). After Holm correction for multiple comparisons, XGBoost remained significantly better than RF (adjusted p = 0.012), ResNet (p = 0.036) and SVM (p = 0.040). Its advantage over LR (unadjusted p = 0.005) was no longer significant (adjusted p = 0.095), and it did not differ significantly from the MLP or the FT-Transformer (unadjusted p = 0.064 and 0.075). **No deep-learning model was significantly better than any classical model, with or without correction.** Wherever a deep model had the higher AUC (the MLP and FT-Transformer versus LR, RF and SVM), unadjusted p ranged from 0.161 to 0.460. The MLP–ResNet difference (unadjusted p = 0.031) did not survive correction (adjusted p = 0.525). LR, RF and SVM were statistically indistinguishable from one another (unadjusted p ≥ 0.876). *Table IV below shows unadjusted p-values; Holm-adjusted values are in `results/delong_pairwise_corrected.csv`.*
 
 **Table IV. Pairwise DeLong test p-values for differences in test ROC-AUC**
 

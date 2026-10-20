@@ -201,7 +201,7 @@ C.push(body("On harmonized NHANES 2011–2018 data, four classical models and th
 
 // ---- Declarations (Acknowledgments are reserved for funding by the conference guidelines)
 C.push(heading("Data Availability"));
-C.push(body("NHANES data are publicly available from the U.S. Centers for Disease Control and Prevention (Centers for Disease Control and Prevention, n.d.). Analysis code, random seeds, trained models and result files are available from the corresponding author on reasonable request."));
+C.push(body("NHANES data are publicly available from the U.S. Centers for Disease Control and Prevention (Centers for Disease Control and Prevention, n.d.). Analysis code, random seeds, trained models and result files are available at https://github.com/Nilay-11/AIRP."));
 C.push(heading("Declaration of AI-Assisted Technologies"));
 C.push(body("An AI assistant (Claude, Anthropic) was used to help develop the analysis code and draft the manuscript. The authors defined the research question, the study design, the models and the evaluation metrics, ran and verified the analyses, checked all reported results, and take full responsibility for the content of this publication. The AI assistant is not an author."));
 

@@ -71,10 +71,32 @@ function table(caption, header, rows, colWeights) {
 const C = [];
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 },
   children: [new TextRun({ text: "Classical Machine Learning vs. Deep Learning for Cardiovascular Disease Classification: An Explainable AI Study Using NHANES Data", bold: true, size: 28, font: FONT })] }));
-// TODO (authors): replace placeholders with real names, affiliations and the corresponding author's institutional e-mail.
-C.push(center("Author One¹*, Author Two¹, Author Three¹"));
-C.push(center("¹Department of Computer Science, University Name, City, Country", { italics: true }));
-C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 }, children: runs("*Corresponding author: email@university.edu") }));
+// Author block in IEEE style: name, school (italic), institute, city, e-mail. Corresponding author marked with *.
+const SCOPE = "School of Computer Science Engineering and Information Systems";
+const AUTHORS = [
+  ["Adwit Agarwal", SCOPE, "adwit.agarwal2025@vitstudent.ac.in"],
+  ["Nilay Sengupta*", SCOPE, "nilay.sengupta2025a@vitstudent.ac.in"],
+  ["Geetha Ramakrishnan", "School of Chemical Engineering", "geetha.ramakrishnan2025@vitstudent.ac.in"],
+  ["Yamuna Manimuthu", "School of Advanced Sciences", "myamuna@vit.ac.in"],
+];
+const CORRESPONDING = "nilay.sengupta2025a@vitstudent.ac.in";
+const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
+function authorCell([name, school, email], w) {
+  const line = (t, o = {}) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0, line: 240 }, children: [new TextRun({ text: t, font: FONT, size: 21, ...o })] });
+  return new TableCell({ borders: noBorders, width: { size: w, type: WidthType.DXA }, margins: { top: 60, bottom: 60, left: 40, right: 40 },
+    children: [line(name, { size: 24 }), line(school, { italics: true }), line("Vellore Institute of Technology"), line("Vellore, India"), line(email)] });
+}
+function authorRow(list, totalW) {
+  const w = Math.floor(totalW / list.length);
+  return new Table({ alignment: AlignmentType.CENTER, width: { size: w * list.length, type: WidthType.DXA }, columnWidths: list.map(() => w),
+    borders: { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder, insideHorizontal: noBorder, insideVertical: noBorder },
+    rows: [new TableRow({ cantSplit: true, children: list.map((a) => authorCell(a, w)) })] });
+}
+// 2 x 2 grid: three columns are too narrow for the long e-mail addresses at this page width
+C.push(authorRow(AUTHORS.slice(0, 2), TEXT_W));
+C.push(authorRow(AUTHORS.slice(2), TEXT_W));
+C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 240 }, children: runs(`*Corresponding author: ${CORRESPONDING}`) }));
 
 C.push(heading("Abstract"));
 C.push(new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: runs(

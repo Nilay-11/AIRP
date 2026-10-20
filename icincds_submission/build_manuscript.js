@@ -74,12 +74,11 @@ C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 },
 // Author block in IEEE style: name, school (italic), institute, city, e-mail. Corresponding author marked with *.
 const SCOPE = "School of Computer Science Engineering and Information Systems";
 const AUTHORS = [
-  ["Adwit Agarwal", SCOPE, "adwit.agarwal2025@vitstudent.ac.in"],
-  ["Nilay Sengupta*", SCOPE, "nilay.sengupta2025a@vitstudent.ac.in"],
+  ["Adwit Agarwal*", SCOPE, "adwit.agarwal2025@vitstudent.ac.in"],
+  ["Nilay Sengupta", SCOPE, "nilay.sengupta2025a@vitstudent.ac.in"],
   ["Geetha Ramakrishnan", "School of Chemical Engineering", "geetha.ramakrishnan2025@vitstudent.ac.in"],
   ["Yamuna Manimuthu", "School of Advanced Sciences", "myamuna@vit.ac.in"],
 ];
-const CORRESPONDING = "nilay.sengupta2025a@vitstudent.ac.in";
 const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
 const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
 function authorCell([name, school, email], w) {
@@ -96,7 +95,7 @@ function authorRow(list, totalW) {
 // 2 x 2 grid: three columns are too narrow for the long e-mail addresses at this page width
 C.push(authorRow(AUTHORS.slice(0, 2), TEXT_W));
 C.push(authorRow(AUTHORS.slice(2), TEXT_W));
-C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 240 }, children: runs(`*Corresponding author: ${CORRESPONDING}`) }));
+C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 240 }, children: runs("*Corresponding author: adwit.agarwal2025@vitstudent.ac.in") }));
 
 C.push(heading("Abstract"));
 C.push(new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: runs(

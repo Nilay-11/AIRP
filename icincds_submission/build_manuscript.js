@@ -84,104 +84,104 @@ C.push(new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: runs("**Key
 // ---- Introduction
 C.push(heading("Introduction"));
 [
-  "Cardiovascular diseases (CVDs) are a major public health concern associated with demographic, physiological, biochemical and behavioral factors (Roth et al., 2020; Tsao et al., 2023). Clinical variables such as age, blood pressure, cholesterol, glucose concentration and body mass index provide valuable information about cardiovascular health and underpin established risk scores (D’Agostino et al., 2008; Goff et al., 2014). However, relationships among these variables can be nonlinear and interdependent, which motivates the application of data-driven predictive methods.",
-  "Classical machine learning algorithms, including Logistic Regression, Support Vector Machines, Random Forests and gradient-boosted decision trees, are widely applicable to structured clinical data. These methods offer different trade-offs between interpretability, computational efficiency and the ability to capture nonlinear relationships. Deep learning models, from multilayer perceptrons to Transformer architectures designed for tabular data (Gorishniy et al., 2021), can learn complex feature interactions but may require careful regularization and sufficient training data. Their greater complexity does not necessarily guarantee superior performance on tabular health datasets (Christodoulou et al., 2019; Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022).",
-  "Model evaluation in clinical applications should extend beyond predictive accuracy. Identifying which features influence predictions, determining whether their contributions remain stable across algorithms, and assessing probability calibration are important for judging model reliability (Van Calster et al., 2019). Explainable artificial intelligence techniques, including SHapley Additive exPlanations (SHAP; Lundberg & Lee, 2017), provide a framework for examining feature contributions. However, model attribution indicates predictive influence rather than causation (Rudin, 2019).",
-  "The National Health and Nutrition Examination Survey (NHANES), conducted by the United States Centers for Disease Control and Prevention, combines health interviews, physical examinations and laboratory measurements (Centers for Disease Control and Prevention, n.d.). Integrating four survey periods provides an opportunity to compare predictive models on population-level clinical data. Such integration requires consistent variable definitions, appropriate handling of missing data, and consideration of survey design and changes in data collection (Johnson et al., 2013).",
+  "Cardiovascular diseases (CVDs) are a major public health concern associated with demographic, physiological, biochemical and behavioral factors [1, 2]. Clinical variables such as age, blood pressure, cholesterol, glucose concentration and body mass index provide valuable information about cardiovascular health and underpin established risk scores [3, 4]. However, relationships among these variables can be nonlinear and interdependent, which motivates the application of data-driven predictive methods.",
+  "Classical machine learning algorithms, including Logistic Regression, Support Vector Machines, Random Forests and gradient-boosted decision trees, are widely applicable to structured clinical data. These methods offer different trade-offs between interpretability, computational efficiency and the ability to capture nonlinear relationships. Deep learning models, from multilayer perceptrons to Transformer architectures designed for tabular data [5], can learn complex feature interactions but may require careful regularization and sufficient training data. Their greater complexity does not necessarily guarantee superior performance on tabular health datasets [6, 7, 8].",
+  "Model evaluation in clinical applications should extend beyond predictive accuracy. Identifying which features influence predictions, determining whether their contributions remain stable across algorithms, and assessing probability calibration are important for judging model reliability [9]. Explainable artificial intelligence techniques, including SHapley Additive exPlanations (SHAP) [10], provide a framework for examining feature contributions. However, model attribution indicates predictive influence rather than causation [11].",
+  "The National Health and Nutrition Examination Survey (NHANES), conducted by the United States Centers for Disease Control and Prevention, combines health interviews, physical examinations and laboratory measurements [12]. Integrating four survey periods provides an opportunity to compare predictive models on population-level clinical data. Such integration requires consistent variable definitions, appropriate handling of missing data, and consideration of survey design and changes in data collection [13].",
   "This study compares four classical machine learning models (LR, RF, SVM, XGBoost) with three deep learning models (MLP, tabular ResNet, FT-Transformer) for CVD classification on harmonized NHANES 2011–2018 data. Its contributions are fourfold. First, it provides a controlled comparison in which all seven models share the same data splits, preprocessing and tuning protocol, with pairwise DeLong tests corrected for multiple comparisons. Second, it evaluates calibration (Brier score, expected calibration error and calibration slope) alongside discrimination, which most prior CVD studies omit. Third, it quantifies computational cost (tuning, training and inference time) for every model. Fourth, it measures whether SHAP explanations agree across model families and remain stable across bootstrap refits, complemented by feature-group ablation and an analysis of treatment-related reverse causation.",
 ].forEach((t) => C.push(body(t)));
 
 // ---- Related Work
 C.push(heading("Related Work"));
 [
-  "Machine learning for CVD risk has been studied in large cohorts. Weng et al. (2017) compared logistic regression, random forests, gradient boosting and neural networks with the ACC/AHA risk score in 378,256 UK primary-care patients; the neural network exceeded logistic regression by only 0.004 AUC. Alaa et al. (2019) showed that an automated machine-learning ensemble outperformed the Framingham score in 423,604 UK Biobank participants, largely by using many more variables, and Ambale-Venkatesh et al. (2017) applied random survival forests to the Multi-Ethnic Study of Atherosclerosis. A meta-analysis of 103 cohorts found overlapping performance across algorithm families and substantial heterogeneity between studies (Krittanawong et al., 2020).",
-  "Several studies have used NHANES. Dinh et al. (2019) reported an ensemble AUC of 0.831 for CVD using 131 variables. Martin-Morales et al. (2023) predicted CVD mortality and identified age and systolic blood pressure as key SHAP features, and Ahiduzzaman and Hasan (2025) compared five classical models with SHAP and LIME on NHANES 2017–2023. None of these studies evaluated deep learning models, and none measured whether attributions agree across models or remain stable across refits.",
-  "Broader evidence suggests that machine learning rarely outperforms logistic regression in clinical prediction (Christodoulou et al., 2019) and that tree ensembles often match or exceed deep learning on medium-sized tabular data (Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022). Explanation methods can also disagree with one another (Krishna et al., 2024). The present study addresses these gaps by comparing classical and deep models on identical data splits, with calibration, temporal validation, and cross-model and within-model SHAP stability analyses.",
+  "Machine learning for CVD risk has been studied in large cohorts. Weng et al. [14] compared logistic regression, random forests, gradient boosting and neural networks with the ACC/AHA risk score in 378,256 UK primary-care patients; the neural network exceeded logistic regression by only 0.004 AUC. Alaa et al. [15] showed that an automated machine-learning ensemble outperformed the Framingham score in 423,604 UK Biobank participants, largely by using many more variables, and Ambale-Venkatesh et al. [16] applied random survival forests to the Multi-Ethnic Study of Atherosclerosis. A meta-analysis of 103 cohorts found overlapping performance across algorithm families and substantial heterogeneity between studies [17].",
+  "Several studies have used NHANES. Dinh et al. [18] reported an ensemble AUC of 0.831 for CVD using 131 variables. Martin-Morales et al. [19] predicted CVD mortality and identified age and systolic blood pressure as key SHAP features, and Ahiduzzaman and Hasan [20] compared five classical models with SHAP and LIME on NHANES 2017–2023. None of these studies evaluated deep learning models, and none measured whether attributions agree across models or remain stable across refits.",
+  "Broader evidence suggests that machine learning rarely outperforms logistic regression in clinical prediction [6] and that tree ensembles often match or exceed deep learning on medium-sized tabular data [7, 8]. Explanation methods can also disagree with one another [21]. The present study addresses these gaps by comparing classical and deep models on identical data splits, with calibration, temporal validation, and cross-model and within-model SHAP stability analyses.",
 ].forEach((t) => C.push(body(t)));
 
 // ---- Methodology
 C.push(heading("Methodology"));
 C.push(subheading("Data and cohort"));
-C.push(body("Four NHANES cycles (2011–2012, 2013–2014, 2015–2016 and 2017–2018) were combined (Centers for Disease Control and Prevention, n.d.); the 2019–2020 cycle was excluded because data collection was interrupted by COVID-19. The analytic cohort comprised adults aged 20 years or older who completed the physical examination and had a determinable outcome (n = 21,552; 2,369 cases). Prevalence was 11.0% unweighted and 8.9% survey-weighted, using the examination weight divided by four as recommended for combined cycles (Johnson et al., 2013)."));
+C.push(body("Four NHANES cycles (2011–2012, 2013–2014, 2015–2016 and 2017–2018) were combined [12]; the 2019–2020 cycle was excluded because data collection was interrupted by COVID-19. The analytic cohort comprised adults aged 20 years or older who completed the physical examination and had a determinable outcome (n = 21,552; 2,369 cases). Prevalence was 11.0% unweighted and 8.9% survey-weighted, using the examination weight divided by four as recommended for combined cycles [13]."));
 C.push(subheading("Outcome"));
 C.push(body("CVD was defined as a self-reported physician diagnosis of congestive heart failure, coronary heart disease, angina, heart attack or stroke (NHANES items MCQ160B–F). Participants answering “no” to all five items were controls; those with missing or unknown answers were excluded (n = 94)."));
 C.push(subheading("Features and preprocessing"));
 C.push(body("Twenty features were harmonized across cycles: age, sex, race/ethnicity (four indicators), income-to-poverty ratio, education, systolic and diastolic blood pressure (mean of up to three readings), pulse rate, body mass index, waist circumference, total and HDL cholesterol, HbA1c, serum creatinine, uric acid, smoking status and diagnosed diabetes. Medication variables were excluded because treatment frequently follows a CVD diagnosis and would leak the label. Missingness was at most 9.8%. Median imputation and standardization were fitted inside each model pipeline on training folds only."));
 C.push(subheading("Models and training"));
-C.push(body("Data were split 80/20 with stratification (training n = 17,241; test n = 4,311). Hyperparameters were tuned by five-fold stratified cross-validation on the training set to maximize ROC-AUC. The classical models were L2-regularized Logistic Regression (LR), Random Forest (RF; Breiman, 2001), a radial-basis-function Support Vector Machine (SVM; Cortes & Vapnik, 1995) with Platt-scaled probabilities, and XGBoost (XGB; Chen & Guestrin, 2016) tuned by random search. The deep models were a multilayer perceptron (MLP) built from Linear–BatchNorm–ReLU–Dropout blocks, a tabular ResNet and an FT-Transformer (Gorishniy et al., 2021), which converts each feature into a token and applies multi-head self-attention. All three deep models were trained with the AdamW optimizer, binary cross-entropy loss and early stopping on a 15% validation split; the selected networks had 3,649, 68,353 and 69,589 parameters, respectively. For ResNet and FT-Transformer the best configurations lay on a plateau, with the top configurations within 0.003 cross-validated AUC of each other, below the cross-validation standard deviation. Models were implemented in scikit-learn, XGBoost and PyTorch. Each model’s decision threshold maximized the F1-score on out-of-fold training predictions."));
+C.push(body("Data were split 80/20 with stratification (training n = 17,241; test n = 4,311). Hyperparameters were tuned by five-fold stratified cross-validation on the training set to maximize ROC-AUC. The classical models were L2-regularized Logistic Regression (LR), Random Forest (RF) [22], a radial-basis-function Support Vector Machine (SVM) [23] with Platt-scaled probabilities, and XGBoost (XGB) [24] tuned by random search. The deep models were a multilayer perceptron (MLP) built from Linear–BatchNorm–ReLU–Dropout blocks, a tabular ResNet and an FT-Transformer [5], which converts each feature into a token and applies multi-head self-attention. All three deep models were trained with the AdamW optimizer, binary cross-entropy loss and early stopping on a 15% validation split; the selected networks had 3,649, 68,353 and 69,589 parameters, respectively. For ResNet and FT-Transformer the best configurations lay on a plateau, with the top configurations within 0.003 cross-validated AUC of each other, below the cross-validation standard deviation. Models were implemented in scikit-learn, XGBoost and PyTorch. Each model’s decision threshold maximized the F1-score on out-of-fold training predictions."));
 C.push(subheading("Evaluation"));
-C.push(body("Test-set performance was assessed with ROC-AUC (with 1,000-sample bootstrap confidence intervals), PR-AUC (Saito & Rehmsmeier, 2015), precision, recall, specificity, F1-score, Brier score, expected calibration error (ECE) and calibration slope (Van Calster et al., 2019). Paired AUC differences were tested with DeLong’s method (DeLong et al., 1988), and p-values for the 21 pairwise comparisons were adjusted with Holm’s step-down procedure (Holm, 1979). Robustness was assessed over five random splits, by temporal validation (training on 2011–2016 and testing on 2017–2018), and with survey-weighted AUC."));
+C.push(body("Test-set performance was assessed with ROC-AUC (with 1,000-sample bootstrap confidence intervals), PR-AUC [25], precision, recall, specificity, F1-score, Brier score, expected calibration error (ECE) and calibration slope [9]. Paired AUC differences were tested with DeLong’s method [26], and p-values for the 21 pairwise comparisons were adjusted with Holm’s step-down procedure [27]. Robustness was assessed over five random splits, by temporal validation (training on 2011–2016 and testing on 2017–2018), and with survey-weighted AUC."));
 C.push(subheading("Explainability and stability"));
-C.push(body("The same model-agnostic permutation SHAP estimator (Lundberg & Lee, 2017) was applied to every model’s predicted probability (300 test rows, 50 background rows); its rankings agreed with exact TreeSHAP (Lundberg et al., 2020) for XGBoost (Spearman ρ = 0.989). Agreement between models was measured with pairwise Spearman correlation of mean absolute SHAP values and with Kendall’s W; stability within each model was measured across five bootstrap refits. Feature-group ablation removed one of eight feature groups at a time, retrained each model and averaged the change in AUC over five splits. All final models and reported timings used a CPU; FT-Transformer refits for the ablation and stability analyses used a GPU."));
+C.push(body("The same model-agnostic permutation SHAP estimator [10] was applied to every model’s predicted probability (300 test rows, 50 background rows); its rankings agreed with exact TreeSHAP [28] for XGBoost (Spearman ρ = 0.989). Agreement between models was measured with pairwise Spearman correlation of mean absolute SHAP values and with Kendall’s W; stability within each model was measured across five bootstrap refits. Feature-group ablation removed one of eight feature groups at a time, retrained each model and averaged the change in AUC over five splits. All final models and reported timings used a CPU; FT-Transformer refits for the ablation and stability analyses used a GPU."));
 
 // ---- Results
 C.push(heading("Results"));
 C.push(subheading("Study population"));
 C.push(body("Table 1 compares survey-weighted characteristics by CVD status. Participants with CVD were older (65.0 vs. 46.1 years), more often had diagnosed diabetes (33.0% vs. 8.3%) and were more often former smokers (38.0% vs. 23.1%). They had higher systolic blood pressure, waist circumference, HbA1c and creatinine but, notably, lower total cholesterol (177.5 vs. 193.0 mg/dL) and diastolic blood pressure (67.8 vs. 71.3 mmHg)."));
 C.push(...table("**Table 1.** Survey-weighted characteristics of the study population",
-  ["Characteristic", "Overall", "No CVD", "CVD"],
-  [["Unweighted n", "21,552", "19,183", "2,369"], ["Age, years, mean (SD)", "47.7 (17.1)", "46.1 (16.5)", "65.0 (13.1)"],
-   ["Male sex, %", "48.0", "47.5", "54.0"], ["Income-to-poverty ratio, mean (SD)", "3.0 (1.7)", "3.0 (1.7)", "2.5 (1.6)"],
-   ["Systolic BP, mmHg, mean (SD)", "122.8 (17.4)", "122.0 (16.8)", "130.4 (20.8)"], ["Diastolic BP, mmHg, mean (SD)", "71.0 (12.0)", "71.3 (11.7)", "67.8 (14.5)"],
-   ["BMI, kg/m², mean (SD)", "29.3 (7.0)", "29.1 (7.0)", "30.8 (7.3)"], ["Waist circumference, cm, mean (SD)", "99.9 (16.7)", "99.3 (16.6)", "106.6 (16.2)"],
-   ["Total cholesterol, mg/dL, mean (SD)", "191.6 (41.4)", "193.0 (41.0)", "177.5 (43.0)"], ["HDL cholesterol, mg/dL, mean (SD)", "53.9 (16.5)", "54.2 (16.5)", "50.4 (16.4)"],
-   ["HbA1c, %, mean (SD)", "5.7 (1.0)", "5.6 (0.9)", "6.2 (1.3)"], ["Serum creatinine, mg/dL, mean (SD)", "0.9 (0.4)", "0.9 (0.3)", "1.1 (0.6)"],
-   ["Diagnosed diabetes, %", "10.5", "8.3", "33.0"], ["Current smoker, %", "18.9", "18.5", "22.4"], ["Former smoker, %", "24.5", "23.1", "38.0"]],
-  [3.2, 1.3, 1.3, 1.3]));
+ ["Characteristic", "Overall", "No CVD", "CVD"],
+ [["Unweighted n", "21,552", "19,183", "2,369"], ["Age, years, mean (SD)", "47.7 (17.1)", "46.1 (16.5)", "65.0 (13.1)"],
+  ["Male sex, %", "48.0", "47.5", "54.0"], ["Income-to-poverty ratio, mean (SD)", "3.0 (1.7)", "3.0 (1.7)", "2.5 (1.6)"],
+  ["Systolic BP, mmHg, mean (SD)", "122.8 (17.4)", "122.0 (16.8)", "130.4 (20.8)"], ["Diastolic BP, mmHg, mean (SD)", "71.0 (12.0)", "71.3 (11.7)", "67.8 (14.5)"],
+  ["BMI, kg/m², mean (SD)", "29.3 (7.0)", "29.1 (7.0)", "30.8 (7.3)"], ["Waist circumference, cm, mean (SD)", "99.9 (16.7)", "99.3 (16.6)", "106.6 (16.2)"],
+  ["Total cholesterol, mg/dL, mean (SD)", "191.6 (41.4)", "193.0 (41.0)", "177.5 (43.0)"], ["HDL cholesterol, mg/dL, mean (SD)", "53.9 (16.5)", "54.2 (16.5)", "50.4 (16.4)"],
+  ["HbA1c, %, mean (SD)", "5.7 (1.0)", "5.6 (0.9)", "6.2 (1.3)"], ["Serum creatinine, mg/dL, mean (SD)", "0.9 (0.4)", "0.9 (0.3)", "1.1 (0.6)"],
+  ["Diagnosed diabetes, %", "10.5", "8.3", "33.0"], ["Current smoker, %", "18.9", "18.5", "22.4"], ["Former smoker, %", "24.5", "23.1", "38.0"]],
+ [3.2, 1.3, 1.3, 1.3]));
 
 C.push(subheading("Predictive performance and calibration"));
 C.push(body("Table 2 reports test-set performance. Discrimination was remarkably similar: ROC-AUC ranged only from 0.837 (ResNet) to 0.848 (XGBoost), and all 95% confidence intervals overlapped. XGBoost achieved the highest ROC-AUC (0.848, 95% CI 0.829–0.863) and the lowest Brier score (0.078). Among the deep models, the FT-Transformer performed best (ROC-AUC 0.843) and achieved the highest PR-AUC of all models (0.419). Cross-validation AUCs (0.846–0.850) closely matched test AUCs, indicating little overfitting. All models were well calibrated (Fig. 1b): ECE was at most 0.021, the FT-Transformer had the calibration slope closest to one (0.99), ResNet (0.87) and the MLP (0.91) were slightly over-confident, and Random Forest (1.16) was slightly under-confident."));
 C.push(...table("**Table 2.** Test-set performance of the seven models (n = 4,311; 474 CVD cases)",
-  ["Model", "Family", "ROC-AUC [95% CI]", "PR-AUC", "Precision", "Recall", "F1", "Brier", "ECE", "Slope"],
-  [["Logistic Regression", "Classical", "0.839 [0.821–0.855]", "0.392", "0.383", "0.561", "0.455", "0.080", "0.010", "1.04"],
-   ["Random Forest", "Classical", "0.839 [0.821–0.856]", "0.407", "0.361", "0.586", "0.447", "0.080", "0.010", "1.16"],
-   ["SVM (RBF)", "Classical", "0.839 [0.821–0.854]", "0.396", "0.362", "0.584", "0.447", "0.080", "0.007", "0.97"],
-   ["**XGBoost**", "Classical", "**0.848 [0.829–0.863]**", "0.418", "0.373", "0.572", "0.451", "**0.078**", "0.009", "1.04"],
-   ["MLP", "Deep", "0.842 [0.825–0.858]", "0.398", "0.390", "0.523", "0.447", "0.080", "0.018", "0.91"],
-   ["ResNet", "Deep", "0.837 [0.819–0.855]", "0.402", "0.377", "0.527", "0.439", "0.080", "0.021", "0.87"],
-   ["FT-Transformer", "Deep", "0.843 [0.825–0.859]", "**0.419**", "0.371", "0.586", "0.455", "0.079", "0.012", "0.99"]],
-  [2.0, 1.15, 2.1, 0.9, 1.0, 0.9, 0.8, 0.8, 0.8, 0.8]));
+ ["Model", "Family", "ROC-AUC [95% CI]", "PR-AUC", "Precision", "Recall", "F1", "Brier", "ECE", "Slope"],
+ [["Logistic Regression", "Classical", "0.839 [0.821–0.855]", "0.392", "0.383", "0.561", "0.455", "0.080", "0.010", "1.04"],
+  ["Random Forest", "Classical", "0.839 [0.821–0.856]", "0.407", "0.361", "0.586", "0.447", "0.080", "0.010", "1.16"],
+  ["SVM (RBF)", "Classical", "0.839 [0.821–0.854]", "0.396", "0.362", "0.584", "0.447", "0.080", "0.007", "0.97"],
+  ["**XGBoost**", "Classical", "**0.848 [0.829–0.863]**", "0.418", "0.373", "0.572", "0.451", "**0.078**", "0.009", "1.04"],
+  ["MLP", "Deep", "0.842 [0.825–0.858]", "0.398", "0.390", "0.523", "0.447", "0.080", "0.018", "0.91"],
+  ["ResNet", "Deep", "0.837 [0.819–0.855]", "0.402", "0.377", "0.527", "0.439", "0.080", "0.021", "0.87"],
+  ["FT-Transformer", "Deep", "0.843 [0.825–0.859]", "**0.419**", "0.371", "0.586", "0.455", "0.079", "0.012", "0.99"]],
+ [2.0, 1.15, 2.1, 0.9, 1.0, 0.9, 0.8, 0.8, 0.8, 0.8]));
 C.push(...figure("fig1_roc_calibration.png", 6.0, "**Fig. 1.** (a) ROC curves of the seven models on the test set (AUC in legend). (b) Calibration by decile of predicted risk. Solid lines denote classical models and dashed lines deep-learning models."));
 
 C.push(subheading("Statistical comparison"));
 C.push(body("Pairwise DeLong tests compared all 21 model pairs (Table 3). After Holm correction for multiple comparisons, XGBoost remained significantly better than RF (adjusted p = 0.012), ResNet (p = 0.036) and SVM (p = 0.040); its advantage over LR (unadjusted p = 0.005) was no longer significant (adjusted p = 0.095), and it did not differ significantly from the MLP or the FT-Transformer (adjusted p = 1.000). No deep learning model was significantly better than any classical model, with or without correction: wherever a deep model had the higher AUC (the MLP and FT-Transformer versus LR, RF and SVM), unadjusted p ranged from 0.161 to 0.460. The difference between the MLP and ResNet (unadjusted p = 0.031) did not survive correction (adjusted p = 0.525)."));
 C.push(...table("**Table 3.** Pairwise DeLong test p-values for differences in test ROC-AUC. Upper triangle: unadjusted; lower triangle: Holm-adjusted for 21 comparisons (bold: p < 0.05)",
-  ["", "LR", "RF", "SVM", "XGB", "MLP", "ResNet", "FT-T"],
-  [
-   ["LR", "–", "0.944", "0.876", "**0.005**", "0.321", "0.675", "0.169"],
-   ["RF", "1.000", "–", "1.000", "**0.001**", "0.460", "0.643", "0.239"],
-   ["SVM", "1.000", "1.000", "–", "**0.002**", "0.274", "0.547", "0.161"],
-   ["XGB", "0.095", "**0.012**", "**0.040**", "–", "0.064", "**0.002**", "0.075"],
-   ["MLP", "1.000", "1.000", "1.000", "1.000", "–", "**0.031**", "0.682"],
-   ["ResNet", "1.000", "1.000", "1.000", "**0.036**", "0.525", "–", "0.075"],
-   ["FT-T", "1.000", "1.000", "1.000", "1.000", "1.000", "1.000", "–"]],
-  [1.1, 1, 1, 1, 1, 1, 1, 1]));
+ ["", "LR", "RF", "SVM", "XGB", "MLP", "ResNet", "FT-T"],
+ [
+  ["LR", "–", "0.944", "0.876", "**0.005**", "0.321", "0.675", "0.169"],
+  ["RF", "1.000", "–", "1.000", "**0.001**", "0.460", "0.643", "0.239"],
+  ["SVM", "1.000", "1.000", "–", "**0.002**", "0.274", "0.547", "0.161"],
+  ["XGB", "0.095", "**0.012**", "**0.040**", "–", "0.064", "**0.002**", "0.075"],
+  ["MLP", "1.000", "1.000", "1.000", "1.000", "–", "**0.031**", "0.682"],
+  ["ResNet", "1.000", "1.000", "1.000", "**0.036**", "0.525", "–", "0.075"],
+  ["FT-T", "1.000", "1.000", "1.000", "1.000", "1.000", "1.000", "–"]],
+ [1.1, 1, 1, 1, 1, 1, 1, 1]));
 
 C.push(subheading("Robustness and computational cost"));
 C.push(body("Across five random splits, XGBoost had the highest mean AUC (0.846), closely followed by the FT-Transformer (0.845), and every model was within about one standard deviation of the others (Table 4). Under temporal validation all seven models converged to an AUC of 0.837–0.840, and survey-weighted test AUCs (0.851–0.862) preserved the ranking. Computational cost, however, differed by orders of magnitude: the FT-Transformer required 5,779 s of tuning, 119 times longer than XGBoost (49 s), and its final training took about 5,000 times longer than that of Logistic Regression."));
 C.push(...table("**Table 4.** Robustness of discrimination and computational cost (CPU, wall-clock)",
-  ["Model", "AUC, 5 splits (mean ± SD)", "Temporal AUC", "Weighted AUC", "Tuning (s)", "Training (s)", "Inference (ms/1k)"],
-  [["Logistic Regression", "0.842 ± 0.002", "0.838", "0.852", "5", "0.05", "1.1"],
-   ["Random Forest", "0.841 ± 0.004", "0.837", "0.851", "271", "1.5", "24.8"],
-   ["SVM (RBF)", "0.843 ± 0.003", "0.838", "0.853", "224", "47.4", "828"],
-   ["XGBoost", "**0.846 ± 0.004**", "0.838", "**0.862**", "49", "0.6", "2.9"],
-   ["MLP", "0.844 ± 0.003", "0.839", "0.855", "352", "9.0", "1.2"],
-   ["ResNet", "0.841 ± 0.005", "**0.840**", "0.851", "913", "22.3", "8.8"],
-   ["FT-Transformer", "0.845 ± 0.003", "0.837", "0.853", "5,779", "275.6", "351"]],
-  [2.0, 1.7, 1.1, 1.1, 1.0, 1.0, 1.2]));
+ ["Model", "AUC, 5 splits (mean ± SD)", "Temporal AUC", "Weighted AUC", "Tuning (s)", "Training (s)", "Inference (ms/1k)"],
+ [["Logistic Regression", "0.842 ± 0.002", "0.838", "0.852", "5", "0.05", "1.1"],
+  ["Random Forest", "0.841 ± 0.004", "0.837", "0.851", "271", "1.5", "24.8"],
+  ["SVM (RBF)", "0.843 ± 0.003", "0.838", "0.853", "224", "47.4", "828"],
+  ["XGBoost", "**0.846 ± 0.004**", "0.838", "**0.862**", "49", "0.6", "2.9"],
+  ["MLP", "0.844 ± 0.003", "0.839", "0.855", "352", "9.0", "1.2"],
+  ["ResNet", "0.841 ± 0.005", "**0.840**", "0.851", "913", "22.3", "8.8"],
+  ["FT-Transformer", "0.845 ± 0.003", "0.837", "0.853", "5,779", "275.6", "351"]],
+ [2.0, 1.7, 1.1, 1.1, 1.0, 1.0, 1.2]));
 
 C.push(subheading("Feature attributions and stability"));
 C.push(body("SHAP analysis identified age as the most influential feature for every model (Fig. 2). Total cholesterol, smoking status, diagnosed diabetes and income-to-poverty ratio completed the top five for LR, SVM and all three deep models, whereas RF and XGBoost ranked serum creatinine among their top five. For XGBoost, older age, smoking, diagnosed diabetes and higher creatinine increased predicted risk, whereas a higher income-to-poverty ratio and, counter-intuitively, higher total cholesterol decreased it."));
 C.push(...figure("fig2_shap_importance_heatmap.png", 3.0, "**Fig. 2.** Mean absolute SHAP importance per model, scaled to each model’s top feature. Cell numbers are within-model ranks; the white line separates classical (left) from deep (right) models."));
 C.push(body("Feature rankings were broadly concordant across all seven models (Kendall’s W = 0.752), but agreement followed the shape of the decision function rather than the classical/deep distinction (Table 5). The two tree ensembles agreed closely with each other (RF–XGBoost ρ = 0.941), while LR, SVM and the three deep models formed a second cluster (for example ResNet–FT-Transformer ρ = 0.935 and SVM–MLP ρ = 0.886). The deep models were highly concordant with one another (W = 0.921) compared with the classical models (W = 0.742). Across bootstrap refits, the tree ensembles produced the most stable full rankings (RF ρ = 0.973), the SVM and MLP kept a perfectly stable top five, and the FT-Transformer was the least stable (top-five Jaccard index 0.61)."));
 C.push(...table("**Table 5.** SHAP ranking agreement between models (Spearman ρ) and within-model stability",
-  ["", "LR", "RF", "SVM", "XGB", "MLP", "ResNet", "FT-T"],
-  [["RF", "0.474", "", "", "", "", "", ""], ["SVM", "0.656", "0.653", "", "", "", "", ""],
-   ["XGB", "0.553", "**0.941**", "0.663", "", "", "", ""], ["MLP", "0.743", "0.629", "**0.886**", "0.633", "", "", ""],
-   ["ResNet", "0.666", "0.663", "0.698", "0.717", "0.863", "", ""], ["FT-T", "0.728", "0.597", "0.692", "0.681", "0.848", "**0.935**", ""],
-   ["Bootstrap stability (ρ)", "0.846", "0.973", "0.732", "0.921", "0.805", "0.804", "0.761"],
-   ["Top-5 stability (Jaccard)", "0.867", "0.767", "1.000", "0.733", "1.000", "0.767", "0.605"]],
-  [2.0, 1, 1, 1, 1, 1, 1, 1]));
+ ["", "LR", "RF", "SVM", "XGB", "MLP", "ResNet", "FT-T"],
+ [["RF", "0.474", "", "", "", "", "", ""], ["SVM", "0.656", "0.653", "", "", "", "", ""],
+  ["XGB", "0.553", "**0.941**", "0.663", "", "", "", ""], ["MLP", "0.743", "0.629", "**0.886**", "0.633", "", "", ""],
+  ["ResNet", "0.666", "0.663", "0.698", "0.717", "0.863", "", ""], ["FT-T", "0.728", "0.597", "0.692", "0.681", "0.848", "**0.935**", ""],
+  ["Bootstrap stability (ρ)", "0.846", "0.973", "0.732", "0.921", "0.805", "0.804", "0.761"],
+  ["Top-5 stability (Jaccard)", "0.867", "0.767", "1.000", "0.733", "1.000", "0.767", "0.605"]],
+ [2.0, 1, 1, 1, 1, 1, 1, 1]));
 
 C.push(subheading("Feature-group ablation"));
 C.push(body("Removing one feature group at a time confirmed the SHAP results (Fig. 3). Removing the demographic group caused by far the largest loss for every model (−0.037 to −0.063 AUC), largest for LR. Lipid, glycaemic, socioeconomic, renal/metabolic and smoking groups each cost 0.001–0.007 AUC, whereas removing anthropometric or blood-pressure features changed AUC by at most 0.003, within the variation between splits. The ordering of feature groups was nearly identical across all seven models."));
@@ -190,10 +190,10 @@ C.push(...figure("fig4_ablation.png", 4.2, "**Fig. 3.** Change in test ROC-AUC (
 // ---- Discussion
 C.push(heading("Discussion"));
 [
-  "Neither the MLP nor the architectures designed for tabular data (ResNet and FT-Transformer) offered a measurable advantage over classical models. This agrees with benchmarks on medium-sized tabular data (Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022) and with clinical prediction studies (Christodoulou et al., 2019; Weng et al., 2017). Logistic Regression came within 0.009 AUC of the best model at a negligible computational cost, supporting the use of inherently interpretable models where their accuracy is comparable (Rudin, 2019).",
-  "Similar accuracy did not imply similar explanations. Tree ensembles and smooth-boundary models distributed credit differently among correlated features, so attributions from a single model give an incomplete picture of which clinical factors matter (Krishna et al., 2024). Reporting SHAP results from several model families, together with their stability, offers a more reliable basis for interpretation.",
-  "Higher total cholesterol lowered predicted CVD probability in every model, and blood pressure added almost no discriminative information. Both effects reflect treatment after diagnosis: survey-weighted statin use was 58.0% among participants with CVD versus 14.2% among those without, and antihypertensive use was 62.8% versus 20.1%. In contrast, NHANES studies of future CVD mortality find systolic blood pressure predictive (Martin-Morales et al., 2023). Because the outcome in this study is prevalent, self-reported CVD measured cross-sectionally, the models partly learn markers of diagnosis and treatment, and the attributions describe association only.",
-  "This study has limitations. The outcome is self-reported and therefore subject to recall bias, age is top-coded at 80 years in NHANES, and survey weights were used for descriptive analysis and a weighted-AUC check rather than for model training. Reporting followed the TRIPOD+AI guidance (Collins et al., 2024).",
+  "Neither the MLP nor the architectures designed for tabular data (ResNet and FT-Transformer) offered a measurable advantage over classical models. This agrees with benchmarks on medium-sized tabular data [7, 8] and with clinical prediction studies [6, 14]. Logistic Regression came within 0.009 AUC of the best model at a negligible computational cost, supporting the use of inherently interpretable models where their accuracy is comparable [11].",
+  "Similar accuracy did not imply similar explanations. Tree ensembles and smooth-boundary models distributed credit differently among correlated features, so attributions from a single model give an incomplete picture of which clinical factors matter [21]. Reporting SHAP results from several model families, together with their stability, offers a more reliable basis for interpretation.",
+  "Higher total cholesterol lowered predicted CVD probability in every model, and blood pressure added almost no discriminative information. Both effects reflect treatment after diagnosis: survey-weighted statin use was 58.0% among participants with CVD versus 14.2% among those without, and antihypertensive use was 62.8% versus 20.1%. In contrast, NHANES studies of future CVD mortality find systolic blood pressure predictive [19]. Because the outcome in this study is prevalent, self-reported CVD measured cross-sectionally, the models partly learn markers of diagnosis and treatment, and the attributions describe association only.",
+  "This study has limitations. The outcome is self-reported and therefore subject to recall bias, age is top-coded at 80 years in NHANES, and survey weights were used for descriptive analysis and a weighted-AUC check rather than for model training. Reporting followed the TRIPOD+AI guidance [29].",
 ].forEach((t) => C.push(body(t)));
 
 // ---- Conclusion
@@ -202,15 +202,14 @@ C.push(body("On harmonized NHANES 2011–2018 data, four classical models and th
 
 // ---- Declarations (Acknowledgments are reserved for funding by the conference guidelines)
 C.push(heading("Data Availability"));
-C.push(body("NHANES data are publicly available from the U.S. Centers for Disease Control and Prevention (Centers for Disease Control and Prevention, n.d.). Analysis code, random seeds, trained models and result files are available at https://github.com/Nilay-11/AIRP."));
+C.push(body("NHANES data are publicly available from the U.S. Centers for Disease Control and Prevention [12]. Analysis code, random seeds, trained models and result files are available at https://github.com/Nilay-11/AIRP."));
 C.push(heading("Declaration of AI-Assisted Technologies"));
 C.push(body("An AI assistant (Claude, Anthropic) was used to help develop the analysis code and draft the manuscript. The authors defined the research question, the study design, the models and the evaluation metrics, ran and verified the analyses, checked all reported results, and take full responsibility for the content of this publication. The AI assistant is not an author."));
 
 // ---- References (APA, alphabetical)
 C.push(heading("References"));
-const sortKey = (s) => s.replace(/[^A-Za-z]/g, "").toLowerCase();
-Object.values(refs).sort((a, b) => sortKey(a).localeCompare(sortKey(b))).forEach((r) =>
-  C.push(new Paragraph({ alignment: AlignmentType.LEFT, indent: { left: 720, hanging: 720 }, spacing: { after: 80, line: 240 }, children: runs(r) })));
+const ORDER = ["roth2020", "tsao2023", "dagostino2008", "goff2014", "gorishniy2021", "christodoulou2019", "grinsztajn2022", "shwartzziv2022", "vancalster2019", "lundberg2017", "rudin2019", "nhanes", "johnson2013", "weng2017", "alaa2019", "ambale2017", "krittanawong2020", "dinh2019", "martinmorales2023", "ahiduzzaman2025", "krishna2024", "breiman2001", "cortes1995", "chen2016", "saito2015", "delong1988", "holm1979", "lundberg2020", "collins2024"];
+ORDER.forEach((k, i) => C.push(new Paragraph({ alignment: AlignmentType.JUSTIFIED, indent: { left: 720, hanging: 720 }, spacing: { after: 80, line: 240 }, children: runs(`${i + 1}.\t` + refs[k]) })));
 
 const doc = new Document({
   creator: "ICINCDS 2026 authors",

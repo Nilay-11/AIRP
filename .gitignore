@@ -16,3 +16,7 @@ reference_papers/pdfs/
 # Node dependencies and Word lock files
 node_modules/
 ~$*
+
+# Kaggle cardiovascular dataset (third-party data; download it from Kaggle instead)
+cardio_cleaned.csv
+data/cardio_cleaned.csv

@@ -75,7 +75,7 @@ C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 },
 const SCOPE = "School of Computer Science Engineering and Information Systems";
 const AUTHORS = [
   ["Adwit Agarwal*", SCOPE, "adwit.agarwal2025@vitstudent.ac.in"],
-  ["Nilay Sengupta", SCOPE, "nilay.sengupta2025a@vitstudent.ac.in"],
+  ["Nilay Sengupta", SCOPE, "nilay.sengupta2025@vitstudent.ac.in"],
   ["Geetha Ramakrishnan", "School of Chemical Engineering", "geetha.ramakrishnan2025@vitstudent.ac.in"],
   ["Yamuna Manimuthu", "School of Advanced Sciences", "myamuna@vit.ac.in"],
 ];
